@@ -1,0 +1,185 @@
+{
+  "title": "MIL-STD-202",
+  "description": "Test Method Standard: Electronic and Electrical Component Parts",
+  "methods": [
+    { "id": "101", "title": "Salt Atmosphere (Corrosion)", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "96 hours" },
+      { "name": "Condition B", "requirements": "48 hours" },
+      { "name": "Condition C", "requirements": "24 hours" },
+      { "name": "Condition D", "requirements": "240 hours" }
+    ] },
+    { "id": "102", "title": "Temperature Cycling", "status": "CANCELED", "date": "28 June 2013", "conditions": [] },
+    { "id": "103", "title": "Humidity (Steady State)", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "240 hours, 90-95% RH, 40°C" },
+      { "name": "Condition B", "requirements": "96 hours, 90-95% RH, 40°C" },
+      { "name": "Condition C", "requirements": "504 hours, 90-95% RH, 40°C" },
+      { "name": "Condition D", "requirements": "1,344 hours, 90-95% RH, 40°C" }
+    ] },
+    { "id": "104", "title": "Immersion", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "2 cycles, 15 min each, Cold bath: Fresh water 25°C" },
+      { "name": "Condition B", "requirements": "2 cycles, 15 min each, Cold bath: Salt water 25°C" },
+      { "name": "Condition C", "requirements": "5 cycles, 60 min each, Cold bath: Salt water 0°C" }
+    ] },
+    { "id": "105", "title": "Barometric Pressure (Reduced)", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "30,000 ft (8.88 inHg)" },
+      { "name": "Condition B", "requirements": "50,000 ft (3.44 inHg)" },
+      { "name": "Condition C", "requirements": "70,000 ft (1.31 inHg)" },
+      { "name": "Condition D", "requirements": "100,000 ft (0.315 inHg)" },
+      { "name": "Condition E", "requirements": "150,000 ft (0.043 inHg)" },
+      { "name": "Condition F", "requirements": "15,000 ft (17.3 inHg)" },
+      { "name": "Condition G", "requirements": "656,000 ft (9.436 x 10^-8 inHg)" }
+    ] },
+    { "id": "106", "title": "Moisture Resistance", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Standard", "requirements": "10 continuous cycles, 24 hours/cycle. Includes low temp/vibration subcycles." }
+    ] },
+    { "id": "107", "title": "Thermal Shock", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "-55°C to +85°C (Air). Cycles: 5 (A), 25 (A-1), 50 (A-2), 100 (A-3)" },
+      { "name": "Condition B", "requirements": "-65°C to +125°C (Air). Cycles: 5 (B), 25 (B-1), 50 (B-2), 100 (B-3)" },
+      { "name": "Condition C", "requirements": "-65°C to +200°C (Air). Cycles: 5 (C), 25 (C-1), 50 (C-2), 100 (C-3)" },
+      { "name": "Condition D", "requirements": "-65°C to +350°C (Air). Cycles: 5 (D), 25 (D-1), 50 (D-2), 100 (D-3)" },
+      { "name": "Condition E", "requirements": "-65°C to +500°C (Air). Cycles: 5 (E), 25 (E-1), 50 (E-2), 100 (E-3)" },
+      { "name": "Condition F", "requirements": "-65°C to +150°C (Air). Cycles: 5 (F), 25 (F-1), 50 (F-2), 100 (F-3)" },
+      { "name": "Condition AA", "requirements": "-0°C to +100°C (Liquid). Cycles: 5 (AA), 15 (AA-1), 25 (AA-2)" },
+      { "name": "Condition BB", "requirements": "-65°C to +125°C (Liquid). Cycles: 5 (BB), 15 (BB-1), 25 (BB-2)" },
+      { "name": "Condition CC", "requirements": "-65°C to +150°C (Liquid). Cycles: 5 (CC), 15 (CC-1), 25 (CC-2)" },
+      { "name": "Condition DD", "requirements": "-65°C to +200°C (Liquid). Cycles: 5 (DD), 15 (DD-1), 25 (DD-2)" }
+    ] },
+    { "id": "108", "title": "Life (At Elevated Ambient Temperature)", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "96 hours" },
+      { "name": "Condition B", "requirements": "250 hours" },
+      { "name": "Condition C", "requirements": "500 hours" },
+      { "name": "Condition D", "requirements": "1,000 hours" },
+      { "name": "Condition F", "requirements": "2,000 hours" },
+      { "name": "Condition G", "requirements": "3,000 hours" },
+      { "name": "Condition H", "requirements": "5,000 hours" },
+      { "name": "Condition I", "requirements": "10,000 hours" },
+      { "name": "Condition J", "requirements": "30,000 hours" },
+      { "name": "Condition K", "requirements": "50,000 hours" }
+    ] },
+    { "id": "109", "title": "Explosion", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Explosive atmosphere test (n-hexane). Altitudes: Ground to 60,000 ft." }] },
+    { "id": "110", "title": "Sand and Dust", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Step 1: 6h @ 23°C, 1750 fpm. Step 2: 16h @ 63°C, 300 fpm. Step 3: 6h @ 63°C, 1750 fpm." }] },
+    { "id": "111", "title": "Flammability (External Flame)", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Exposure to flame for 15 seconds." }] },
+    { "id": "112", "title": "Seal", "status": "Active (Rev A)", "date": "31 Oct 2024", "conditions": [
+      { "name": "Condition A", "requirements": "Bubble test - Mineral/Peanut Oil, 125°C. Sensitivity 10^-5." },
+      { "name": "Condition B", "requirements": "Bubble test - Silicone Oil, Room Temp, Vacuum. Sensitivity 10^-5." },
+      { "name": "Condition C", "requirements": "Tracer Gas (Helium/Radioactive). Sensitivity 10^-8. Procedures I-IV." },
+      { "name": "Condition D", "requirements": "Gross leak bubble test - Fluorocarbon liquid, 125°C." },
+      { "name": "Condition E", "requirements": "Bubble test - Two fluorocarbon liquids (pressure then 125°C). Sensitivity 10^-5." },
+      { "name": "Condition F", "requirements": "Fluorocarbon vapor detection. Sensitivity 10^-5." }
+    ] },
+    { "id": "201", "title": "Vibration", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Simple harmonic motion." }] },
+    { "id": "202", "title": "Shock", "status": "CANCELED", "date": "16 April 1973", "conditions": [] },
+    { "id": "203", "title": "Random Drop", "status": "Active (w/ Chg 1)", "date": "28 April 2020", "conditions": [{ "name": "Standard", "requirements": "Tumbling barrel test." }] },
+    { "id": "204", "title": "Vibration Frequency", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "10g peak acceleration, 10-500 Hz." },
+      { "name": "Condition B", "requirements": "15g peak acceleration, 10-2,000 Hz." },
+      { "name": "Condition C", "requirements": "10g peak acceleration, 10-2,000 Hz." },
+      { "name": "Condition D", "requirements": "20g peak acceleration, 10-2,000 Hz." },
+      { "name": "Condition E", "requirements": "50g peak acceleration, 10-2,000 Hz." },
+      { "name": "Condition F", "requirements": "20g peak acceleration, 10-3,000 Hz." },
+      { "name": "Condition G", "requirements": "30g peak acceleration, 10-2,000 Hz." },
+      { "name": "Condition H", "requirements": "80g peak acceleration, 10-2,000 Hz." }
+    ] },
+    { "id": "205", "title": "Shock, Medium Impact", "status": "CANCELED", "date": "28 June 2013", "conditions": [] },
+    { "id": "206", "title": "Life (Rotational)", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "500 cycles" },
+      { "name": "Condition B", "requirements": "2,000 cycles" },
+      { "name": "Condition C", "requirements": "5,000 cycles" },
+      { "name": "Condition D", "requirements": "10,000 cycles" },
+      { "name": "Condition E", "requirements": "15,000 cycles" },
+      { "name": "Condition F", "requirements": "25,000 cycles" },
+      { "name": "Condition G", "requirements": "50,000 cycles" },
+      { "name": "Condition H", "requirements": "100,000 cycles" },
+      { "name": "Condition J", "requirements": "200,000 cycles" },
+      { "name": "Condition K", "requirements": "300,000 cycles" },
+      { "name": "Condition L", "requirements": "500,000 cycles" },
+      { "name": "Condition M", "requirements": "1,000,000 cycles" },
+      { "name": "Condition N", "requirements": "2,000,000 cycles" }
+    ] },
+    { "id": "207", "title": "High Impact Shock", "status": "Active (Rev A)", "date": "19 March 2025", "conditions": [{ "name": "Standard", "requirements": "9 blows (3 back, 3 top, 3 side) from heights of 1, 3, and 5 ft." }] },
+    { "id": "208", "title": "Solderability", "status": "Active (Rev A)", "date": "29 Jan 2020", "conditions": [
+      { "name": "Test A", "requirements": "Through-hole and surface mount leaded components." },
+      { "name": "Test B", "requirements": "Surface mount leadless components." },
+      { "name": "Test C", "requirements": "Lugs, tabs, terminals, and wires > .045 inch." },
+      { "name": "Soldering Iron", "requirements": "Soldering iron test method." }
+    ] },
+    { "id": "209", "title": "Radiographic Inspection", "status": "Active (Rev A)", "date": "06 Sept 2019", "conditions": [{ "name": "Standard", "requirements": "X-ray inspection." }] },
+    { "id": "210", "title": "Resistance to Soldering Heat", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "Solder iron, 350°C ±10°C, 4-5s." },
+      { "name": "Condition B", "requirements": "Solder dip, 260°C ±5°C, 10s ±1s." },
+      { "name": "Condition C", "requirements": "Wave solder (topside), 260°C ±5°C, 20s ±1s." },
+      { "name": "Condition D", "requirements": "Wave solder (bottomside), 260°C ±5°C, 10s ±1s." },
+      { "name": "Condition H", "requirements": "Vapor phase reflow, 215°C ±5°C, 60s ±5s." },
+      { "name": "Condition I", "requirements": "IR/convection reflow, 215°C ±5°C, 3 cycles." },
+      { "name": "Condition J", "requirements": "IR/convection reflow, 235°C ±5°C, 3 cycles." },
+      { "name": "Condition K", "requirements": "IR/convection reflow, 250°C ±5°C, 3 cycles." }
+    ] },
+    { "id": "211", "title": "Terminal Strength", "status": "Active (w/ Chg 1)", "date": "15 Dec 2020", "conditions": [
+      { "name": "Condition A", "requirements": "Pull test. Force: 1/2, 1, 2, 3, 5, 10, or 20 lbs." },
+      { "name": "Condition B", "requirements": "Flat-terminal bend test. 2 or 5 bends." },
+      { "name": "Condition C", "requirements": "Wire-lead bend test. 3 bends. Load: 1/4 to 10 lbs." },
+      { "name": "Condition D", "requirements": "Twist test. 3 rotations of 360°." },
+      { "name": "Condition E", "requirements": "Torque test. Screw-thread or rigid terminals." }
+    ] },
+    { "id": "212", "title": "Acceleration", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "20g, 50g, or 100g. 5 mins in each of 3 axes." },
+      { "name": "Condition B", "requirements": "10,000g or 20,000g. 1 min." },
+      { "name": "Condition C", "requirements": "Specified g. 10 mins in each of 3 axes." }
+    ] },
+    { "id": "213", "title": "Shock (Specified Pulse)", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Condition A", "requirements": "Peak: 50g; Duration: 11ms; Waveform: Half-sine; Velocity Change: 11.3 ft/s" }, { "name": "Condition B", "requirements": "Peak: 75g; Duration: 6ms; Waveform: Half-sine; Velocity Change: 9.2 ft/s" }, { "name": "Condition C", "requirements": "Peak: 100g; Duration: 6ms; Waveform: Half-sine; Velocity Change: 12.3 ft/s" }, { "name": "Condition D", "requirements": "Peak: 500g; Duration: 1ms; Waveform: Half-sine; Velocity Change: 10.2 ft/s" }, { "name": "Condition E", "requirements": "Peak: 1,000g; Duration: 0.5ms; Waveform: Half-sine; Velocity Change: 10.2 ft/s" }, { "name": "Condition F", "requirements": "Peak: 1,500g; Duration: 0.5ms; Waveform: Half-sine; Velocity Change: 15.4 ft/s" }, { "name": "Condition G", "requirements": "Peak: 50g; Duration: 11ms; Waveform: Sawtooth; Velocity Change: 8.8 ft/s" }, { "name": "Condition H", "requirements": "Peak: 75g; Duration: 6ms; Waveform: Sawtooth; Velocity Change: 7.2 ft/s" }, { "name": "Condition I", "requirements": "Peak: 100g; Duration: 6ms; Waveform: Sawtooth; Velocity Change: 9.7 ft/s" }, { "name": "Condition J", "requirements": "Peak: 30g; Duration: 11ms; Waveform: Half-sine; Velocity Change: 6.8 ft/s" }, { "name": "Condition K", "requirements": "Peak: 30g; Duration: 11ms; Waveform: Sawtooth; Velocity Change: 5.3 ft/s" }] },
+    { "id": "214", "title": "Random Vibration", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition I-A", "requirements": "PSD 0.02, 5.35 G rms" },
+      { "name": "Condition I-B", "requirements": "PSD 0.04, 7.56 G rms" },
+      { "name": "Condition I-C", "requirements": "PSD 0.06, 9.26 G rms" },
+      { "name": "Condition I-D", "requirements": "PSD 0.1, 11.95 G rms" },
+      { "name": "Condition I-E", "requirements": "PSD 0.2, 16.91 G rms" },
+      { "name": "Condition I-F", "requirements": "PSD 0.3, 20.71 G rms" },
+      { "name": "Condition I-G", "requirements": "PSD 0.4, 23.91 G rms" },
+      { "name": "Condition I-H", "requirements": "PSD 0.6, 29.28 G rms" },
+      { "name": "Condition I-J", "requirements": "PSD 1.0, 37.80 G rms" },
+      { "name": "Condition I-K", "requirements": "PSD 1.5, 46.30 G rms" },
+      { "name": "Condition II-A", "requirements": "PSD 0.02, 6.21 G rms" },
+      { "name": "Condition II-B", "requirements": "PSD 0.04, 8.78 G rms" },
+      { "name": "Condition II-C", "requirements": "PSD 0.06, 10.76 G rms" },
+      { "name": "Condition II-D", "requirements": "PSD 0.1, 13.89 G rms" },
+      { "name": "Condition II-E", "requirements": "PSD 0.2, 19.64 G rms" },
+      { "name": "Condition II-F", "requirements": "PSD 0.3, 24.06 G rms" },
+      { "name": "Condition II-G", "requirements": "PSD 0.4, 27.78 G rms" },
+      { "name": "Condition II-H", "requirements": "PSD 0.6, 34.02 G rms" },
+      { "name": "Condition II-J", "requirements": "PSD 1.0, 43.92 G rms" },
+      { "name": "Condition II-K", "requirements": "PSD 1.5, 53.79 G rms" }
+    ] },
+    { "id": "215", "title": "Resistance to Solvents", "status": "Active (Rev A)", "date": "15 Dec 2020", "conditions": [
+      { "name": "Solvent 1", "requirements": "IPA + Mineral Spirits. 3 cycles (Immersion + Brush)." },
+      { "name": "Solvent 3", "requirements": "Terpene Defluxer. 3 cycles (Immersion + Brush)." },
+      { "name": "Solvent 4", "requirements": "Water + Glycol Ether + Monoethanolamine. 3 cycles (Immersion + Brush)." }
+    ] },
+    { "id": "216", "title": "Resistance to Solder Wave Heat", "status": "Active (w/ Chg 2)", "date": "28 June 2013", "conditions": [{ "name": "Standard", "requirements": "Wave solder simulation." }] },
+    { "id": "217", "title": "Particle Impact Noise Detection (PIND)", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Vibration (27 Hz) + Shock pulses. Detection of loose particles." }] },
+    { "id": "218", "title": "Board Flex", "status": "Active (w/ Chg 1)", "date": "19 Sept 2018", "conditions": [{ "name": "Standard", "requirements": "Flexing of printed wiring board." }] },
+    { "id": "219", "title": "Shear Stress", "status": "Active (w/ Chg 1)", "date": "24 June 2020", "conditions": [{ "name": "Standard", "requirements": "Shear force application." }] },
+    { "id": "220", "title": "Ultrasonic Inspection", "status": "Active", "date": "11 Sept 2017", "conditions": [{ "name": "Standard", "requirements": "Ultrasonic scanning." }] },
+    { "id": "301", "title": "Dielectric Withstanding Voltage", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Application of voltage higher than rated voltage. Rate: 500V/s. Duration: 60s." }] },
+    { "id": "302", "title": "Insulation Resistance", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "100 Volts ±10%" },
+      { "name": "Condition B", "requirements": "500 Volts ±10%" },
+      { "name": "Condition C", "requirements": "1,000 Volts ±10%" }
+    ] },
+    { "id": "303", "title": "DC Resistance", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Measure DC resistance. Temp: 25°C ± 5°C. Max duration: 5s." }] },
+    { "id": "304", "title": "Resistance-Temperature Characteristic", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Series 1: 25°, 0°, -15°, -55°C. Series 2: 25°, 50°, 75°, 100°, 125°, 200°, 275°, 350°C." }] },
+    { "id": "305", "title": "Capacitance", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Measure capacitance. Frequencies: 60 Hz, 100 Hz, 120 Hz, 1 kHz, 100 kHz, 1 MHz." }] },
+    { "id": "306", "title": "Quality Factor (Q)", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Measure Quality Factor (Q) at specified frequency." }] },
+    { "id": "307", "title": "Contact Resistance", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Measurement of contact resistance." }] },
+    { "id": "308", "title": "Current-Noise Test for Fixed Resistors", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Noise measurement." }] },
+    { "id": "309", "title": "Voltage Coefficient of Resistance", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Resistance change with voltage." }] },
+    { "id": "310", "title": "Contact-Chatter Monitoring", "status": "Active", "date": "18 April 2015", "conditions": [
+      { "name": "Condition A", "requirements": "10 microseconds" },
+      { "name": "Condition B", "requirements": "100 microseconds" },
+      { "name": "Condition C", "requirements": "1 millisecond" },
+      { "name": "Condition D", "requirements": "5 milliseconds" },
+      { "name": "Condition E", "requirements": "20 milliseconds" }
+    ] },
+    { "id": "311", "title": "Life, Low Level Switching", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Low level load life test." }] },
+    { "id": "312", "title": "Life, Intermediate Current Switching", "status": "Active", "date": "18 April 2015", "conditions": [{ "name": "Standard", "requirements": "Intermediate load life test." }] }
+  ]
+}

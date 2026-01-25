@@ -24,7 +24,7 @@
               >
                 <v-list-item-title>{{ tool.meta?.title || tool.name }}</v-list-item-title>
                 <v-list-item-subtitle class="text-caption">
-                  {{ tool.description || 'Tool' }}
+                  {{ tool.meta?.description || tool.description || 'Tool' }}
                 </v-list-item-subtitle>
               </v-list-item>
               

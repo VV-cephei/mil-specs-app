@@ -148,22 +148,34 @@ const quickLinks = ref([
     to: '/specs'
   },
   {
+    icon: 'mdi-eye-check',
+    title: 'MIL-STD-202',
+    description: 'Test Method Standard Viewer',
+    to: '/tools/mil-std-202'
+  },
+  {
+    icon: 'mdi-file-replace',
+    title: 'Superseding Lookup',
+    description: 'Check spec status',
+    to: '/tools/superseding-lookup'
+  },
+  {
     icon: 'mdi-tools',
-    title: 'Tools',
+    title: 'All Tools',
     description: 'Access documentation tools',
     to: '/tools'
+  },
+  {
+    icon: 'mdi-file-document',
+    title: 'Generate Forms',
+    description: 'Create compliant forms',
+    to: '/tools/dd2326/generator'
   },
   {
     icon: 'mdi-help-circle',
     title: 'Guidance',
     description: 'Get help and resources',
     to: '/about'
-  },
-  {
-    icon: 'mdi-file-document',
-    title: 'Generate Forms',
-    description: 'Create compliant forms',
-    to: '/form-generator'
   }
 ])
 </script>

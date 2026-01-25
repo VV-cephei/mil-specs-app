@@ -7,6 +7,7 @@ import router, { registerPluginRoutes } from './router'
 import '@/plugins/specs'
 import '@/plugins/mil-std-2073'
 import '@/plugins/dd2326'
+import '@/plugins/tools-expansion'
 
 // Vuetify
 import 'vuetify/styles'

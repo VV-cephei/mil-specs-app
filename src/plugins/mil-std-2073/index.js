@@ -4,8 +4,9 @@
  */
 
 import { MilSpecAdapter } from '@/plugins/specs/adapter.js'
+import { specRegistry } from '@/plugins/specs/registry.js'
 
-export default {
+const milStd2073Plugin = {
   id: 'mil-std-2073',
   name: 'MIL-STD-2073',
   version: '1E',
@@ -79,3 +80,8 @@ export default {
     ]
   }
 }
+
+// Register the plugin
+specRegistry.register(milStd2073Plugin)
+
+export default milStd2073Plugin

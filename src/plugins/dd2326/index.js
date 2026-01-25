@@ -4,8 +4,9 @@
  */
 
 import { DD2326Adapter } from '@/plugins/specs/adapter.js'
+import { specRegistry } from '@/plugins/specs/registry.js'
 
-export default {
+const dd2326Plugin = {
   id: 'dd2326',
   name: 'DD Form 2326',
   version: 'SEP1997',
@@ -116,3 +117,8 @@ export default {
     ]
   }
 }
+
+// Register the plugin
+specRegistry.register(dd2326Plugin)
+
+export default dd2326Plugin

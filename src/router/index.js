@@ -24,6 +24,24 @@ const routes = [
         meta: { title: 'Select a Tool' }
       },
       {
+        path: 'mil-std-202',
+        name: 'mil-std-202',
+        component: () => import('@/components/tools/MilStd202Tool.vue'),
+        meta: { 
+          title: 'MIL-STD-202 Viewer',
+          description: 'Test Method Standard for Electronic Parts'
+        }
+      },
+      {
+        path: 'superseding-lookup',
+        name: 'superseding-lookup',
+        component: () => import('@/components/tools/SpecSupersedingTool.vue'),
+        meta: { 
+          title: 'Spec Superseding Lookup',
+          description: 'Check if a specification has been superseded'
+        }
+      },
+      {
         path: 'dd2326/generator',
         name: 'dd2326-generator',
         component: () => import('@/views/FormGeneratorView.vue'),
