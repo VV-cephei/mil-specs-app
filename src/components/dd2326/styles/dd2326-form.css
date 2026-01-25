@@ -1,0 +1,167 @@
+/* DD Form 2326 Shared Styles */
+
+.dd2326-form {
+  background: white;
+  border: 2px solid black;
+  font-family: Arial, Helvetica, sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dd2326-form table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dd2326-form td,
+.dd2326-form th {
+  border: 1px solid black;
+  padding: 4px;
+  vertical-align: top;
+}
+
+/* Section Headers */
+.section-header {
+  background: white;
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+  padding: 6px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+/* Column Headers */
+.column-header {
+  background: #e8e8e8;
+  border: 1px solid black;
+  padding: 4px 2px;
+  font-size: 9px;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Row Labels (A, B, C, D) */
+.row-label {
+  background: #e8e8e8;
+  border: 1px solid black;
+  font-weight: bold;
+  text-align: center;
+  width: 30px;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+/* Data Cells */
+.data-cell {
+  border: 1px solid black;
+  padding: 0;
+  position: relative;
+  min-width: 18px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.data-cell input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  padding: 14px 0 0 0;
+  background: transparent;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.data-cell input:focus {
+  background: #e3f2fd;
+  outline: 2px solid #2196f3;
+  outline-offset: -2px;
+}
+
+/* Cell Numbers */
+.cell-number {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  font-size: 7px;
+  color: #666;
+  pointer-events: none;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1;
+}
+
+/* Field Labels */
+.field-label {
+  background: #e8e8e8;
+  border: 1px solid black;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Field Inputs */
+.field-input {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+.field-input input,
+.field-input textarea {
+  width: 100%;
+  border: none;
+  padding: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 12px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.field-input input:focus,
+.field-input textarea:focus {
+  background: #e3f2fd;
+}
+
+/* Print Styles */
+@media print {
+  .dd2326-form {
+    border: 2px solid black;
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+  
+  .data-cell input,
+  .field-input input,
+  .field-input textarea {
+    border: none;
+    background: transparent !important;
+    outline: none !important;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .dd2326-form {
+    font-size: 90%;
+  }
+  
+  .data-cell {
+    min-width: 16px;
+    height: 26px;
+  }
+  
+  .data-cell input {
+    font-size: 11px;
+  }
+}

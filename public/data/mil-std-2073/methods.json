@@ -1,0 +1,330 @@
+[
+  {
+    "code": "10",
+    "description": "The unpreserved item(s) shall be protected from physical damage and mechanical malfunction. Cushioning materials, dunnage, blocking and bracing shall be applied as required to protect the item(s) and the enclosing media and restrict the movement of the item within the container.",
+    "category": "Method",
+    "group": "Basic",
+    "keywords": ["physical protection", "cushioning", "blocking", "bracing"],
+    "specReference": "5.2.1"
+  },
+  {
+    "code": "20",
+    "description": "Preservative coating. Items shall be treated with appropriate preservatives in accordance with the procedures of 5.2.2.2 or 5.2.2.3. Contact preservative coated items shall be wrapped in material conforming to MIL-PRF-121 or QQ-A-1876.",
+    "category": "Method",
+    "group": "Preservation",
+    "keywords": ["preservative", "coating", "greaseproof wrap"],
+    "specReference": "5.2.2"
+  },
+  {
+    "code": "30",
+    "description": "Waterproof or waterproof-greaseproof protection with preservative as required. Items protected in accordance with Method 30 shall be heat sealed within a waterproof or waterproof-greaseproof bag.",
+    "category": "Method",
+    "group": "Waterproof",
+    "keywords": ["waterproof", "greaseproof", "heat sealed", "bag"],
+    "specReference": "5.2.4"
+  },
+  {
+    "code": "31",
+    "description": "Waterproof bag, heat sealed. The item, preserved, wrapped and cushioned as required in 5.2.3.5, shall be enclosed in a heat-sealed bag conforming to MIL-DTL-117, Type III, Class B, Style 2.",
+    "category": "Method",
+    "group": "Waterproof",
+    "keywords": ["waterproof bag", "heat sealed", "MIL-DTL-117"],
+    "specReference": "5.2.4.5"
+  },
+  {
+    "code": "32",
+    "description": "Container, waterproof bag, heat sealed. The item shall be enclosed in a close fitting container (box) selected from table C-I, which in turn shall be enclosed in a heat-sealed waterproof bag.",
+    "category": "Method",
+    "group": "Waterproof",
+    "keywords": ["container", "waterproof bag", "heat sealed"],
+    "specReference": "5.2.4.6"
+  },
+  {
+    "code": "33",
+    "description": "Greaseproof-waterproof bag, heat sealed. The item shall be enclosed in a close fitting heat-sealed bag conforming to MIL-DTL-117, Type II, Class C, Style 1, 2 or 3.",
+    "category": "Method",
+    "group": "Waterproof",
+    "keywords": ["greaseproof", "waterproof", "bag", "heat sealed"],
+    "specReference": "5.2.4.7"
+  },
+  {
+    "code": "40",
+    "description": "Watervaporproof protection with preservative as required. Items protected in accordance with Method 40 shall be heat sealed within a watervaporproof enclosure.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["watervaporproof", "desiccant", "heat sealed"],
+    "specReference": "5.2.5"
+  },
+  {
+    "code": "41",
+    "description": "Watervaporproof bag, heat sealed. The item shall be enclosed in a close fitting heat-sealed bag conforming to MIL-DTL-117, Type I, Class E or MIL-DTL-117, Type II, Class E.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["watervaporproof bag", "heat sealed", "MIL-DTL-117"],
+    "specReference": "5.2.5.1"
+  },
+  {
+    "code": "42",
+    "description": "Container, watervaporproof bag, heat sealed, container. The item shall be enclosed in a close fitting inner container (box) and enclosed in a heat-sealed watervaporproof bag.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["container", "watervaporproof bag", "heat sealed"],
+    "specReference": "5.2.5.2"
+  },
+  {
+    "code": "43",
+    "description": "Floating watervaporproof bag, heat sealed. The item, preserved, wrapped, cushioned and anchored or shock mounted as necessary, shall be enclosed in a heat-sealed bag conforming to MIL-DTL-6060.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["floating", "watervaporproof", "bag", "MIL-DTL-6060"],
+    "specReference": "5.2.5.3"
+  },
+  {
+    "code": "44",
+    "description": "Rigid container (other than metal), sealed. The item shall be enclosed in a sealed, snug fitting, rigid container other than all metal with WVTR not exceeding 0.075 grams per 100 square inches per 24 hours.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["rigid container", "non-metal", "sealed", "WVTR"],
+    "specReference": "5.2.5.4"
+  },
+  {
+    "code": "45",
+    "description": "Rigid metal container, sealed. The item shall be snugly enclosed in a sealed, rigid metal container with machine seamed or reusable gasketed closure.",
+    "category": "Method",
+    "group": "Watervaporproof",
+    "keywords": ["rigid metal container", "sealed", "machine seamed"],
+    "specReference": "5.2.5.5"
+  },
+  {
+    "code": "50",
+    "description": "Watervaporproof protection with desiccant. Items protected in accordance with Method 50 shall be heat sealed in a watervaporproof enclosure with activated desiccant and humidity indicator.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["watervaporproof", "desiccant", "humidity indicator"],
+    "specReference": "5.2.6"
+  },
+  {
+    "code": "51",
+    "description": "Watervaporproof bag with desiccant, heat sealed. The item shall be enclosed within a heat sealed bag conforming to MIL-DTL-117, Type I or Type II, Class E.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["watervaporproof bag", "desiccant", "heat sealed"],
+    "specReference": "5.2.6.1"
+  },
+  {
+    "code": "52",
+    "description": "Container, watervaporproof bag with desiccant, heat sealed, container. The item shall be enclosed in a close fitting inner container and then in a heat-sealed watervaporproof bag with desiccant.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["container", "watervaporproof bag", "desiccant"],
+    "specReference": "5.2.6.2"
+  },
+  {
+    "code": "53",
+    "description": "Floating watervaporproof bag with desiccant, heat sealed. The item shall be enclosed in a sealed bag conforming to MIL-DTL-6060 with desiccant and humidity indicator.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["floating", "watervaporproof", "desiccant", "bag"],
+    "specReference": "5.2.6.3"
+  },
+  {
+    "code": "54",
+    "description": "Rigid container (other than metal) with desiccant, sealed. The item shall be enclosed in a sealed, close fitting, rigid container other than all metal with desiccant.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["rigid container", "non-metal", "desiccant", "sealed"],
+    "specReference": "5.2.6.4"
+  },
+  {
+    "code": "55",
+    "description": "Rigid metal container with desiccant, sealed. The item shall be enclosed in a sealed, close fitting, metal container with desiccant and humidity indicator.",
+    "category": "Method",
+    "group": "Watervaporproof with Desiccant",
+    "keywords": ["rigid metal container", "desiccant", "sealed"],
+    "specReference": "5.2.6.5"
+  },
+  {
+    "code": "2A",
+    "description": "Method 33 (formerly Submethod IC-1) - Greaseproof-waterproof bag, sealed, MIL-B-121.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["greaseproof", "waterproof", "bag", "MIL-B-121"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2B",
+    "description": "Package submethod IC-9, Skin pack, greaseproof, waterproof, vacuum, formed, MIL-B-121.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["skin pack", "vacuum formed", "greaseproof", "waterproof"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2C",
+    "description": "Package submethod IC-10, Skin pack, waterproof, vacuum formed.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["skin pack", "vacuum formed", "waterproof"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2D",
+    "description": "Method 31 (formerly Submethod IC-3) - Waterproof bag, sealed, MIL-B-121.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["waterproof", "bag", "sealed", "MIL-B-121"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2E",
+    "description": "Method 33 (formerly Submethod IC-1) - Greaseproof-waterproof bag, sealed, MIL-B-121.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["greaseproof", "waterproof", "bag", "MIL-B-121"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2M",
+    "description": "Method 32 (formerly Submethod IC-2) - Container, waterproof bag, sealed, MIL-B-121.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["container", "waterproof", "bag", "MIL-B-121"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2S",
+    "description": "Package submethod IC-4, Rigid waterproof container other than all metal, sealed.",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["rigid container", "waterproof", "sealed", "non-metal"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "2Y",
+    "description": "Method 30 (formerly Method IC) - Waterproof or waterproof-greaseproof protection (MIL-B-121).",
+    "category": "Submethod",
+    "group": "IC",
+    "keywords": ["waterproof", "greaseproof", "protection", "MIL-B-121"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3G",
+    "description": "Method 41 (formerly Submethod IA-8) - Watervaporproof bag, sealed, MIL-B-131.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["watervaporproof", "bag", "sealed", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3H",
+    "description": "Method 43 (formerly Submethod IA-16) - Floating watervaporproof bag, sealed, MIL-B-131.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["floating", "watervaporproof", "bag", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3P",
+    "description": "Package submethod IA-15, Container, watervaporproof bag, sealed, MIL-B-131.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["container", "watervaporproof", "bag", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3Q",
+    "description": "Method 42 (formerly Submethod IA-14) - Container, watervaporproof bag, sealed, MIL-B-131, container.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["container", "watervaporproof", "bag", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3T",
+    "description": "Method 44 (formerly Submethod IA-13) - Rigid container (other than metal), sealed.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["rigid container", "non-metal", "sealed"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3V",
+    "description": "Method 45 (formerly Submethod IA-5) - Rigid metal container, sealed.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["rigid metal container", "sealed"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3W",
+    "description": "Package submethod IA-6, Rigid container (items immersed in oil-type preservative) sealed.",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["rigid container", "oil preservative", "sealed"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "3Y",
+    "description": "Method 40 (formerly Method IA) - Watervaporproof protection (MIL-B-131).",
+    "category": "Submethod",
+    "group": "IA",
+    "keywords": ["watervaporproof", "protection", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4G",
+    "description": "Method 51 (formerly Submethod IIc) - Watervaporproof bag, sealed, MIL-B-131 with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["watervaporproof", "bag", "desiccant", "MIL-B-131"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4H",
+    "description": "Method 53 (formerly Submethod IIa) - Floating watervaporproof bag, sealed, MIL-B-131 with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["floating", "watervaporproof", "bag", "desiccant"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4P",
+    "description": "Package submethod IIe, Container, watervaporproof bag, sealed, MIL-B-131, with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["container", "watervaporproof", "bag", "desiccant"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4Q",
+    "description": "Method 52 (formerly Submethod IIb) - Container, watervaporproof bag, sealed, MIL-B-131 with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["container", "watervaporproof", "bag", "desiccant"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4T",
+    "description": "Method 54 (formerly Submethod IIf) - Rigid container (other than metal), sealed with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["rigid container", "non-metal", "desiccant", "sealed"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4V",
+    "description": "Method 55 (formerly Submethod IId) - Rigid metal container, sealed with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["rigid metal container", "desiccant", "sealed"],
+    "specReference": "Appendix E"
+  },
+  {
+    "code": "4Y",
+    "description": "Method 50 (formerly Method II) - Watervaporproof protection (MIL-B-131) with desiccant.",
+    "category": "Submethod",
+    "group": "II",
+    "keywords": ["watervaporproof", "desiccant", "MIL-B-131"],
+    "specReference": "Appendix E"
+  }
+]

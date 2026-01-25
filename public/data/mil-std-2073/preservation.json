@@ -1,0 +1,369 @@
+[
+  {
+    "code": "00",
+    "description": "No requirement.",
+    "specification": null,
+    "category": "Preservative",
+    "application": null,
+    "filmType": null
+  },
+  {
+    "code": "01",
+    "description": "MIL-PRF-16173, grade 1 corrosion preventive, solvent cutback, cold application, hard film.",
+    "specification": "MIL-PRF-16173",
+    "grade": "1",
+    "category": "Corrosion Preventive",
+    "application": "cold",
+    "filmType": "hard"
+  },
+  {
+    "code": "02",
+    "description": "MIL-PRF-16173, grade 2 corrosion preventive, solvent cutback, cold application, soft film.",
+    "specification": "MIL-PRF-16173",
+    "grade": "2",
+    "category": "Corrosion Preventive",
+    "application": "cold",
+    "filmType": "soft"
+  },
+  {
+    "code": "03",
+    "description": "MIL-PRF-16173, grade 3 corrosion preventive, solvent cutback, cold application, water displacing soft film.",
+    "specification": "MIL-PRF-16173",
+    "grade": "3",
+    "category": "Corrosion Preventive",
+    "application": "cold",
+    "filmType": "water displacing"
+  },
+  {
+    "code": "06",
+    "description": "MIL-C-11796, class 3 light preservative compound, soft film, hot application.",
+    "specification": "MIL-C-11796",
+    "class": "3",
+    "category": "Preservative Compound",
+    "application": "hot",
+    "filmType": "soft"
+  },
+  {
+    "code": "07",
+    "description": "MIL-PRF-3150, medium preservative oil, cold application.",
+    "specification": "MIL-PRF-3150",
+    "category": "Preservative Oil",
+    "application": "cold"
+  },
+  {
+    "code": "09",
+    "description": "MIL-PRF-32033, lubricating oil, general purpose preservative (water displacing, low temperature).",
+    "specification": "MIL-PRF-32033",
+    "category": "Lubricating Oil",
+    "keywords": ["general purpose", "water displacing", "low temperature"]
+  },
+  {
+    "code": "10",
+    "description": "MIL-PRF-21260, preservative and break-in lubricating oil, internal combustion engine, Grade 10, 30 or 50.",
+    "specification": "MIL-PRF-21260",
+    "grade": "10/30/50",
+    "category": "Lubricating Oil",
+    "keywords": ["preservative", "break-in", "engine"]
+  },
+  {
+    "code": "11",
+    "description": "MIL-PRF-23827, grease, aircraft & instrument, gear & actuator screw.",
+    "specification": "MIL-PRF-23827",
+    "category": "Grease",
+    "keywords": ["aircraft", "instrument", "gear", "actuator"]
+  },
+  {
+    "code": "12",
+    "description": "MIL-PRF-81322, grease, aircraft, general purpose.",
+    "specification": "MIL-PRF-81322",
+    "category": "Grease",
+    "keywords": ["aircraft", "general purpose"]
+  },
+  {
+    "code": "13",
+    "description": "MIL-PRF-10924, grease, automotive and artillery.",
+    "specification": "MIL-PRF-10924",
+    "category": "Grease",
+    "keywords": ["automotive", "artillery"]
+  },
+  {
+    "code": "15",
+    "description": "MIL-PRF-46170, hydraulic fluid, synthetic, rust inhibited, fire resistant.",
+    "specification": "MIL-PRF-46170",
+    "category": "Hydraulic Fluid",
+    "keywords": ["synthetic", "rust inhibited", "fire resistant"]
+  },
+  {
+    "code": "17",
+    "description": "MIL-PRF-6085, lubricating oil, instrument, aircraft, low volatility.",
+    "specification": "MIL-PRF-6085",
+    "category": "Lubricating Oil",
+    "keywords": ["instrument", "aircraft", "low volatility"]
+  },
+  {
+    "code": "18",
+    "description": "MIL-P-3420, or MIL-B-22019, VCI treated carrier type.",
+    "specification": "MIL-P-3420/MIL-B-22019",
+    "category": "VCI Treated",
+    "keywords": ["volatile corrosion inhibitor"]
+  },
+  {
+    "code": "19",
+    "description": "MIL-PRF-16173, grade 4, corrosion preventive, solvent cutback, cold application, transparent, nontacky.",
+    "specification": "MIL-PRF-16173",
+    "grade": "4",
+    "category": "Corrosion Preventive",
+    "application": "cold",
+    "keywords": ["transparent", "nontacky"]
+  },
+  {
+    "code": "20",
+    "description": "MIL-PRF-46002, preservative oil, contact and volatile corrosion inhibited.",
+    "specification": "MIL-PRF-46002",
+    "category": "Preservative Oil",
+    "keywords": ["contact", "volatile corrosion inhibited"]
+  },
+  {
+    "code": "21",
+    "description": "MIL-PRF-16173, Grade 5, corrosion preventive, solvent cutback, water displacing soft film, low pressure steam removable.",
+    "specification": "MIL-PRF-16173",
+    "grade": "5",
+    "category": "Corrosion Preventive",
+    "keywords": ["water displacing", "steam removable"]
+  },
+  {
+    "code": "26",
+    "description": "MIL-C-0083933(MR) corrosion preventive compound, cold application (for motor vehicles), fire retardant.",
+    "specification": "MIL-C-0083933",
+    "category": "Corrosion Preventive",
+    "keywords": ["motor vehicles", "fire retardant"]
+  },
+  {
+    "code": "27",
+    "description": "MIL-C-16555, type I, fire retardant, aluminum and aluminum gray.",
+    "specification": "MIL-C-16555",
+    "type": "I",
+    "category": "Preservative Compound",
+    "keywords": ["fire retardant", "aluminum"]
+  },
+  {
+    "code": "28",
+    "description": "MIL-C-16555, type II, class 1, fire retardant, olive drab.",
+    "specification": "MIL-C-16555",
+    "type": "II",
+    "class": "1",
+    "category": "Preservative Compound",
+    "keywords": ["fire retardant", "olive drab"]
+  },
+  {
+    "code": "29",
+    "description": "MIL-C-16555, type II, class 2, fire retardant, Marine Corps green.",
+    "specification": "MIL-C-16555",
+    "type": "II",
+    "class": "2",
+    "category": "Preservative Compound",
+    "keywords": ["fire retardant", "Marine Corps green"]
+  },
+  {
+    "code": "30",
+    "description": "MIL-PRF-46010, corrosion inhibiting lubricant, solid film, heat cured.",
+    "specification": "MIL-PRF-46010",
+    "category": "Corrosion Inhibiting Lubricant",
+    "keywords": ["solid film", "heat cured"]
+  },
+  {
+    "code": "31",
+    "description": "MIL-C-6529, Type II, corrosion preventive, ready mixed, for reciprocating aircraft engines.",
+    "specification": "MIL-C-6529",
+    "type": "II",
+    "category": "Corrosion Preventive",
+    "keywords": ["reciprocating aircraft engines"]
+  },
+  {
+    "code": "32",
+    "description": "MIL-C-6529, Type III, corrosion preventive, ready mixed, for turbojet aircraft engines.",
+    "specification": "MIL-C-6529",
+    "type": "III",
+    "category": "Corrosion Preventive",
+    "keywords": ["turbojet aircraft engines"]
+  },
+  {
+    "code": "33",
+    "description": "MIL-PRF-7808, lubricating oil, synthetic base, for aircraft turbine engines.",
+    "specification": "MIL-PRF-7808",
+    "category": "Lubricating Oil",
+    "keywords": ["synthetic", "aircraft turbine engines"]
+  },
+  {
+    "code": "38",
+    "description": "MIL-P-149, strippable plastic coating (hot dipping).",
+    "specification": "MIL-P-149",
+    "category": "Strippable Coating",
+    "keywords": ["hot dipping"]
+  },
+  {
+    "code": "43",
+    "description": "MIL-G-25537, grease, aircraft, helicopter.",
+    "specification": "MIL-G-25537",
+    "category": "Grease",
+    "keywords": ["aircraft", "helicopter"]
+  },
+  {
+    "code": "49",
+    "description": "Vendor's protective grease or oil coating.",
+    "specification": "Vendor Standard",
+    "category": "Vendor Standard",
+    "keywords": ["vendor protective"]
+  },
+  {
+    "code": "50",
+    "description": "MIL-PRF-7870, lubricating oil, low temperature.",
+    "specification": "MIL-PRF-7870",
+    "category": "Lubricating Oil",
+    "keywords": ["low temperature"]
+  },
+  {
+    "code": "51",
+    "description": "MIL-PRF-6081, lubricating oil, jet engine, Grade 1010.",
+    "specification": "MIL-PRF-6081",
+    "grade": "1010",
+    "category": "Lubricating Oil",
+    "keywords": ["jet engine"]
+  },
+  {
+    "code": "52",
+    "description": "MIL-PRF-8188, corrosion preventive oil, synthetic base, for aircraft gas turbine engines.",
+    "specification": "MIL-PRF-8188",
+    "category": "Corrosion Preventive Oil",
+    "keywords": ["synthetic", "gas turbine engines"]
+  },
+  {
+    "code": "53",
+    "description": "MIL-L-6082, lubricating oil, aircraft, reciprocating (piston) engine (fire retardant).",
+    "specification": "MIL-L-6082",
+    "category": "Lubricating Oil",
+    "keywords": ["aircraft", "piston engine", "fire retardant"]
+  },
+  {
+    "code": "56",
+    "description": "MIL-PRF-23699, lubricating oil, synthetic base, for aircraft turbine engines.",
+    "specification": "MIL-PRF-23699",
+    "category": "Lubricating Oil",
+    "keywords": ["synthetic", "turbine engines"]
+  },
+  {
+    "code": "57",
+    "description": "MIL-PRF-21260, Grade 10, light viscosity preservative and break-in lubricating oil, internal combustion engine.",
+    "specification": "MIL-PRF-21260",
+    "grade": "10",
+    "category": "Lubricating Oil",
+    "keywords": ["light viscosity", "break-in", "engine"]
+  },
+  {
+    "code": "58",
+    "description": "MIL-L-21260, lubricating oil, internal combustion engine, preservative, grade 2, medium viscosity oil.",
+    "specification": "MIL-L-21260",
+    "grade": "2",
+    "category": "Lubricating Oil",
+    "keywords": ["medium viscosity", "preservative"]
+  },
+  {
+    "code": "59",
+    "description": "MIL-L-21260, lubricating oil, internal combustion engine, preservative, grade 3, heavy viscosity oil.",
+    "specification": "MIL-L-21260",
+    "grade": "3",
+    "category": "Lubricating Oil",
+    "keywords": ["heavy viscosity", "preservative"]
+  },
+  {
+    "code": "65",
+    "description": "MIL-PRF-83282, hydraulic fluid, synthetic, fire retardant.",
+    "specification": "MIL-PRF-83282",
+    "category": "Hydraulic Fluid",
+    "keywords": ["synthetic", "fire retardant"]
+  },
+  {
+    "code": "71",
+    "description": "MIL-P-3420, packaging material, volatile corrosion inhibitor treated.",
+    "specification": "MIL-P-3420",
+    "category": "Packaging Material",
+    "keywords": ["volatile corrosion inhibitor"]
+  },
+  {
+    "code": "73",
+    "description": "Lubricating oil, general purpose, preservative (water displacing, low temperature) overwrapped with MIL-P-3420.",
+    "specification": "MIL-P-3420",
+    "category": "Packaging Material",
+    "keywords": ["lubricating oil", "overwrap", "VCI"]
+  },
+  {
+    "code": "78",
+    "description": "MIL-B-22019, barrier materials, transparent, flexible, sealable, VCI treated.",
+    "specification": "MIL-B-22019",
+    "category": "Barrier Material",
+    "keywords": ["transparent", "flexible", "sealable", "VCI"]
+  },
+  {
+    "code": "79",
+    "description": "MIL-B-46176, brake fluid, silicone, automotive, operational and preservative.",
+    "specification": "MIL-B-46176",
+    "category": "Brake Fluid",
+    "keywords": ["silicone", "automotive"]
+  },
+  {
+    "code": "80",
+    "description": "MIL-P-53030, primer coating, epoxy, water reducible.",
+    "specification": "MIL-P-53030",
+    "category": "Primer Coating",
+    "keywords": ["epoxy", "water reducible"]
+  },
+  {
+    "code": "89",
+    "description": "Preserve with normal operating lubricant.",
+    "specification": null,
+    "category": "Preservative",
+    "keywords": ["normal operating lubricant"]
+  },
+  {
+    "code": "92",
+    "description": "MIL-H-6083, hydraulic fluid, petroleum base; preservative applied to interior surfaces; P-6 applied to critical external ferrous metal surfaces; P-1 applied to external noncritical ferrous metal surfaces.",
+    "specification": "MIL-H-6083",
+    "category": "Hydraulic Fluid",
+    "keywords": ["petroleum base", "ferrous metal surfaces"]
+  },
+  {
+    "code": "95",
+    "description": "MIL-C-22235, corrosion preventive, oil, nonstaining.",
+    "specification": "MIL-C-22235",
+    "category": "Corrosion Preventive",
+    "keywords": ["oil", "nonstaining"]
+  },
+  {
+    "code": "AA",
+    "description": "Preservative used shall be IAW the general provisions of MIL-P-116.",
+    "specification": "MIL-P-116",
+    "category": "General",
+    "keywords": ["IAW MIL-P-116"]
+  },
+  {
+    "code": "XX",
+    "description": "See method of preservation code for this requirement.",
+    "specification": null,
+    "category": "Reference",
+    "keywords": ["see preservation code"]
+  },
+  {
+    "code": "YY",
+    "description": "Packager's option so long as all other contractual requirements are met.",
+    "specification": null,
+    "category": "Option",
+    "keywords": ["packager option"]
+  },
+  {
+    "code": "ZZ",
+    "description": "Special requirements - see specific instructions or drawings provided.",
+    "specification": null,
+    "category": "Special",
+    "keywords": ["special requirements"]
+  }
+]
