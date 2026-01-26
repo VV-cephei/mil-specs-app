@@ -3,7 +3,6 @@ import { ref, watch } from 'vue'
 
 export const useUIStore = defineStore('ui', () => {
   // State
-  const drawer = ref(true)
   const loading = ref(false)
   const theme = ref('light')
   const notifications = ref([])
@@ -24,14 +23,6 @@ export const useUIStore = defineStore('ui', () => {
   })
   
   // Actions
-  function toggleDrawer() {
-    drawer.value = !drawer.value
-  }
-  
-  function setDrawer(value) {
-    drawer.value = value
-  }
-  
   function setLoading(value) {
     loading.value = value
   }
@@ -75,14 +66,11 @@ export const useUIStore = defineStore('ui', () => {
   
   return {
     // State
-    drawer,
     loading,
     theme,
     notifications,
     snackbar,
     // Actions
-    toggleDrawer,
-    setDrawer,
     setLoading,
     toggleTheme,
     showNotification,

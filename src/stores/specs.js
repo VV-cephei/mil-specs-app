@@ -201,6 +201,33 @@ export const useSpecsStore = defineStore('specs', () => {
     specData.value.clear()
     loadedSpecs.value.clear()
   }
+
+  /**
+   * Get a method by code from MIL-STD-2073
+   * @param {string} code - Method code
+   * @returns {object|null} Method or null
+   */
+  function getMethodByCode(code) {
+    return getItemByCode('mil-std-2073', 'methods', code)
+  }
+  
+  /**
+   * Get a cleaning procedure by code from MIL-STD-2073
+   * @param {string} code - Cleaning code
+   * @returns {object|null} Cleaning procedure or null
+   */
+  function getCleaningByCode(code) {
+    return getItemByCode('mil-std-2073', 'cleaning', code)
+  }
+  
+  /**
+   * Get a preservation material by code from MIL-STD-2073
+   * @param {string} code - Preservation code
+   * @returns {object|null} Preservation material or null
+   */
+  function getPreservationByCode(code) {
+    return getItemByCode('mil-std-2073', 'preservation', code)
+  }
   
   return {
     // State
@@ -224,6 +251,9 @@ export const useSpecsStore = defineStore('specs', () => {
     setSearchQuery,
     getFilteredData,
     getItemByCode,
+    getMethodByCode,
+    getCleaningByCode,
+    getPreservationByCode,
     getCurrentSectionData,
     clearSpecData,
     clearAllData

@@ -1,0 +1,628 @@
+/* ===========================================
+   INPUT COMPONENTS
+   Military Specifications Hub Design System
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   INPUT WRAPPER
+   ───────────────────────────────────────── */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1-5);
+}
+
+/* ─────────────────────────────────────────
+   FORM LABELS
+   ───────────────────────────────────────── */
+.input-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+}
+
+.input-label-required::after {
+  content: ' *';
+  color: var(--color-error-main);
+}
+
+.input-label-optional::after {
+  content: ' (optional)';
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/* ─────────────────────────────────────────
+   BASE INPUT STYLES
+   ───────────────────────────────────────── */
+.input {
+  width: 100%;
+  padding: var(--spacing-input-padding-y) var(--spacing-input-padding-x);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  transition: var(--transition-colors);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-text-disabled);
+}
+
+/* Hover state */
+.input:hover:not(:disabled):not(:focus) {
+  border-color: var(--color-border-dark);
+}
+
+/* Focus state with primary color ring */
+.input:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+/* Disabled state */
+.input:disabled {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────
+   INPUT STATES
+   ───────────────────────────────────────── */
+
+/* Error state with red border */
+.input-error {
+  border-color: var(--color-error-main);
+}
+
+.input-error:focus {
+  border-color: var(--color-error-main);
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+}
+
+/* Success state */
+.input-success {
+  border-color: var(--color-success-main);
+}
+
+.input-success:focus {
+  border-color: var(--color-success-main);
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
+
+/* Warning state */
+.input-warning {
+  border-color: var(--color-warning-main);
+}
+
+.input-warning:focus {
+  border-color: var(--color-warning-main);
+  box-shadow: 0 0 0 3px rgba(245, 124, 0, 0.1);
+}
+
+/* ─────────────────────────────────────────
+   INPUT SIZES
+   ───────────────────────────────────────── */
+.input-sm {
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.input-lg {
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--font-size-lg);
+}
+
+/* ─────────────────────────────────────────
+   HELP TEXT
+   ───────────────────────────────────────── */
+.input-helper {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.input-error-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-error-main);
+  line-height: var(--line-height-normal);
+}
+
+.input-success-text {
+  font-size: var(--font-size-xs);
+  color: var(--color-success-main);
+  line-height: var(--line-height-normal);
+}
+
+/* ─────────────────────────────────────────
+   INPUT GROUPS (with icons/addons)
+   ───────────────────────────────────────── */
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Input with icon on left */
+.input-with-icon {
+  position: relative;
+}
+
+.input-with-icon .input {
+  padding-left: var(--space-10);
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-secondary);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Input with icon on right */
+.input-with-icon-right .input {
+  padding-right: var(--space-10);
+  padding-left: var(--spacing-input-padding-x);
+}
+
+.input-with-icon-right .input-icon {
+  left: auto;
+  right: var(--space-3);
+}
+
+/* Input addons (prefix/suffix) */
+.input-addon {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-input-padding-y) var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  background-color: var(--color-neutral-100);
+  border: 1px solid var(--color-border-default);
+  white-space: nowrap;
+}
+
+.input-addon-left {
+  border-right: none;
+  border-top-left-radius: var(--radius-default);
+  border-bottom-left-radius: var(--radius-default);
+}
+
+.input-addon-right {
+  border-left: none;
+  border-top-right-radius: var(--radius-default);
+  border-bottom-right-radius: var(--radius-default);
+}
+
+.input-group .input {
+  flex: 1;
+}
+
+.input-group .input:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group .input:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* ─────────────────────────────────────────
+   TEXTAREA STYLES
+   ───────────────────────────────────────── */
+.textarea {
+  width: 100%;
+  padding: var(--spacing-input-padding-y) var(--spacing-input-padding-x);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  transition: var(--transition-colors);
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea::placeholder {
+  color: var(--color-text-disabled);
+}
+
+.textarea:hover:not(:disabled):not(:focus) {
+  border-color: var(--color-border-dark);
+}
+
+.textarea:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.textarea:disabled {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  resize: none;
+}
+
+.textarea-error {
+  border-color: var(--color-error-main);
+}
+
+.textarea-error:focus {
+  box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.1);
+}
+
+/* No resize */
+.textarea-no-resize {
+  resize: none;
+}
+
+/* ─────────────────────────────────────────
+   SELECT STYLES
+   ───────────────────────────────────────── */
+.select {
+  width: 100%;
+  padding: var(--spacing-input-padding-y) var(--spacing-input-padding-x);
+  padding-right: var(--space-10);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-3) center;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  transition: var(--transition-colors);
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+}
+
+.select:hover:not(:disabled) {
+  border-color: var(--color-border-dark);
+}
+
+.select:focus {
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+.select:disabled {
+  background-color: var(--color-neutral-100);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.select-error {
+  border-color: var(--color-error-main);
+}
+
+.select-sm {
+  padding: var(--space-2) var(--space-3);
+  padding-right: var(--space-8);
+  font-size: var(--font-size-sm);
+}
+
+.select-lg {
+  padding: var(--space-4) var(--space-5);
+  padding-right: var(--space-12);
+  font-size: var(--font-size-lg);
+}
+
+/* ─────────────────────────────────────────
+   CHECKBOX STYLES
+   ───────────────────────────────────────── */
+.checkbox-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-primary-500);
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.checkbox-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  user-select: none;
+}
+
+.checkbox-wrapper:has(.checkbox:disabled) .checkbox-label {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Custom checkbox styling */
+.checkbox-custom {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.checkbox-custom input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-custom-box {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-surface);
+  transition: var(--transition-colors);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-custom input:checked + .checkbox-custom-box {
+  background-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.checkbox-custom input:focus-visible + .checkbox-custom-box {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.checkbox-custom input:disabled + .checkbox-custom-box {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox-custom-checkmark {
+  color: var(--color-text-inverse);
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--transition-fast);
+}
+
+.checkbox-custom input:checked + .checkbox-custom-box .checkbox-custom-checkmark {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─────────────────────────────────────────
+   RADIO STYLES
+   ───────────────────────────────────────── */
+.radio-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.radio {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  accent-color: var(--color-primary-500);
+}
+
+.radio:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.radio:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.radio-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-normal);
+  user-select: none;
+}
+
+.radio-wrapper:has(.radio:disabled) .radio-label {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Radio group */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.radio-group-horizontal {
+  flex-direction: row;
+  gap: var(--space-4);
+}
+
+/* ─────────────────────────────────────────
+   SWITCH/TOGGLE STYLES
+   ───────────────────────────────────────── */
+.switch-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  background-color: var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-colors);
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-transform);
+}
+
+.switch-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-input:checked + .switch {
+  background-color: var(--color-primary-500);
+}
+
+.switch-input:checked + .switch::after {
+  transform: translateX(20px);
+}
+
+.switch-input:focus-visible + .switch {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.switch-input:disabled + .switch {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.switch-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  user-select: none;
+}
+
+/* ─────────────────────────────────────────
+   FORM LAYOUT UTILITIES
+   ───────────────────────────────────────── */
+.form-row {
+  display: flex;
+  gap: var(--space-4);
+}
+
+.form-row > * {
+  flex: 1;
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-inline {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+}
+
+@media (max-width: 576px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE ADJUSTMENTS
+   ───────────────────────────────────────── */
+[data-theme="dark"] .input,
+[data-theme="dark"] .textarea,
+[data-theme="dark"] .select,
+.v-theme--dark .input,
+.v-theme--dark .textarea,
+.v-theme--dark .select {
+  background-color: var(--color-surface);
+  border-color: var(--color-border-default);
+  color: var(--color-text-primary);
+}
+
+[data-theme="dark"] .input:focus,
+[data-theme="dark"] .textarea:focus,
+[data-theme="dark"] .select:focus,
+.v-theme--dark .input:focus,
+.v-theme--dark .textarea:focus,
+.v-theme--dark .select:focus {
+  box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+}
+
+[data-theme="dark"] .input:disabled,
+[data-theme="dark"] .textarea:disabled,
+[data-theme="dark"] .select:disabled,
+.v-theme--dark .input:disabled,
+.v-theme--dark .textarea:disabled,
+.v-theme--dark .select:disabled {
+  background-color: var(--color-neutral-800);
+}
+
+[data-theme="dark"] .input-addon,
+.v-theme--dark .input-addon {
+  background-color: var(--color-neutral-700);
+  border-color: var(--color-border-default);
+}
+
+[data-theme="dark"] .select,
+.v-theme--dark .select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+[data-theme="dark"] .checkbox-custom-box,
+.v-theme--dark .checkbox-custom-box {
+  background-color: var(--color-surface);
+  border-color: var(--color-border-default);
+}
+
+[data-theme="dark"] .switch,
+.v-theme--dark .switch {
+  background-color: var(--color-neutral-600);
+}
+
+[data-theme="dark"] .switch::after,
+.v-theme--dark .switch::after {
+  background-color: var(--color-neutral-200);
+}

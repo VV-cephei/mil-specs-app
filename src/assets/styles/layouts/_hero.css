@@ -1,0 +1,310 @@
+/* ===========================================
+   HERO SECTION STYLES
+   Military Specifications Hub Design System
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   BASE HERO SECTION
+   ───────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: var(--space-20) var(--space-6);
+  background: linear-gradient(180deg, var(--color-neutral-50) 0%, var(--color-surface) 100%);
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--width-container-lg);
+  margin: 0 auto;
+}
+
+/* ─────────────────────────────────────────
+   HERO TYPOGRAPHY
+   ───────────────────────────────────────── */
+.hero-title {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.hero-subtitle {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto var(--space-8);
+  line-height: var(--line-height-relaxed);
+}
+
+.hero-description {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 0 auto var(--space-6);
+  line-height: var(--line-height-normal);
+}
+
+/* ─────────────────────────────────────────
+   HERO CTA AREA
+   ───────────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+}
+
+.hero-actions .btn {
+  min-width: 160px;
+}
+
+/* ─────────────────────────────────────────
+   HERO GRADIENT VARIANT (Navy)
+   ───────────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  color: var(--color-text-inverse);
+}
+
+.hero-gradient .hero-title {
+  color: var(--color-text-inverse);
+}
+
+.hero-gradient .hero-subtitle,
+.hero-gradient .hero-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ─────────────────────────────────────────
+   HERO WITH BACKGROUND PATTERN
+   ───────────────────────────────────────── */
+.hero-pattern {
+  position: relative;
+}
+
+.hero-pattern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid pattern variant */
+.hero-pattern-grid::before {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Diagonal lines pattern */
+.hero-pattern-diagonal::before {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.03) 10px,
+    rgba(255, 255, 255, 0.03) 20px
+  );
+  background-size: auto;
+}
+
+/* ─────────────────────────────────────────
+   HERO SIZE VARIANTS
+   ───────────────────────────────────────── */
+.hero-sm {
+  padding: var(--space-12) var(--space-6);
+}
+
+.hero-lg {
+  padding: var(--space-28) var(--space-6);
+}
+
+.hero-full {
+  min-height: calc(100vh - 64px); /* Account for header */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────
+   HERO WITH ACCENT BORDER
+   ───────────────────────────────────────── */
+.hero-accent-bottom {
+  border-bottom: 4px solid var(--color-accent-500);
+}
+
+.hero-accent-top {
+  border-top: 4px solid var(--color-accent-500);
+}
+
+/* ─────────────────────────────────────────
+   HERO BADGE/LABEL
+   ───────────────────────────────────────── */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-accent-500);
+  background-color: var(--color-accent-50);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.hero-gradient .hero-badge {
+  color: var(--color-primary-900);
+  background-color: var(--color-accent-400);
+}
+
+/* ─────────────────────────────────────────
+   HERO STATS/METRICS
+   ───────────────────────────────────────── */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-12);
+  margin-top: var(--space-12);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.hero-gradient .hero-stats {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-value {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+}
+
+.hero-gradient .hero-stat-value {
+  color: var(--color-text-inverse);
+}
+
+.hero-stat-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.hero-gradient .hero-stat-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE ADJUSTMENTS
+   ───────────────────────────────────────── */
+[data-theme="dark"] .hero {
+  background: linear-gradient(180deg, var(--color-neutral-900) 0%, var(--color-background) 100%);
+}
+
+[data-theme="dark"] .hero-badge {
+  background-color: rgba(201, 162, 39, 0.15);
+  color: var(--color-accent-400);
+}
+
+[data-theme="dark"] .hero-stats {
+  border-top-color: var(--color-border-light);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE ADJUSTMENTS
+   ───────────────────────────────────────── */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--space-12) var(--space-4);
+  }
+  
+  .hero-sm {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .hero-lg {
+    padding: var(--space-16) var(--space-4);
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-6);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero-stats {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  .hero-stat-value {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: var(--space-10) var(--space-3);
+  }
+  
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .hero-badge {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1-5) var(--space-3);
+  }
+}

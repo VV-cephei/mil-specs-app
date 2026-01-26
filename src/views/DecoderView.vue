@@ -580,8 +580,13 @@ function createNewForm() {
 }
 
 onMounted(async () => {
-  if (specsStore.methods.length === 0) {
-    await specsStore.loadSpecData()
+  // Load MIL-STD-2073 data if not already loaded
+  if (!specsStore.isSpecLoaded('mil-std-2073')) {
+    try {
+      await specsStore.loadAllSections('mil-std-2073')
+    } catch (error) {
+      console.warn('[DecoderView] Could not load spec data:', error)
+    }
   }
 })
 </script>

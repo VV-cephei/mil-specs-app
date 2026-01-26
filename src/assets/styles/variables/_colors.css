@@ -1,0 +1,133 @@
+/* ===========================================
+   COLOR SYSTEM - CSS Custom Properties
+   Military Specifications Hub Design System
+   =========================================== */
+
+:root {
+  /* ─────────────────────────────────────────
+     PRIMARY COLORS (Navy Blue)
+     ───────────────────────────────────────── */
+  --color-primary-50: #E8EAF6;
+  --color-primary-100: #C5CAE9;
+  --color-primary-200: #9FA8DA;
+  --color-primary-300: #7986CB;
+  --color-primary-400: #5C6BC0;
+  --color-primary-500: #1E3A5F;  /* Main primary */
+  --color-primary-600: #1A3356;
+  --color-primary-700: #152B4A;
+  --color-primary-800: #10233D;
+  --color-primary-900: #0A1628;
+  
+  /* ─────────────────────────────────────────
+     ACCENT COLORS (Tactical Gold)
+     ───────────────────────────────────────── */
+  --color-accent-50: #FFF8E1;
+  --color-accent-100: #FFECB3;
+  --color-accent-200: #FFE082;
+  --color-accent-300: #FFD54F;
+  --color-accent-400: #FFCA28;
+  --color-accent-500: #C9A227;  /* Main accent */
+  --color-accent-600: #B8922A;
+  --color-accent-700: #A67F24;
+  --color-accent-800: #8D6B1F;
+  --color-accent-900: #6B5118;
+  
+  /* ─────────────────────────────────────────
+     NEUTRAL COLORS (Grays)
+     ───────────────────────────────────────── */
+  --color-neutral-0: #FFFFFF;
+  --color-neutral-50: #F8FAFC;
+  --color-neutral-100: #F1F5F9;
+  --color-neutral-200: #E2E8F0;
+  --color-neutral-300: #CBD5E1;
+  --color-neutral-400: #94A3B8;
+  --color-neutral-500: #64748B;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1E293B;
+  --color-neutral-900: #0F172A;
+  --color-neutral-950: #020617;
+  
+  /* ─────────────────────────────────────────
+     SEMANTIC COLORS
+     ───────────────────────────────────────── */
+  --color-success-light: #E8F5E9;
+  --color-success-main: #2E7D32;
+  --color-success-dark: #1B5E20;
+  
+  --color-warning-light: #FFF3E0;
+  --color-warning-main: #F57C00;
+  --color-warning-dark: #E65100;
+  
+  --color-error-light: #FFEBEE;
+  --color-error-main: #C62828;
+  --color-error-dark: #B71C1C;
+  
+  --color-info-light: #E3F2FD;
+  --color-info-main: #0288D1;
+  --color-info-dark: #01579B;
+  
+  /* ─────────────────────────────────────────
+     SURFACE COLORS (Light Theme)
+     ───────────────────────────────────────── */
+  --color-background: #F8FAFC;
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-surface-overlay: rgba(0, 0, 0, 0.5);
+  
+  /* ─────────────────────────────────────────
+     TEXT COLORS (Light Theme)
+     ───────────────────────────────────────── */
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #64748B;
+  --color-text-disabled: #94A3B8;
+  --color-text-inverse: #FFFFFF;
+  --color-text-link: #1E3A5F;
+  --color-text-link-hover: #0A1628;
+  
+  /* ─────────────────────────────────────────
+     BORDER COLORS
+     ───────────────────────────────────────── */
+  --color-border-light: #E2E8F0;
+  --color-border-default: #CBD5E1;
+  --color-border-dark: #94A3B8;
+  --color-border-focus: #1E3A5F;
+  
+  /* ─────────────────────────────────────────
+     SHADOW COLORS
+     ───────────────────────────────────────── */
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 1%;
+}
+
+/* ─────────────────────────────────────────
+   DARK THEME OVERRIDES
+   ───────────────────────────────────────── */
+[data-theme="dark"],
+.v-theme--dark {
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-elevated: #334155;
+  --color-surface-overlay: rgba(0, 0, 0, 0.7);
+  
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-text-disabled: #64748B;
+  --color-text-inverse: #0F172A;
+  --color-text-link: #7986CB;
+  --color-text-link-hover: #9FA8DA;
+  
+  --color-border-light: #334155;
+  --color-border-default: #475569;
+  --color-border-dark: #64748B;
+  --color-border-focus: #5C6BC0;
+  
+  --shadow-color: 220 40% 2%;
+  --shadow-strength: 25%;
+  
+  /* Adjusted semantic colors for dark mode */
+  --color-success-light: #1B5E20;
+  --color-warning-light: #E65100;
+  --color-error-light: #B71C1C;
+  --color-info-light: #01579B;
+}

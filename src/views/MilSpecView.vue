@@ -62,7 +62,7 @@
               <SpecTable
                 v-else-if="activeSection === 'methods'"
                 title="Methods of Preservation"
-                :items="specsStore.filteredMethods"
+                :items="filteredMethods"
                 :headers="methodHeaders"
                 :loading="specsStore.loading"
                 @view="viewMethod"
@@ -73,7 +73,7 @@
               <SpecTable
                 v-else-if="activeSection === 'cleaning'"
                 title="Cleaning & Drying Procedures"
-                :items="specsStore.filteredCleaning"
+                :items="filteredCleaning"
                 :headers="cleaningHeaders"
                 :loading="specsStore.loading"
                 @view="viewCleaning"
@@ -84,7 +84,7 @@
               <SpecTable
                 v-else-if="activeSection === 'preservation'"
                 title="Preservative Materials"
-                :items="specsStore.filteredPreservation"
+                :items="filteredPreservation"
                 :headers="preservationHeaders"
                 :loading="specsStore.loading"
                 @view="viewPreservation"
@@ -224,6 +224,10 @@ const currentSectionTitle = computed(() => {
   const section = sections.find(s => s.id === activeSection.value)
   return section ? section.title : 'Select a Section'
 })
+
+const filteredMethods = computed(() => specsStore.getFilteredData('mil-std-2073', 'methods') || [])
+const filteredCleaning = computed(() => specsStore.getFilteredData('mil-std-2073', 'cleaning') || [])
+const filteredPreservation = computed(() => specsStore.getFilteredData('mil-std-2073', 'preservation') || [])
 
 // Methods
 function setActiveSection(sectionId) {

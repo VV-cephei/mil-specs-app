@@ -20,7 +20,7 @@ const routes = [
       {
         path: '',
         name: 'tools-index',
-        component: () => import('@/views/tools/index.vue'),
+        component: () => import('@/views/tools/ToolsHub.vue'),
         meta: { title: 'Select a Tool' }
       },
       {
@@ -30,6 +30,15 @@ const routes = [
         meta: { 
           title: 'MIL-STD-202 Viewer',
           description: 'Test Method Standard for Electronic Parts'
+        }
+      },
+      {
+        path: 'mil-std-883',
+        name: 'mil-std-883',
+        component: () => import('@/components/tools/MilStd883Tool.vue'),
+        meta: { 
+          title: 'MIL-STD-883 Viewer',
+          description: 'Test Methods and Procedures for Microelectronics'
         }
       },
       {

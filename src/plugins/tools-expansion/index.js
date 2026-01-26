@@ -17,6 +17,15 @@ const toolsExpansionPlugin = {
       }
     },
     {
+      path: '/tools/mil-std-883',
+      name: 'mil-std-883',
+      component: () => import('@/components/tools/MilStd883Tool.vue'),
+      meta: { 
+        title: 'MIL-STD-883',
+        description: 'Test Methods and Procedures for Microelectronics'
+      }
+    },
+    {
       path: '/tools/superseding-lookup',
       name: 'superseding-lookup',
       component: () => import('@/components/tools/SpecSupersedingTool.vue'),

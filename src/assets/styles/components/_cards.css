@@ -1,0 +1,368 @@
+/* ===========================================
+   CARD COMPONENTS
+   Military Specifications Hub Design System
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   BASE CARD STYLES
+   ───────────────────────────────────────── */
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: var(--transition-shadow), var(--transition-transform);
+}
+
+/* ─────────────────────────────────────────
+   CARD VARIANTS
+   ───────────────────────────────────────── */
+
+/* Elevated card - Higher shadow */
+.card-elevated {
+  box-shadow: var(--shadow-default);
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Interactive card - Hover effects */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.card-interactive:active {
+  transform: translateY(0);
+}
+
+/* Focus state for keyboard navigation */
+.card-interactive:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────
+   CARD STATUS VARIANTS
+   With colored left border accent
+   ───────────────────────────────────────── */
+.card-status {
+  border-left-width: 4px;
+  border-left-style: solid;
+}
+
+.card-status-accent,
+.card-accent {
+  border-left-color: var(--color-accent-500);
+}
+
+.card-status-primary {
+  border-left-color: var(--color-primary-500);
+}
+
+.card-status-success,
+.card-success {
+  border-left-color: var(--color-success-main);
+}
+
+.card-status-warning,
+.card-warning {
+  border-left-color: var(--color-warning-main);
+}
+
+.card-status-error,
+.card-error {
+  border-left-color: var(--color-error-main);
+}
+
+.card-status-info,
+.card-info {
+  border-left-color: var(--color-info-main);
+}
+
+/* ─────────────────────────────────────────
+   CARD SECTIONS
+   ───────────────────────────────────────── */
+
+/* Card Header */
+.card-header {
+  padding: var(--spacing-card-padding);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.card-header-primary {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+  color: var(--color-text-inverse);
+  border-bottom: none;
+}
+
+.card-header-accent {
+  background: linear-gradient(135deg, var(--color-accent-500) 0%, var(--color-accent-600) 100%);
+  color: var(--color-primary-900);
+  border-bottom: none;
+}
+
+.card-header-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.card-header-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.card-header-primary .card-header-subtitle,
+.card-header-accent .card-header-subtitle {
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Card Header with actions */
+.card-header-with-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.card-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Card Body */
+.card-body {
+  padding: var(--spacing-card-padding);
+}
+
+.card-body-compact {
+  padding: var(--space-4);
+}
+
+.card-body-spacious {
+  padding: var(--space-8);
+}
+
+/* Card Footer */
+.card-footer {
+  padding: var(--spacing-card-padding);
+  border-top: 1px solid var(--color-border-light);
+  background-color: var(--color-neutral-50);
+}
+
+.card-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+.card-footer-actions-spread {
+  justify-content: space-between;
+}
+
+/* ─────────────────────────────────────────
+   CARD IMAGE
+   ───────────────────────────────────────── */
+.card-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-image-top {
+  border-top-left-radius: calc(var(--radius-lg) - 1px);
+  border-top-right-radius: calc(var(--radius-lg) - 1px);
+}
+
+.card-image-cover {
+  object-fit: cover;
+  height: 200px;
+}
+
+/* ─────────────────────────────────────────
+   CARD CONTENT UTILITIES
+   ───────────────────────────────────────── */
+.card-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+  line-height: var(--line-height-tight);
+}
+
+.card-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-4);
+}
+
+.card-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+}
+
+.card-meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* ─────────────────────────────────────────
+   CARD GRID LAYOUT UTILITIES
+   ───────────────────────────────────────── */
+.card-grid {
+  display: grid;
+  gap: var(--spacing-card-gap);
+}
+
+.card-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card-grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto-fit responsive grid */
+.card-grid-auto {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card-grid-auto-sm {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card-grid-auto-lg {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-grid-2,
+  .card-grid-3,
+  .card-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-grid-3,
+  .card-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─────────────────────────────────────────
+   HORIZONTAL CARD
+   ───────────────────────────────────────── */
+.card-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-horizontal .card-image {
+  width: 200px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.card-horizontal .card-body {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  .card-horizontal {
+    flex-direction: column;
+  }
+  
+  .card-horizontal .card-image {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+/* ─────────────────────────────────────────
+   CARD DIVIDER
+   ───────────────────────────────────────── */
+.card-divider {
+  height: 1px;
+  background-color: var(--color-border-light);
+  margin: 0;
+  border: none;
+}
+
+/* ─────────────────────────────────────────
+   CARD LOADING STATE
+   ───────────────────────────────────────── */
+.card-loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: card-shimmer 1.5s infinite;
+}
+
+@keyframes card-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE ADJUSTMENTS
+   ───────────────────────────────────────── */
+[data-theme="dark"] .card,
+.v-theme--dark .card {
+  background-color: var(--color-surface);
+  border-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .card-footer,
+.v-theme--dark .card-footer {
+  background-color: var(--color-surface-elevated);
+}
+
+[data-theme="dark"] .card-loading::after,
+.v-theme--dark .card-loading::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+}

@@ -1,326 +1,359 @@
 <template>
   <div class="form-generator-view">
-    <v-container>
-      <v-row justify="center">
-        <v-col cols="12" lg="10">
-          <!-- Page Header -->
-          <v-card class="mb-4" elevation="2">
-            <v-card-title class="d-flex align-center flex-wrap ga-4 pa-4">
-              <v-icon icon="mdi-file-document-edit" size="32" color="primary" class="mr-2"></v-icon>
-              <div>
-                <h1 class="text-h5 font-weight-bold">DD Form 2326 Generator</h1>
-                <p class="text-body-2 text-grey mb-0">Create Military Packaging Data forms from MIL-STD-2073 codes</p>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="page-header-content container">
+        <nav class="breadcrumb">
+          <span class="breadcrumb-item">
+            <router-link to="/" class="breadcrumb-link">Home</router-link>
+          </span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-item">
+            <router-link to="/tools" class="breadcrumb-link">Tools</router-link>
+          </span>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Form Generator</span>
+        </nav>
+        <div class="page-header-row">
+          <div class="page-header-info">
+            <h1 class="page-title">DD Form 2326 Generator</h1>
+            <p class="page-description">Create Military Packaging Data forms from MIL-STD-2073 codes</p>
+          </div>
+          <div class="page-actions">
+            <div class="btn-group">
+              <button 
+                :class="['btn', viewMode === 'form' ? 'btn-primary' : 'btn-outlined']"
+                @click="viewMode = 'form'"
+              >
+                Form
+              </button>
+              <button 
+                :class="['btn', viewMode === 'wizard' ? 'btn-primary' : 'btn-outlined']"
+                @click="viewMode = 'wizard'"
+              >
+                Wizard
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="page-body">
+      <div class="page-body-content container">
+        <!-- Form Card -->
+        <div class="card card-elevated">
+          <div class="card-body">
+            <form ref="form" @submit.prevent="handleSubmit">
+              <div class="form-grid">
+                <!-- Quality per Unit Pack (QUP) -->
+                <div class="input-wrapper">
+                  <label class="input-label input-label-required" for="qup">Quality per Unit Pack (QUP)</label>
+                  <input 
+                    id="qup"
+                    v-model="formData.qup"
+                    type="text"
+                    class="input"
+                    maxlength="4"
+                    placeholder="e.g., 001"
+                  >
+                  <span class="input-helper">1-4 alphanumeric characters per MIL-STD-2073</span>
+                </div>
+                
+                <!-- Method of Preservation -->
+                <div class="input-wrapper">
+                  <label class="input-label input-label-required" for="preservation">Method of Preservation</label>
+                  <select 
+                    id="preservation"
+                    v-model="formData.methodOfPreservation"
+                    class="select"
+                  >
+                    <option value="">-- Select method --</option>
+                    <option 
+                      v-for="method in preservationMethods" 
+                      :key="method.code" 
+                      :value="method"
+                    >
+                      {{ method.code }} - {{ method.description }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Cleaning & Drying -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="cleaning">Cleaning & Drying</label>
+                  <select 
+                    id="cleaning"
+                    v-model="formData.cleaningDrying"
+                    class="select"
+                  >
+                    <option value="">-- Select code --</option>
+                    <option 
+                      v-for="code in cleaningCodes" 
+                      :key="code.code" 
+                      :value="code"
+                    >
+                      {{ code.code }} - {{ code.description }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Preservative Materials -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="preservative">Preservative Materials</label>
+                  <select 
+                    id="preservative"
+                    v-model="formData.preservativeMaterial"
+                    class="select"
+                  >
+                    <option value="">-- Select material --</option>
+                    <option 
+                      v-for="code in preservativeCodes" 
+                      :key="code.code" 
+                      :value="code"
+                    >
+                      {{ code.code }} - {{ code.description }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Wrapping Material -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="wrapping">Wrapping Material</label>
+                  <input 
+                    id="wrapping"
+                    v-model="formData.wrappingMaterial"
+                    type="text"
+                    class="input"
+                    placeholder="Material specification or code"
+                  >
+                </div>
+                
+                <!-- Cushioning Material -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="cushioning">Cushioning Material</label>
+                  <input 
+                    id="cushioning"
+                    v-model="formData.cushioningMaterial"
+                    type="text"
+                    class="input"
+                    placeholder="Material specification or code"
+                  >
+                </div>
+                
+                <!-- Cushioning Thickness -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="thickness">Cushioning Thickness</label>
+                  <input 
+                    id="thickness"
+                    v-model="formData.cushioningThickness"
+                    type="number"
+                    step="0.125"
+                    class="input"
+                    placeholder="Thickness in inches"
+                  >
+                </div>
+                
+                <!-- Unit/Intermediate Container -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="container">Unit/Intermediate Container</label>
+                  <select 
+                    id="container"
+                    v-model="formData.unitIntermediateContainer"
+                    class="select"
+                  >
+                    <option value="">-- Select container --</option>
+                    <option v-for="type in containerTypes" :key="type" :value="type">
+                      {{ type }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Packing Code -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="packing">Packing Code</label>
+                  <input 
+                    id="packing"
+                    v-model="formData.packingCode"
+                    type="text"
+                    class="input"
+                    maxlength="4"
+                    placeholder="1-4 alphanumeric characters"
+                  >
+                </div>
+                
+                <!-- Hazardous Material -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="hazardous">Hazardous Material</label>
+                  <select 
+                    id="hazardous"
+                    v-model="formData.hazardousMaterial"
+                    class="select"
+                  >
+                    <option value="">-- Select --</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                  </select>
+                </div>
+                
+                <!-- Unit Container Level -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="level">Unit Container Level</label>
+                  <select 
+                    id="level"
+                    v-model="formData.unitContainerLevel"
+                    class="select"
+                  >
+                    <option value="">-- Select level --</option>
+                    <option v-for="level in containerLevels" :key="level" :value="level">
+                      {{ level }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Shelf-Life -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="shelflife">Shelf-Life</label>
+                  <input 
+                    id="shelflife"
+                    v-model="formData.shelfLife"
+                    type="text"
+                    class="input"
+                    placeholder="e.g., 12/15 or 24 months"
+                  >
+                </div>
+                
+                <!-- Shelf-Life Action -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="shelfaction">Shelf-Life Action</label>
+                  <select 
+                    id="shelfaction"
+                    v-model="formData.shelfLifeAction"
+                    class="select"
+                  >
+                    <option value="">-- Select action --</option>
+                    <option v-for="action in shelfLifeActions" :key="action" :value="action">
+                      {{ action }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Type of Storage -->
+                <div class="input-wrapper">
+                  <label class="input-label" for="storage">Type of Storage</label>
+                  <select 
+                    id="storage"
+                    v-model="formData.typeOfStorage"
+                    class="select"
+                  >
+                    <option value="">-- Select storage --</option>
+                    <option v-for="type in storageTypes" :key="type" :value="type">
+                      {{ type }}
+                    </option>
+                  </select>
+                </div>
+                
+                <!-- Special Material Content (full width) -->
+                <div class="input-wrapper col-span-full">
+                  <label class="input-label" for="special">Special Material Content</label>
+                  <textarea 
+                    id="special"
+                    v-model="formData.specialMaterialContent"
+                    class="textarea"
+                    rows="2"
+                    placeholder="Describe any special material requirements"
+                  ></textarea>
+                </div>
+                
+                <!-- Special Marking (full width) -->
+                <div class="input-wrapper col-span-full">
+                  <label class="input-label" for="marking">Special Marking</label>
+                  <textarea 
+                    id="marking"
+                    v-model="formData.specialMarking"
+                    class="textarea"
+                    rows="2"
+                    placeholder="Any special marking requirements"
+                  ></textarea>
+                </div>
+                
+                <!-- Optional Procedures (full width) -->
+                <div class="input-wrapper col-span-full">
+                  <label class="input-label" for="procedures">Optional Procedures</label>
+                  <textarea 
+                    id="procedures"
+                    v-model="formData.optionalProcedures"
+                    class="textarea"
+                    rows="2"
+                    placeholder="Describe any optional procedures"
+                  ></textarea>
+                </div>
               </div>
-              <v-spacer></v-spacer>
-              <v-btn-toggle v-model="viewMode" mandatory>
-                <v-btn value="form" size="small">
-                  <v-icon icon="mdi-form-textbox" class="mr-1"></v-icon>
-                  Form
-                </v-btn>
-                <v-btn value="wizard" size="small">
-                  <v-icon icon="mdi-ray-start" class="mr-1"></v-icon>
-                  Wizard
-                </v-btn>
-              </v-btn-toggle>
-            </v-card-title>
-          </v-card>
+            </form>
+          </div>
           
-          <!-- Form Content -->
-          <v-card elevation="2">
-            <v-card-text class="pa-4">
-              <v-form ref="form" v-model="isValid" @submit.prevent="handleSubmit">
-                <v-row>
-                  <!-- Quality per Unit Pack (QUP) -->
-                  <v-col cols="12" md="6">
-                    <v-text-field
-                      v-model="formData.qup"
-                      label="Quality per Unit Pack (QUP)"
-                      :rules="[rules.required, rules.code]"
-                      hint="1-4 alphanumeric characters per MIL-STD-2073"
-                      persistent-hint
-                      counter
-                      maxlength="4"
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Method of Preservation -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.methodOfPreservation"
-                      :items="preservationMethods"
-                      item-title="description"
-                      item-value="code"
-                      label="Method of Preservation"
-                      :rules="[rules.required]"
-                      return-object
-                      clearable
-                    >
-                      <template v-slot:item="{ props, item }">
-                        <v-list-item v-bind="props">
-                          <template v-slot:prepend>
-                            <v-chip color="primary" size="small">{{ item.raw.code }}</v-chip>
-                          </template>
-                          <v-list-item-subtitle class="text-truncate">
-                            {{ item.raw.description }}
-                          </v-list-item-subtitle>
-                        </v-list-item>
-                      </template>
-                    </v-select>
-                  </v-col>
-                  
-                  <!-- Cleaning & Drying -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.cleaningDrying"
-                      :items="cleaningCodes"
-                      item-title="description"
-                      item-value="code"
-                      label="Cleaning & Drying"
-                      return-object
-                      clearable
-                    >
-                      <template v-slot:item="{ props, item }">
-                        <v-list-item v-bind="props">
-                          <template v-slot:prepend>
-                            <v-chip color="secondary" size="small">{{ item.raw.code }}</v-chip>
-                          </template>
-                          <v-list-item-subtitle class="text-truncate">
-                            {{ item.raw.description }}
-                          </v-list-item-subtitle>
-                        </v-list-item>
-                      </template>
-                    </v-select>
-                  </v-col>
-                  
-                  <!-- Preservative Materials -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.preservativeMaterial"
-                      :items="preservativeCodes"
-                      item-title="description"
-                      item-value="code"
-                      label="Preservative Materials"
-                      return-object
-                      clearable
-                    >
-                      <template v-slot:item="{ props, item }">
-                        <v-list-item v-bind="props">
-                          <template v-slot:prepend>
-                            <v-chip color="success" size="small">{{ item.raw.code }}</v-chip>
-                          </template>
-                          <v-list-item-subtitle class="text-truncate">
-                            {{ item.raw.description }}
-                          </v-list-item-subtitle>
-                        </v-list-item>
-                      </template>
-                    </v-select>
-                  </v-col>
-                  
-                  <!-- Wrapping Material -->
-                  <v-col cols="12" md="6">
-                    <v-text-field
-                      v-model="formData.wrappingMaterial"
-                      label="Wrapping Material"
-                      hint="Material specification or code"
-                      persistent-hint
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Cushioning Material -->
-                  <v-col cols="12" md="6">
-                    <v-text-field
-                      v-model="formData.cushioningMaterial"
-                      label="Cushioning Material"
-                      hint="Material specification or code"
-                      persistent-hint
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Cushioning Thickness -->
-                  <v-col cols="12" md="6">
-                    <v-text-field
-                      v-model="formData.cushioningThickness"
-                      label="Cushioning Thickness"
-                      hint="Thickness in inches"
-                      persistent-hint
-                      type="number"
-                      step="0.125"
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Unit/Intermediate Container -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.unitIntermediateContainer"
-                      :items="containerTypes"
-                      label="Unit/Intermediate Container"
-                      clearable
-                    ></v-select>
-                  </v-col>
-                  
-                  <!-- Packing Code -->
-                  <v-col cols="12" md="6">
-                    <v-text-field
-                      v-model="formData.packingCode"
-                      label="Packing Code"
-                      hint="1-4 alphanumeric characters"
-                      persistent-hint
-                      counter
-                      maxlength="4"
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Special Material Content -->
-                  <v-col cols="12">
-                    <v-textarea
-                      v-model="formData.specialMaterialContent"
-                      label="Special Material Content"
-                      hint="Describe any special material requirements"
-                      persistent-hint
-                      rows="2"
-                      auto-grow
-                    ></v-textarea>
-                  </v-col>
-                  
-                  <!-- Hazardous Material -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.hazardousMaterial"
-                      :items="['Yes', 'No']"
-                      label="Hazardous Material"
-                    ></v-select>
-                  </v-col>
-                  
-                  <!-- Special Marking -->
-                  <v-col cols="12" md="6">
-                    <v-textarea
-                      v-model="formData.specialMarking"
-                      label="Special Marking"
-                      hint="Any special marking requirements"
-                      persistent-hint
-                      rows="2"
-                      auto-grow
-                    ></v-textarea>
-                  </v-col>
-                  
-                  <!-- Unit Container Level -->
-                  <v-col cols="12" md="6">
-                    <v-select
-                      v-model="formData.unitContainerLevel"
-                      :items="containerLevels"
-                      label="Unit Container Level"
-                    ></v-select>
-                  </v-col>
-                  
-                  <!-- Optional Procedures -->
-                  <v-col cols="12" md="6">
-                    <v-textarea
-                      v-model="formData.optionalProcedures"
-                      label="Optional Procedures"
-                      hint="Describe any optional procedures"
-                      persistent-hint
-                      rows="2"
-                      auto-grow
-                    ></v-textarea>
-                  </v-col>
-                  
-                  <!-- Shelf-Life -->
-                  <v-col cols="12" md="4">
-                    <v-text-field
-                      v-model="formData.shelfLife"
-                      label="Shelf-Life"
-                      hint="e.g., 12/15 or 24 months"
-                      persistent-hint
-                    ></v-text-field>
-                  </v-col>
-                  
-                  <!-- Shelf-Life Action -->
-                  <v-col cols="12" md="4">
-                    <v-select
-                      v-model="formData.shelfLifeAction"
-                      :items="shelfLifeActions"
-                      label="Shelf-Life Action"
-                    ></v-select>
-                  </v-col>
-                  
-                  <!-- Type of Storage -->
-                  <v-col cols="12" md="4">
-                    <v-select
-                      v-model="formData.typeOfStorage"
-                      :items="storageTypes"
-                      label="Type of Storage"
-                    ></v-select>
-                  </v-col>
-                </v-row>
-              </v-form>
-            </v-card-text>
-            
-            <v-divider></v-divider>
-            
-            <!-- Action Buttons -->
-            <v-card-actions class="pa-4">
-              <v-btn variant="outlined" @click="resetForm">
-                <v-icon icon="mdi-refresh" class="mr-1"></v-icon>
+          <hr class="card-divider">
+          
+          <!-- Action Buttons -->
+          <div class="card-footer card-footer-actions card-footer-actions-spread">
+            <div class="btn-group-left">
+              <button type="button" class="btn btn-outlined" @click="resetForm">
                 Reset
-              </v-btn>
-              <v-btn variant="outlined" @click="saveForm">
-                <v-icon icon="mdi-content-save" class="mr-1"></v-icon>
+              </button>
+              <button type="button" class="btn btn-outlined" @click="saveForm">
                 Save
-              </v-btn>
-              <v-spacer></v-spacer>
-              <v-btn variant="outlined" color="info" @click="previewForm">
-                <v-icon icon="mdi-eye" class="mr-1"></v-icon>
+              </button>
+            </div>
+            <div class="btn-group-right">
+              <button type="button" class="btn btn-outlined" @click="previewForm">
                 Preview
-              </v-btn>
-              <v-btn color="primary" @click="exportForm" :disabled="!isValid">
-                <v-icon icon="mdi-download" class="mr-1"></v-icon>
+              </button>
+              <button type="button" class="btn btn-primary" @click="exportForm" :disabled="!isFormValid">
                 Export PDF
-              </v-btn>
-            </v-card-actions>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <!-- Preview Dialog -->
-    <v-dialog v-model="previewDialog" max-width="800">
-      <v-card>
-        <v-card-title class="d-flex align-center pa-4">
-          <v-icon icon="mdi-file-document-preview" class="mr-2"></v-icon>
-          DD Form 2326 Preview
-          <v-spacer></v-spacer>
-          <v-btn icon @click="previewDialog = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-        </v-card-title>
-        <v-divider></v-divider>
-        <v-card-text class="pa-4">
-          <v-table density="compact">
-            <thead>
-              <tr>
-                <th style="width: 40%">Field</th>
-                <th>Value</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(value, key) in formData" :key="key">
-                <td class="font-weight-medium">{{ formatLabel(key) }}</td>
-                <td>{{ formatValue(value) }}</td>
-              </tr>
-            </tbody>
-          </v-table>
-        </v-card-text>
-        <v-divider></v-divider>
-        <v-card-actions class="pa-4">
-          <v-btn variant="outlined" @click="previewDialog = false">Close</v-btn>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" @click="exportForm">
-            <v-icon icon="mdi-download" class="mr-1"></v-icon>
-            Export PDF
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
+    <!-- Preview Modal -->
+    <div v-if="previewDialog" class="modal-overlay" @click.self="previewDialog = false">
+      <div class="modal card card-elevated">
+        <div class="card-header card-header-with-actions">
+          <h3 class="card-header-title">DD Form 2326 Preview</h3>
+          <button class="btn btn-ghost btn-icon" @click="previewDialog = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-wrapper">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(value, key) in formData" :key="key">
+                  <td class="table-cell-nowrap"><strong>{{ formatLabel(key) }}</strong></td>
+                  <td>{{ formatValue(value) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer card-footer-actions card-footer-actions-spread">
+          <button class="btn btn-outlined" @click="previewDialog = false">Close</button>
+          <button class="btn btn-primary" @click="exportForm">Export PDF</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -338,7 +371,6 @@ const uiStore = useUIStore()
 
 // Form state
 const form = ref(null)
-const isValid = ref(false)
 const viewMode = ref('form')
 const previewDialog = ref(false)
 
@@ -362,11 +394,10 @@ const formData = reactive({
   typeOfStorage: null
 })
 
-// Validation rules
-const rules = {
-  required: v => !!v || 'Required',
-  code: v => /^[A-Z0-9]{1,4}$/.test(v) || 'Must be 1-4 alphanumeric characters'
-}
+// Form validation
+const isFormValid = computed(() => {
+  return formData.qup && formData.methodOfPreservation
+})
 
 // Dropdown options
 const preservationMethods = computed(() => specsStore.methods)
@@ -422,7 +453,7 @@ function formatValue(value) {
 }
 
 function handleSubmit() {
-  if (isValid.value) {
+  if (isFormValid.value) {
     exportForm()
   }
 }
@@ -431,9 +462,6 @@ function resetForm() {
   Object.keys(formData).forEach(key => {
     formData[key] = typeof formData[key] === 'string' ? '' : null
   })
-  if (form.value) {
-    form.value.resetValidation()
-  }
   uiStore.showSnackbar('Form reset successfully', 'info')
 }
 
@@ -499,7 +527,87 @@ onMounted(async () => {
 
 <style scoped>
 .form-generator-view {
-  background-color: #f5f5f5;
   min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
+
+.btn-group-left,
+.btn-group-right {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--spacing-input-padding-y) var(--spacing-input-padding-x);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-default);
+  resize: vertical;
+  min-height: 80px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-border-focus);
+  box-shadow: 0 0 0 3px rgba(30, 58, 95, 0.1);
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-4);
+}
+
+.modal {
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .card-footer-actions-spread {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .btn-group-left,
+  .btn-group-right {
+    width: 100%;
+    justify-content: stretch;
+  }
+  
+  .btn-group-left .btn,
+  .btn-group-right .btn {
+    flex: 1;
+  }
 }
 </style>

@@ -1,21 +1,16 @@
 <template>
-  <v-app :theme="uiStore.theme">
+  <v-app :theme="uiStore.theme" class="page-wrapper" :data-theme="uiStore.theme">
     <!-- Header -->
-    <AppHeader @menu-toggle="uiStore.toggleDrawer" />
-    
-    <!-- Navigation Drawer -->
-    <AppNavigation :model-value="uiStore.drawer" @update:model-value="uiStore.setDrawer" />
+    <AppHeader />
     
     <!-- Main Content -->
-    <v-main>
-      <v-container fluid class="pa-0">
-        <router-view v-slot="{ Component }">
-          <transition name="fade" mode="out-in">
-            <component :is="Component" />
-          </transition>
-        </router-view>
-      </v-container>
-    </v-main>
+    <main class="main-content">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
+    </main>
     
     <!-- Footer -->
     <AppFooter />
@@ -42,7 +37,6 @@ import { onMounted } from 'vue'
 import { useUIStore } from '@/stores/ui'
 import { useSpecsStore } from '@/stores/specs'
 import AppHeader from '@/components/common/AppHeader.vue'
-import AppNavigation from '@/components/common/AppNavigation.vue'
 import AppFooter from '@/components/common/AppFooter.vue'
 
 const uiStore = useUIStore()
@@ -50,11 +44,18 @@ const specsStore = useSpecsStore()
 
 onMounted(async () => {
   // Load MIL-STD-2073 data on app mount
-  await specsStore.loadSpecData()
+  try {
+    await specsStore.loadAllSections('mil-std-2073')
+  } catch (error) {
+    console.warn('[App] Could not preload spec data:', error)
+  }
 })
 </script>
 
 <style>
+/* Import the design system styles */
+@import '@/assets/styles/main.css';
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.2s ease;
@@ -67,11 +68,11 @@ onMounted(async () => {
 
 /* Global styles */
 .v-application {
-  font-family: 'Roboto', 'Open Sans', sans-serif;
+  font-family: var(--font-family-sans, 'Inter', 'Roboto', 'Open Sans', sans-serif);
 }
 
 .v-card {
-  border-radius: 8px !important;
+  border-radius: var(--radius-lg, 8px) !important;
 }
 
 .v-btn {
@@ -85,15 +86,26 @@ onMounted(async () => {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-neutral-100, #f1f1f1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
+  background: var(--color-neutral-400, #888);
+  border-radius: var(--radius-sm, 4px);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--color-neutral-600, #555);
+}
+
+/* Ensure page wrapper works with Vuetify */
+.v-application.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.v-application .main-content {
+  flex: 1 0 auto;
 }
 </style>

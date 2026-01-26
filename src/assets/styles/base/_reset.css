@@ -1,0 +1,171 @@
+/* ===========================================
+   CSS RESET
+   Military Specifications Hub Design System
+   Modern CSS reset for consistent cross-browser styling
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   BOX SIZING
+   ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ─────────────────────────────────────────
+   MARGIN RESET
+   ───────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ─────────────────────────────────────────
+   HTML & BODY
+   ───────────────────────────────────────── */
+html {
+  /* Prevent font size inflation on mobile */
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Minimum height for full viewport */
+  min-height: 100vh;
+  
+  /* Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  /* Prevent horizontal scroll */
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────────
+   TYPOGRAPHY RESET
+   ───────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  /* Balance text wrapping on headings */
+  text-wrap: balance;
+}
+
+p, li, figcaption {
+  /* Improve readability with pretty text wrap */
+  text-wrap: pretty;
+  
+  /* Limit line length for readability */
+  max-width: 75ch;
+}
+
+/* ─────────────────────────────────────────
+   MEDIA ELEMENTS
+   ───────────────────────────────────────── */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─────────────────────────────────────────
+   FORM ELEMENTS
+   ───────────────────────────────────────── */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Remove default textarea resize */
+textarea {
+  resize: vertical;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: none;
+}
+
+/* ─────────────────────────────────────────
+   LINKS
+   ───────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ─────────────────────────────────────────
+   LISTS
+   ───────────────────────────────────────── */
+ul, ol {
+  list-style: none;
+}
+
+/* ─────────────────────────────────────────
+   TABLES
+   ───────────────────────────────────────── */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ─────────────────────────────────────────
+   REDUCED MOTION
+   Respect user preferences for reduced motion
+   ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   FOCUS VISIBLE
+   Remove default outline, will be styled in global.css
+   ───────────────────────────────────────── */
+:focus {
+  outline: none;
+}
+
+/* ─────────────────────────────────────────
+   HIDDEN ATTRIBUTE
+   Ensure hidden elements are truly hidden
+   ───────────────────────────────────────── */
+[hidden] {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────
+   SCREEN READER ONLY
+   Utility class for accessibility
+   ───────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,44 @@
+/* ===========================================
+   MAIN CSS ENTRY POINT
+   Military Specifications Hub Design System
+   
+   This file imports all CSS modules in the correct order:
+   1. Variables (colors, typography, spacing)
+   2. Base styles (reset, global)
+   3. Components (buttons, cards, inputs, etc.)
+   4. Layouts (hero, sections)
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   VARIABLES
+   CSS Custom Properties for theming
+   ───────────────────────────────────────── */
+@import './variables/_colors.css';
+@import './variables/_typography.css';
+@import './variables/_spacing.css';
+
+/* ─────────────────────────────────────────
+   BASE STYLES
+   Reset and global element styles
+   ───────────────────────────────────────── */
+@import './base/_reset.css';
+@import './base/_global.css';
+
+/* ─────────────────────────────────────────
+   COMPONENTS
+   Reusable component styles
+   ───────────────────────────────────────── */
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_inputs.css';
+@import './components/_tables.css';
+@import './components/_navigation.css';
+
+/* ─────────────────────────────────────────
+   LAYOUTS
+   Page layout and section styles
+   ───────────────────────────────────────── */
+@import './layouts/_hero.css';
+@import './layouts/_sections.css';
+@import './layouts/_grid.css';
+@import './layouts/_page.css';

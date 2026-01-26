@@ -259,12 +259,12 @@ const currentSectionTitle = computed(() => {
 
 const isLoading = computed(() => specsStore.loading)
 
-const filteredMethods = computed(() => specsStore.filteredMethods)
-const filteredCleaning = computed(() => specsStore.filteredCleaning)
-const filteredPreservation = computed(() => specsStore.filteredPreservation)
-const filteredWrapping = computed(() => specsStore.getFilteredData('mil-std-2073', 'wrapping'))
-const filteredCushioning = computed(() => specsStore.getFilteredData('mil-std-2073', 'cushioning'))
-const filteredContainers = computed(() => specsStore.getFilteredData('mil-std-2073', 'containers'))
+const filteredMethods = computed(() => specsStore.getFilteredData('mil-std-2073', 'methods') || [])
+const filteredCleaning = computed(() => specsStore.getFilteredData('mil-std-2073', 'cleaning') || [])
+const filteredPreservation = computed(() => specsStore.getFilteredData('mil-std-2073', 'preservation') || [])
+const filteredWrapping = computed(() => specsStore.getFilteredData('mil-std-2073', 'wrapping') || [])
+const filteredCushioning = computed(() => specsStore.getFilteredData('mil-std-2073', 'cushioning') || [])
+const filteredContainers = computed(() => specsStore.getFilteredData('mil-std-2073', 'containers') || [])
 
 // Methods
 function setActiveSection(sectionId) {

@@ -1,0 +1,494 @@
+/* ===========================================
+   PAGE LAYOUT STYLES
+   Military Specifications Hub Design System
+   =========================================== */
+
+/* ─────────────────────────────────────────
+   PAGE WRAPPER
+   ───────────────────────────────────────── */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-background);
+}
+
+/* ─────────────────────────────────────────
+   MAIN CONTENT AREA
+   ───────────────────────────────────────── */
+.main-content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.main-content-padded {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.main-content-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─────────────────────────────────────────
+   PAGE HEADER (Title + Breadcrumb Area)
+   ───────────────────────────────────────── */
+.page-header {
+  padding: var(--space-8) var(--space-6);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.page-header-gradient {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-600) 100%);
+  color: var(--color-text-inverse);
+  border-bottom: none;
+}
+
+.page-header-content {
+  max-width: var(--width-container-xl);
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.page-header-gradient .breadcrumb {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumb-link {
+  color: var(--color-text-link);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+.breadcrumb-link:hover {
+  color: var(--color-text-link-hover);
+  text-decoration: underline;
+}
+
+.page-header-gradient .breadcrumb-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.page-header-gradient .breadcrumb-link:hover {
+  color: var(--color-text-inverse);
+}
+
+.breadcrumb-separator {
+  color: var(--color-text-disabled);
+  margin: 0 var(--space-1);
+}
+
+.page-header-gradient .breadcrumb-separator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb-current {
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.page-header-gradient .breadcrumb-current {
+  color: var(--color-text-inverse);
+}
+
+/* Page title */
+.page-title {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: var(--line-height-tight);
+}
+
+.page-header-gradient .page-title {
+  color: var(--color-text-inverse);
+}
+
+.page-title-sm {
+  font-size: var(--font-size-2xl);
+}
+
+.page-title-lg {
+  font-size: var(--font-size-4xl);
+}
+
+/* Page description */
+.page-description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: var(--space-3) 0 0;
+  line-height: var(--line-height-relaxed);
+  max-width: 700px;
+}
+
+.page-header-gradient .page-description {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Page header with actions */
+.page-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.page-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─────────────────────────────────────────
+   PAGE ACTIONS AREA
+   ───────────────────────────────────────── */
+.page-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.page-actions-stacked {
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* ─────────────────────────────────────────
+   PAGE BODY
+   ───────────────────────────────────────── */
+.page-body {
+  padding: var(--space-8) var(--space-6);
+}
+
+.page-body-content {
+  max-width: var(--width-container-xl);
+  margin: 0 auto;
+}
+
+.page-body-narrow {
+  max-width: var(--width-container-md);
+}
+
+.page-body-wide {
+  max-width: var(--width-container-2xl);
+}
+
+/* ─────────────────────────────────────────
+   STICKY FOOTER LAYOUT
+   ───────────────────────────────────────── */
+.app-footer {
+  flex-shrink: 0;
+  background-color: var(--color-neutral-900);
+  color: var(--color-neutral-300);
+  padding: var(--space-12) var(--space-6);
+}
+
+.app-footer-content {
+  max-width: var(--width-container-xl);
+  margin: 0 auto;
+}
+
+.app-footer a {
+  color: var(--color-neutral-300);
+  text-decoration: none;
+  transition: var(--transition-colors);
+}
+
+.app-footer a:hover {
+  color: var(--color-text-inverse);
+}
+
+/* Footer grid layout */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-8);
+}
+
+.footer-section-title {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-inverse);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-bottom: var(--space-4);
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-2);
+}
+
+.footer-links a {
+  font-size: var(--font-size-sm);
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+  margin-top: var(--space-8);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-neutral-700);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.footer-copyright {
+  color: var(--color-neutral-400);
+}
+
+/* ─────────────────────────────────────────
+   PAGE WITH SIDEBAR LAYOUT
+   ───────────────────────────────────────── */
+.page-with-sidebar {
+  display: flex;
+  min-height: calc(100vh - 64px); /* Account for header */
+}
+
+.page-sidebar {
+  width: var(--width-sidebar);
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-border-light);
+  overflow-y: auto;
+}
+
+.page-sidebar-collapsed {
+  width: var(--width-sidebar-collapsed);
+}
+
+.page-sidebar-content {
+  padding: var(--space-6);
+}
+
+.page-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+}
+
+/* ─────────────────────────────────────────
+   SPLIT PAGE LAYOUT
+   ───────────────────────────────────────── */
+.page-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+.page-split-left,
+.page-split-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-12);
+}
+
+.page-split-left {
+  background-color: var(--color-surface);
+}
+
+.page-split-right {
+  background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-700) 100%);
+  color: var(--color-text-inverse);
+}
+
+/* ─────────────────────────────────────────
+   LOADING & EMPTY STATES
+   ───────────────────────────────────────── */
+.page-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: var(--space-4);
+  color: var(--color-text-secondary);
+}
+
+.page-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  text-align: center;
+  padding: var(--space-8);
+}
+
+.page-empty-icon {
+  font-size: 64px;
+  color: var(--color-neutral-300);
+  margin-bottom: var(--space-4);
+}
+
+.page-empty-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+}
+
+.page-empty-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 400px;
+  margin: 0 0 var(--space-6);
+}
+
+/* ─────────────────────────────────────────
+   DARK MODE ADJUSTMENTS
+   ───────────────────────────────────────── */
+[data-theme="dark"] .page-header {
+  background-color: var(--color-surface);
+  border-bottom-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .page-sidebar {
+  background-color: var(--color-surface);
+  border-right-color: var(--color-border-light);
+}
+
+[data-theme="dark"] .page-split-left {
+  background-color: var(--color-surface);
+}
+
+[data-theme="dark"] .app-footer {
+  background-color: var(--color-neutral-950);
+}
+
+[data-theme="dark"] .footer-bottom {
+  border-top-color: var(--color-neutral-800);
+}
+
+[data-theme="dark"] .page-empty-icon {
+  color: var(--color-neutral-600);
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE ADJUSTMENTS
+   ───────────────────────────────────────── */
+@media (min-width: 768px) {
+  .page-title {
+    font-size: var(--font-size-4xl);
+  }
+  
+  .page-title-lg {
+    font-size: var(--font-size-5xl);
+  }
+}
+
+@media (max-width: 1023px) {
+  .page-with-sidebar {
+    flex-direction: column;
+  }
+  
+  .page-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  
+  .page-split {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-split-right {
+    display: none;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .page-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .page-actions {
+    margin-top: var(--space-4);
+    justify-content: flex-start;
+  }
+  
+  .page-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .page-title-lg {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .page-description {
+    font-size: var(--font-size-base);
+  }
+  
+  .page-body {
+    padding: var(--space-6) var(--space-4);
+  }
+  
+  .app-footer {
+    padding: var(--space-8) var(--space-4);
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: var(--space-4) var(--space-3);
+  }
+  
+  .page-title {
+    font-size: var(--font-size-xl);
+  }
+  
+  .breadcrumb {
+    font-size: var(--font-size-xs);
+  }
+  
+  .page-body {
+    padding: var(--space-4) var(--space-3);
+  }
+}

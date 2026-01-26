@@ -1,19 +1,19 @@
 <template>
-  <div class="mil-std-202-tool">
+  <div class="mil-std-883-tool">
     <!-- Tool Header -->
     <div class="card">
       <div class="card-header card-header-primary">
-        <h2 class="card-header-title">MIL-STD-202 Method Viewer</h2>
-        <p class="card-header-subtitle">Electronic and Electrical Component Test Methods</p>
+        <h2 class="card-header-title">MIL-STD-883 Method Viewer</h2>
+        <p class="card-header-subtitle">Microcircuit Test Methods and Procedures</p>
       </div>
       
       <div class="card-body">
         <!-- Selection Controls -->
         <div class="form-row">
           <div class="input-wrapper">
-            <label class="input-label" for="method-select">Select Method</label>
+            <label class="input-label" for="method-select-883">Select Method</label>
             <select 
-              id="method-select"
+              id="method-select-883"
               v-model="selectedMethodId"
               class="select"
               :disabled="loading"
@@ -24,16 +24,16 @@
                 :key="method.id" 
                 :value="method.id"
               >
-                {{ method.displayText }}
+                {{ method.displayText }} ({{ method.category }})
               </option>
             </select>
             <span v-if="loading" class="input-helper">Loading methods...</span>
           </div>
           
           <div class="input-wrapper">
-            <label class="input-label" for="condition-select">Select Condition</label>
+            <label class="input-label" for="condition-select-883">Select Condition</label>
             <select 
-              id="condition-select"
+              id="condition-select-883"
               v-model="selectedConditionName"
               class="select"
               :disabled="!selectedMethod || availableConditions.length === 0"
@@ -57,12 +57,43 @@
         <!-- Method Details -->
         <div v-if="selectedMethod" class="method-details">
           <div class="method-header">
-            <h3 class="method-title">{{ selectedMethod.id }} - {{ selectedMethod.title }}</h3>
-            <div class="method-meta">
-              <span :class="['table-status-badge', getStatusBadgeClass(selectedMethod.status)]">
+            <div class="method-title-row">
+              <h3 class="method-title">{{ selectedMethod.id }} - {{ selectedMethod.title }}</h3>
+              <span class="category-badge">{{ selectedMethod.category }}</span>
+            </div>
+            <div v-if="selectedMethod.status || selectedMethod.date" class="method-meta">
+              <span v-if="selectedMethod.status" :class="['table-status-badge', getStatusBadgeClass(selectedMethod.status)]">
                 {{ selectedMethod.status }}
               </span>
-              <span class="method-date">Date: {{ selectedMethod.date }}</span>
+              <span v-if="selectedMethod.date" class="method-date">Date: {{ selectedMethod.date }}</span>
+            </div>
+          </div>
+
+          <!-- Method Information Sections -->
+          <div class="method-sections">
+            <div v-if="selectedMethod.description" class="method-section">
+              <h4 class="method-section-title">Description</h4>
+              <p class="method-section-text">{{ selectedMethod.description }}</p>
+            </div>
+
+            <div v-if="selectedMethod.purpose" class="method-section">
+              <h4 class="method-section-title">Purpose</h4>
+              <p class="method-section-text">{{ selectedMethod.purpose }}</p>
+            </div>
+
+            <div v-if="selectedMethod.apparatus" class="method-section">
+              <h4 class="method-section-title">Apparatus</h4>
+              <p class="method-section-text">{{ selectedMethod.apparatus }}</p>
+            </div>
+
+            <div v-if="selectedMethod.procedure" class="method-section">
+              <h4 class="method-section-title">Procedure</h4>
+              <p class="method-section-text">{{ selectedMethod.procedure }}</p>
+            </div>
+
+            <div v-if="selectedMethod.summary" class="method-section">
+              <h4 class="method-section-title">Summary</h4>
+              <p class="method-section-text">{{ selectedMethod.summary }}</p>
             </div>
           </div>
 
@@ -95,7 +126,7 @@
               <line x1="12" y1="16" x2="12" y2="12"/>
               <line x1="12" y1="8" x2="12.01" y2="8"/>
             </svg>
-            <span>No specific test conditions defined for this method.</span>
+            <span>No specific test conditions defined for this method in the database.</span>
           </div>
           
           <div v-else class="alert alert-info">
@@ -165,14 +196,14 @@ function getStatusBadgeClass(status) {
 onMounted(async () => {
   loading.value = true
   try {
-    const response = await fetch('/data/mil-std-202/methods.json')
+    const response = await fetch('/data/mil-std-883/methods.json')
     const data = await response.json()
     methods.value = data.methods.map(m => ({
       ...m,
       displayText: `${m.id} - ${m.title}`
     }))
   } catch (e) {
-    console.error('Failed to load MIL-STD-202 data', e)
+    console.error('Failed to load MIL-STD-883 data', e)
   } finally {
     loading.value = false
   }
@@ -180,7 +211,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.mil-std-202-tool {
+.mil-std-883-tool {
   min-height: 400px;
 }
 
@@ -192,11 +223,29 @@ onMounted(async () => {
   margin-bottom: var(--space-4);
 }
 
+.method-title-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-2);
+}
+
 .method-title {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
-  margin: 0 0 var(--space-2);
+  margin: 0;
+}
+
+.category-badge {
+  display: inline-flex;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  background-color: var(--color-accent-100);
+  color: var(--color-accent-700);
+  border-radius: var(--radius-full);
 }
 
 .method-meta {
@@ -209,6 +258,27 @@ onMounted(async () => {
 .method-date {
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
+}
+
+.method-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.method-section-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-500);
+  margin: 0 0 var(--space-1);
+}
+
+.method-section-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
 }
 
 .alert {
