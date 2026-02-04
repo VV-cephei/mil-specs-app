@@ -1,0 +1,129 @@
+{
+  "materials": [
+    {
+      "id": "gold",
+      "name": "Gold",
+      "symbol": "Au",
+      "purity": "99.99% (4N)",
+      "dopants": ["Beryllium (5-10 ppm)", "Calcium (5-10 ppm)"],
+      "conductivity": "Excellent",
+      "hardness": "Low",
+      "cost": "Very High",
+      "pros": [
+        "Highly oxidation-resistant (no shielding gas needed)",
+        "Soft (low hardness prevents cratering of underlying silicon)",
+        "Excellent electrical conductivity"
+      ],
+      "cons": [
+        "Extremely expensive",
+        "Forms brittle intermetallics with aluminum pads (Purple Plague AuAl₂, White Plague Au₅Al₂) if temperatures exceed 300°C for prolonged periods"
+      ],
+      "applications": [
+        "Fine pitch (<60µm)",
+        "High reliability applications",
+        "Hermetic packages"
+      ],
+      "trenchInsights": "For ultra-fine pitch applications (<60µm), higher strength gold wire is required. This is achieved by increasing dopants, but this increases the wire's electrical resistivity (hardening)."
+    },
+    {
+      "id": "aluminum",
+      "name": "Aluminum",
+      "symbol": "Al",
+      "purity": "Alloyed (Al-1%Si or Al-0.5%Mg)",
+      "dopants": ["1% Silicon", "0.5% Magnesium"],
+      "conductivity": "Good",
+      "hardness": "Medium",
+      "cost": "Low",
+      "pros": [
+        "Inexpensive",
+        "Monometallic bond (Al wire to Al pad) eliminates intermetallic corrosion issues",
+        "Ideal for hermetic packages"
+      ],
+      "cons": [
+        "Prone to fatigue failure",
+        "Requires precise ultrasonic control",
+        "Rarely used in ball bonding (does not form spherical ball easily due to instant oxidation)"
+      ],
+      "applications": [
+        "Ultrasonic Wedge Bonding",
+        "Power devices",
+        "Heavy wire bonding",
+        "Hermetic packages"
+      ],
+      "trenchInsights": "Pure aluminum is too soft to draw effectively; it is almost always alloyed with 1% Silicon (Al-1%Si) or 0.5% Magnesium (Al-0.5%Mg)."
+    },
+    {
+      "id": "copper",
+      "name": "Copper",
+      "symbol": "Cu",
+      "purity": "99.99%",
+      "dopants": [],
+      "conductivity": "Excellent (better than Au)",
+      "hardness": "High",
+      "cost": "Low (~90% cheaper than Au)",
+      "pros": [
+        "Cost-effective (Cu is ~90% cheaper than gold)",
+        "Better electrical conductivity than Au",
+        "Better thermal conductivity than Au"
+      ],
+      "cons": [
+        "Higher risk of Cratering (cracking the silicon under the pad) due to hardness",
+        "Oxidizes rapidly - requires Forming Gas (95% N₂ / 5% H₂) during EFO process",
+        "Requires higher ultrasonic power (roughly 20-30% more) to bond, increasing stress on bond pad"
+      ],
+      "applications": [
+        "Modern industry standard replacing gold",
+        "High volume production",
+        "Cost-sensitive applications"
+      ],
+      "trenchInsights": "Cu wire has better electrical and thermal conductivity than Au. However, it requires higher ultrasonic power (roughly 20-30% more) to bond, which increases the stress on the bond pad. Bonding requires Forming Gas (95% N₂ / 5% H₂) flow to create an oxygen-free environment during the Electronic Flame Off (EFO) process."
+    },
+    {
+      "id": "palladium-copper",
+      "name": "Palladium-Coated Copper",
+      "symbol": "Pd-Cu",
+      "purity": "Copper core with Pd coating",
+      "dopants": [],
+      "conductivity": "Excellent",
+      "hardness": "High (slightly harder than bare Cu)",
+      "cost": "Medium",
+      "pros": [
+        "Copper core provides conductivity/cost benefits",
+        "Palladium coating prevents oxidation",
+        "Widens the Second Bond process window (Pd layer prevents copper from oxidizing before stitch bond)"
+      ],
+      "cons": [
+        "Slightly harder than bare Cu",
+        "Requires even more robust pad metallization structures"
+      ],
+      "applications": [
+        "High volume production with improved process window",
+        "Applications requiring oxidation resistance without forming gas"
+      ],
+      "trenchInsights": "A hybrid solution. The copper core provides conductivity/cost benefits, while the palladium coating prevents oxidation. It widens the Second Bond process window because the Pd layer prevents the copper from oxidizing before the stitch bond is made."
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "symbol": "Ag",
+      "purity": "99.99%",
+      "dopants": [],
+      "conductivity": "Highest",
+      "hardness": "Medium",
+      "cost": "Medium",
+      "pros": [
+        "High reflectivity (doesn't absorb light like Gold)",
+        "Highest electrical conductivity of all metals",
+        "Highest thermal conductivity"
+      ],
+      "cons": [
+        "Susceptible to electromigration",
+        "Dendritic growth in high-humidity environments"
+      ],
+      "applications": [
+        "LED applications (due to high reflectivity)"
+      ],
+      "trenchInsights": "Niche application primarily used in LED applications due to its high reflectivity (doesn't absorb light like Gold). However, it is susceptible to electromigration and dendritic growth in high-humidity environments."
+    }
+  ]
+}

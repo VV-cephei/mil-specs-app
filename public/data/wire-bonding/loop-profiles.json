@@ -1,0 +1,79 @@
+{
+  "loopProfiles": [
+    {
+      "id": "basic",
+      "name": "Basic Loop",
+      "description": "The simplest loop profile. Capillary goes up, moves toward 2nd bond, then goes down. Simple and fast, but prone to swaying.",
+      "path": "Up → Move toward 2nd bond → Down",
+      "characteristics": {
+        "speed": "Fast",
+        "stability": "Low (prone to swaying)",
+        "complexity": "Simple",
+        "loopHeight": "Standard"
+      },
+      "applications": [
+        "Short bonds",
+        "Non-critical applications",
+        "High-speed production where stability is less critical"
+      ],
+      "image": "/images/wire-bonding/basic-loop.jpg"
+    },
+    {
+      "id": "reverse",
+      "name": "Reverse Loop (Low Loop)",
+      "description": "Capillary goes up, moves BACKWARDS (away from 2nd bond) to bend the wire, then moves forward. This creates a 'strain hardening' effect at the neck, forcing the wire to stay low.",
+      "path": "Up → Move BACKWARDS (away from 2nd bond) → Forward",
+      "characteristics": {
+        "speed": "Moderate",
+        "stability": "Good",
+        "complexity": "Moderate",
+        "loopHeight": "Low"
+      },
+      "applications": [
+        "Low-profile packages",
+        "Thin packages",
+        "Applications requiring reduced loop height"
+      ],
+      "image": "/images/wire-bonding/reverse-loop.jpg"
+    },
+    {
+      "id": "double-reverse",
+      "name": "Double Reverse Loop (Worked Loop)",
+      "description": "Path: Up → Reverse → Forward → Reverse again → Forward to destination. Creates an 'M' shaped kink profile providing the highest stability and stiffness. Used in long wires (>3mm) to prevent them from touching each other during plastic molding encapsulation ('Wire Sweep').",
+      "path": "Up → Reverse → Forward → Reverse again → Forward to destination",
+      "characteristics": {
+        "speed": "Slow",
+        "stability": "Highest",
+        "complexity": "High",
+        "loopHeight": "Controlled",
+        "profile": "M-shaped kink"
+      },
+      "applications": [
+        "Long wires (>3mm)",
+        "Plastic molding encapsulation",
+        "Applications requiring maximum stability",
+        "Prevention of Wire Sweep"
+      ],
+      "image": "/images/wire-bonding/double-reverse-loop.jpg"
+    },
+    {
+      "id": "long-loop",
+      "name": "Long Loop",
+      "description": "Special algorithms required for wires >5mm. Often uses multiple kinks to stiffen the wire so it doesn't sag under its own weight.",
+      "path": "Special algorithm with multiple kinks",
+      "characteristics": {
+        "speed": "Slow",
+        "stability": "Engineered",
+        "complexity": "Very High (special algorithms)",
+        "loopHeight": "Variable",
+        "wireLength": ">5mm"
+      },
+      "applications": [
+        "Wire spans >5mm",
+        "Multi-chip modules",
+        "Large die-to-leadframe distances"
+      ],
+      "image": "/images/wire-bonding/long-loop.jpg"
+    }
+  ]
+}

@@ -1,0 +1,380 @@
+{
+  "ballBondCriteria": {
+    "title": "Ball Bond Visual Inspection Criteria",
+    "squashRatio": {
+      "parameter": "Ball Squash Ratio",
+      "definition": "Ratio of bonded ball diameter to wire diameter",
+      "acceptable": {
+        "minimum": "2.0x wire diameter",
+        "maximum": "3.5x wire diameter",
+        "optimal": "2.5x-3.0x wire diameter"
+      },
+      "defects": {
+        "undersquash": {
+          "ratio": "<2.0x",
+          "indication": "Insufficient bonding force or ultrasonic energy",
+          "risk": "Weak bond, potential lift-off"
+        },
+        "oversquash": {
+          "ratio": ">3.5x",
+          "indication": "Excessive bonding force",
+          "risk": "Cratering, pad damage, thin neck"
+        }
+      }
+    },
+    "golfClub": {
+      "parameter": "Golf Club Defect",
+      "definition": "Ball not centered on wire stem, resembling a golf club shape",
+      "classification": "REJECT",
+      "causes": [
+        "Capillary tip misalignment",
+        "Worn or damaged capillary",
+        "Incorrect EFO parameters",
+        "Wire feed issues"
+      ],
+      "acceptanceCriteria": "Ball must be concentric with wire stem within 10% of ball diameter"
+    },
+    "centering": {
+      "parameter": "Ball Centering on Pad",
+      "requirements": {
+        "minimum": "Ball 100% contained within pad boundaries",
+        "optimal": "Ball centered with ≥20% margin to pad edge on all sides"
+      },
+      "defects": {
+        "offPad": {
+          "description": "Any portion of ball extends beyond pad edge",
+          "classification": "REJECT"
+        },
+        "offCenter": {
+          "description": "Ball not centered but fully on pad",
+          "classification": "MINOR (if within spec)"
+        }
+      }
+    },
+    "ballShape": {
+      "parameter": "Ball Shape/Symmetry",
+      "acceptable": "Round to slightly oval (aspect ratio ≤1.2:1)",
+      "defects": {
+        "elongated": {
+          "description": "Aspect ratio >1.2:1",
+          "classification": "MINOR to MAJOR depending on severity"
+        },
+        "irregular": {
+          "description": "Non-uniform shape, protrusions",
+          "classification": "MAJOR"
+        },
+        "cracked": {
+          "description": "Visible cracks in ball surface",
+          "classification": "REJECT"
+        }
+      }
+    },
+    "neckCondition": {
+      "parameter": "Neck/HAZ Condition",
+      "acceptable": "Smooth transition from ball to wire, no visible damage",
+      "defects": {
+        "neckDamage": {
+          "description": "Visible cracks, notches, or thinning at neck",
+          "classification": "REJECT"
+        },
+        "excessiveHAZ": {
+          "description": "Visible discoloration or grain growth extending >2x wire diameter",
+          "classification": "MAJOR"
+        }
+      }
+    }
+  },
+  "stitchBondCriteria": {
+    "title": "Stitch Bond Visual Inspection Criteria",
+    "heelCondition": {
+      "parameter": "Heel Condition",
+      "definition": "Transition point from flat bond to round wire loop",
+      "acceptable": "Smooth transition, no visible cracks or damage",
+      "defects": {
+        "heelCrack": {
+          "description": "Visible crack at heel transition",
+          "classification": "REJECT",
+          "causes": ["Excessive ultrasonic power", "Tool wear", "Steep loop angle"]
+        },
+        "heelThinning": {
+          "description": "Wire diameter reduced >20% at heel",
+          "classification": "MAJOR"
+        },
+        "sharpBend": {
+          "description": "Abrupt angle change at heel (>45°)",
+          "classification": "MAJOR"
+        }
+      }
+    },
+    "tailLength": {
+      "parameter": "Tail Length",
+      "definition": "Wire extending beyond the stitch bond",
+      "acceptable": {
+        "minimum": "0.5x wire diameter",
+        "maximum": "3.0x wire diameter",
+        "optimal": "1.0x-2.0x wire diameter"
+      },
+      "defects": {
+        "noTail": {
+          "description": "No visible tail",
+          "classification": "MINOR (if bond is secure)"
+        },
+        "excessiveTail": {
+          "description": "Tail >3x wire diameter",
+          "classification": "MINOR to MAJOR (risk of shorts)"
+        },
+        "tailLiftoff": {
+          "description": "Tail not adhered to pad",
+          "classification": "MINOR"
+        }
+      }
+    },
+    "bondFootprint": {
+      "parameter": "Stitch Bond Footprint",
+      "acceptable": {
+        "width": "1.5x-2.5x wire diameter",
+        "length": "2.0x-4.0x wire diameter"
+      },
+      "coverage": "≥80% of footprint on pad, 100% preferred",
+      "defects": {
+        "undersized": {
+          "description": "Footprint <1.5x wire diameter width",
+          "classification": "MAJOR"
+        },
+        "oversized": {
+          "description": "Footprint >2.5x wire diameter width",
+          "classification": "MINOR (unless causing pad damage)"
+        },
+        "offPad": {
+          "description": ">20% of footprint off pad",
+          "classification": "REJECT"
+        }
+      }
+    }
+  },
+  "loopCriteria": {
+    "title": "Wire Loop Visual Inspection Criteria",
+    "loopHeight": {
+      "parameter": "Loop Height",
+      "definition": "Maximum height of wire above die surface",
+      "typical": {
+        "standard": "150-500 µm (6-20 mil)",
+        "lowLoop": "75-150 µm (3-6 mil)",
+        "ultraLow": "<75 µm (<3 mil)"
+      },
+      "tolerance": "±10% of specified height",
+      "defects": {
+        "tooHigh": {
+          "description": "Exceeds package clearance",
+          "classification": "REJECT"
+        },
+        "tooLow": {
+          "description": "Risk of die contact or excessive stress",
+          "classification": "MAJOR"
+        },
+        "inconsistent": {
+          "description": "Height variation >20% within same device",
+          "classification": "MINOR to MAJOR"
+        }
+      }
+    },
+    "wireSweep": {
+      "parameter": "Wire Sweep (Lateral Displacement)",
+      "definition": "Lateral deviation of wire from straight line between bonds",
+      "acceptable": {
+        "maximum": "3x wire diameter lateral displacement",
+        "percentage": "<15% of wire span length"
+      },
+      "defects": {
+        "excessiveSweep": {
+          "description": "Sweep >3x wire diameter or >15% span",
+          "classification": "MAJOR",
+          "risk": "Wire-to-wire shorts, especially after molding"
+        },
+        "touchingWires": {
+          "description": "Adjacent wires in contact",
+          "classification": "REJECT"
+        }
+      }
+    },
+    "sag": {
+      "parameter": "Wire Sag",
+      "definition": "Downward droop of wire below the straight line between bonds",
+      "acceptable": "Wire should not contact die surface or other features",
+      "defects": {
+        "excessiveSag": {
+          "description": "Wire droops below acceptable clearance",
+          "classification": "MAJOR to REJECT"
+        },
+        "dieContact": {
+          "description": "Wire touches die surface",
+          "classification": "REJECT"
+        }
+      }
+    },
+    "loopShape": {
+      "parameter": "Loop Shape/Profile",
+      "acceptable": "Smooth, consistent arc matching specified profile",
+      "defects": {
+        "kinks": {
+          "description": "Unintended sharp bends in wire",
+          "classification": "MINOR to MAJOR"
+        },
+        "sWave": {
+          "description": "S-shaped deviation from intended profile",
+          "classification": "MINOR"
+        },
+        "inconsistentProfile": {
+          "description": "Loop shape varies significantly from specification",
+          "classification": "MAJOR"
+        }
+      }
+    }
+  },
+  "intermetallicCoverage": {
+    "title": "Intermetallic Coverage (IMC) Requirements",
+    "definition": "Percentage of ball-pad interface that has formed a proper intermetallic weld",
+    "note": "Cannot be seen from above - requires cross-sectioning for qualification",
+    "requirements": {
+      "minimum": "60% of ball-pad interface area",
+      "qualification": "80% for high-reliability applications",
+      "automotive": "≥80% with uniform distribution"
+    },
+    "evaluationMethod": {
+      "procedure": [
+        "Cross-section bond through center",
+        "Polish and etch to reveal intermetallic",
+        "Measure IMC width vs ball diameter",
+        "Calculate coverage percentage"
+      ],
+      "equipment": "Metallurgical microscope with measurement capability"
+    },
+    "intermetallicPhases": {
+      "goldAluminum": ["Au4Al", "Au5Al2", "Au2Al", "AuAl", "AuAl2"],
+      "copperAluminum": ["Cu9Al4", "CuAl", "CuAl2"],
+      "note": "Proper IMC formation indicates good metallurgical bond"
+    }
+  },
+  "defectClassifications": {
+    "title": "Defect Classifications",
+    "categories": [
+      {
+        "classification": "Critical/Reject",
+        "definition": "Defects that will cause immediate failure or pose reliability risk",
+        "action": "Unit must be rejected, cannot be shipped",
+        "examples": [
+          "Ball lift or stitch lift",
+          "Wire-to-wire contact",
+          "Bond off pad",
+          "Cracked ball or heel",
+          "Missing bond"
+        ]
+      },
+      {
+        "classification": "Major",
+        "definition": "Defects that may cause failure under stress or reduce reliability",
+        "action": "Unit should be rejected unless engineering disposition allows",
+        "examples": [
+          "Excessive wire sweep (>3x diameter)",
+          "Undersized ball (<2x wire diameter)",
+          "Heel thinning >20%",
+          "Loop height out of spec",
+          "Excessive sag"
+        ]
+      },
+      {
+        "classification": "Minor",
+        "definition": "Defects that are cosmetic or have minimal impact on reliability",
+        "action": "May be accepted per quality plan, should be monitored",
+        "examples": [
+          "Slight ball off-center (but on pad)",
+          "Tail length slightly out of spec",
+          "Minor loop shape variation",
+          "Surface contamination (non-conductive)"
+        ]
+      },
+      {
+        "classification": "Cosmetic",
+        "definition": "Visual imperfections with no functional impact",
+        "action": "Acceptable, no action required",
+        "examples": [
+          "Wire color variation",
+          "Minor surface marks on ball",
+          "Slight asymmetry within spec"
+        ]
+      }
+    ]
+  },
+  "aoiInspectionParameters": {
+    "title": "AOI (Automated Optical Inspection) Parameters",
+    "systemRequirements": {
+      "resolution": "≤2 µm/pixel for fine pitch (<60 µm)",
+      "magnification": "5x-50x depending on feature size",
+      "lighting": "Coaxial, ring, and/or dark field illumination",
+      "throughput": "Typically 0.5-2 seconds per bond"
+    },
+    "measuredParameters": [
+      {
+        "parameter": "Ball diameter",
+        "method": "Edge detection, circle fit",
+        "tolerance": "±5% of nominal"
+      },
+      {
+        "parameter": "Ball position (X, Y)",
+        "method": "Centroid calculation",
+        "tolerance": "±10 µm typical"
+      },
+      {
+        "parameter": "Loop height",
+        "method": "Focus variation or structured light",
+        "tolerance": "±10% of nominal"
+      },
+      {
+        "parameter": "Wire sweep",
+        "method": "Edge tracking along wire length",
+        "tolerance": "Per specification"
+      },
+      {
+        "parameter": "Stitch dimensions",
+        "method": "Pattern matching, edge detection",
+        "tolerance": "±10% of nominal"
+      },
+      {
+        "parameter": "Tail length",
+        "method": "Edge detection",
+        "tolerance": "Per specification"
+      }
+    ],
+    "defectDetection": [
+      "Missing bond",
+      "Ball off pad",
+      "Wire-to-wire contact",
+      "Excessive sweep",
+      "Golf club defect",
+      "Broken wire",
+      "Foreign material"
+    ],
+    "limitations": [
+      "Cannot detect subsurface defects (cratering)",
+      "Cannot measure bond strength",
+      "Cannot verify intermetallic formation",
+      "May miss subtle heel cracks"
+    ]
+  },
+  "inspectionFrequency": {
+    "title": "Inspection Frequency Guidelines",
+    "visual": {
+      "100percent": "All bonds on all units (typical for high-reliability)",
+      "sampling": "Per AQL sampling plan for commercial products"
+    },
+    "aoi": {
+      "production": "100% of bonds on 100% of units (inline)",
+      "verification": "Periodic correlation with manual inspection"
+    },
+    "destructive": {
+      "qualification": "Per test plan (typically 30+ samples)",
+      "production": "First article, periodic sampling (per shift or lot)",
+      "processChange": "Re-qualification required"
+    }
+  }
+}

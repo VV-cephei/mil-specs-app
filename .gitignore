@@ -36,3 +36,6 @@ coverage/
 # Misc
 *.local
 specs-pdf/
+die-attach/
+smt-manufacturing/
+wire-bond/

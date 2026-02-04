@@ -1,0 +1,251 @@
+{
+  "terms": [
+    {
+      "term": "SMT",
+      "fullName": "Surface Mount Technology",
+      "definition": "Method of placing components directly onto the surface of a PCB, contrasting with Through-Hole Technology (THT)"
+    },
+    {
+      "term": "THT",
+      "fullName": "Through-Hole Technology",
+      "definition": "Older method where component leads pass through holes in the PCB and are soldered on the opposite side"
+    },
+    {
+      "term": "Tg",
+      "fullName": "Glass Transition Temperature",
+      "definition": "Temperature at which PCB material transitions from rigid to soft/rubbery state"
+    },
+    {
+      "term": "Td",
+      "fullName": "Decomposition Temperature",
+      "definition": "Temperature at which PCB resin chemically breaks down"
+    },
+    {
+      "term": "Dk",
+      "fullName": "Dielectric Constant",
+      "definition": "Measure of how much a material slows down electromagnetic waves"
+    },
+    {
+      "term": "Df",
+      "fullName": "Dissipation Factor",
+      "definition": "Measure of signal loss in a dielectric material"
+    },
+    {
+      "term": "CTE",
+      "fullName": "Coefficient of Thermal Expansion",
+      "definition": "Rate at which a material expands with temperature, measured in ppm/°C"
+    },
+    {
+      "term": "TAL",
+      "fullName": "Time Above Liquidus",
+      "definition": "Duration the solder is above its melting point during reflow"
+    },
+    {
+      "term": "IMC",
+      "fullName": "Intermetallic Compound",
+      "definition": "Compound formed at the interface between solder and copper (e.g., Cu₆Sn₅)"
+    },
+    {
+      "term": "SAC",
+      "fullName": "Tin-Silver-Copper",
+      "definition": "Family of lead-free solder alloys (e.g., SAC305 = Sn96.5/Ag3.0/Cu0.5)"
+    },
+    {
+      "term": "RoHS",
+      "fullName": "Restriction of Hazardous Substances",
+      "definition": "EU directive restricting use of hazardous materials including lead in electronics"
+    },
+    {
+      "term": "Eutectic",
+      "fullName": "Eutectic Alloy",
+      "definition": "Alloy composition with lowest melting point that melts/solidifies at a single temperature (no pasty range)"
+    },
+    {
+      "term": "Pasty Range",
+      "fullName": "Pasty Range",
+      "definition": "Temperature range where solder is partially liquid and partially solid"
+    },
+    {
+      "term": "Thixotropic",
+      "fullName": "Thixotropic",
+      "definition": "Property of solder paste that makes it thin under stress (squeegee) but thick at rest"
+    },
+    {
+      "term": "Aspect Ratio",
+      "fullName": "Stencil Aspect Ratio",
+      "definition": "Aperture width divided by stencil thickness. Must be >1.5 for good paste release"
+    },
+    {
+      "term": "Area Ratio",
+      "fullName": "Stencil Area Ratio",
+      "definition": "Aperture opening area divided by aperture wall area. Must be >0.66 for good paste release"
+    },
+    {
+      "term": "SPI",
+      "fullName": "Solder Paste Inspection",
+      "definition": "3D inspection of solder paste deposits after printing, before component placement"
+    },
+    {
+      "term": "AOI",
+      "fullName": "Automated Optical Inspection",
+      "definition": "Camera-based inspection of assembled boards for defects"
+    },
+    {
+      "term": "AXI",
+      "fullName": "Automated X-ray Inspection",
+      "definition": "X-ray inspection for hidden solder joints (BGAs, QFNs)"
+    },
+    {
+      "term": "BGA",
+      "fullName": "Ball Grid Array",
+      "definition": "IC package with solder balls on the bottom surface"
+    },
+    {
+      "term": "QFN",
+      "fullName": "Quad Flat No-lead",
+      "definition": "Leadless IC package with pads on the bottom"
+    },
+    {
+      "term": "QFP",
+      "fullName": "Quad Flat Package",
+      "definition": "IC package with leads on all four sides"
+    },
+    {
+      "term": "ENIG",
+      "fullName": "Electroless Nickel Immersion Gold",
+      "definition": "PCB surface finish with nickel barrier and thin gold coating"
+    },
+    {
+      "term": "HASL",
+      "fullName": "Hot Air Solder Leveling",
+      "definition": "PCB surface finish where molten solder is applied and excess blown off"
+    },
+    {
+      "term": "OSP",
+      "fullName": "Organic Solderability Preservative",
+      "definition": "Thin organic coating that protects copper pads from oxidation"
+    },
+    {
+      "term": "Tombstoning",
+      "fullName": "Tombstoning (Manhattan Effect)",
+      "definition": "Defect where chip component stands up vertically on one end"
+    },
+    {
+      "term": "Head-in-Pillow",
+      "fullName": "Head-in-Pillow (HiP)",
+      "definition": "BGA defect where ball rests on paste but doesn't merge due to oxidation"
+    },
+    {
+      "term": "Graping",
+      "fullName": "Graping",
+      "definition": "Defect where solder looks like cluster of un-melted grapes due to flux exhaustion"
+    },
+    {
+      "term": "Popcorning",
+      "fullName": "Popcorning",
+      "definition": "IC package cracking due to moisture turning to steam during reflow"
+    },
+    {
+      "term": "Fiducial",
+      "fullName": "Fiducial Mark",
+      "definition": "Copper marker on PCB used by pick-and-place machines for alignment"
+    },
+    {
+      "term": "Coplanarity",
+      "fullName": "Lead Coplanarity",
+      "definition": "Measure of how flat component leads are relative to each other"
+    },
+    {
+      "term": "Wetting",
+      "fullName": "Solder Wetting",
+      "definition": "Ability of molten solder to flow and adhere to a surface"
+    },
+    {
+      "term": "Leaching",
+      "fullName": "Copper Leaching",
+      "definition": "Dissolution of copper pad into molten solder during extended reflow"
+    },
+    {
+      "term": "Black Pad",
+      "fullName": "Black Pad Syndrome",
+      "definition": "ENIG defect where high phosphorus in nickel causes brittle joints"
+    },
+    {
+      "term": "Tin Whiskers",
+      "fullName": "Tin Whiskers",
+      "definition": "Crystalline structures that grow from tin surfaces and can cause shorts"
+    },
+    {
+      "term": "MCPCB",
+      "fullName": "Metal Core PCB",
+      "definition": "PCB with metal (usually aluminum) backing for thermal management"
+    },
+    {
+      "term": "FPC",
+      "fullName": "Flexible Printed Circuit",
+      "definition": "Circuit made on flexible substrate (usually polyimide)"
+    }
+  ],
+  "standards": [
+    {
+      "id": "j-std-001",
+      "name": "J-STD-001",
+      "title": "Requirements for Soldered Electrical and Electronic Assemblies",
+      "description": "The 'Law' - Defines materials and process requirements"
+    },
+    {
+      "id": "ipc-a-610",
+      "name": "IPC-A-610",
+      "title": "Acceptability of Electronic Assemblies",
+      "description": "The 'Picture Book' - Visual standards for inspectors"
+    },
+    {
+      "id": "ipc-7525",
+      "name": "IPC-7525",
+      "title": "Stencil Design Guidelines",
+      "description": "Math behind aperture sizes and area ratios"
+    },
+    {
+      "id": "ipc-7527",
+      "name": "IPC-7527",
+      "title": "Requirements for Solder Paste Printing",
+      "description": "Rules for SPI machines (height, volume)"
+    },
+    {
+      "id": "ipc-7095",
+      "name": "IPC-7095",
+      "title": "Design and Assembly Process Implementation for BGAs",
+      "description": "The bible for Ball Grid Arrays and voiding criteria"
+    },
+    {
+      "id": "ipc-7801",
+      "name": "IPC-7801",
+      "title": "Reflow Oven Process Control",
+      "description": "Guidelines for reflow profile development"
+    },
+    {
+      "id": "ipc-9701",
+      "name": "IPC-9701",
+      "title": "Performance Test Methods for Solder Attachment",
+      "description": "How to thermal cycle and stress test solder bonds"
+    },
+    {
+      "id": "j-std-033",
+      "name": "J-STD-033",
+      "title": "Handling, Packing, Shipping and Use of Moisture Sensitive Devices",
+      "description": "Standard for moisture sensitivity levels and baking requirements"
+    },
+    {
+      "id": "j-std-004",
+      "name": "J-STD-004",
+      "title": "Requirements for Soldering Fluxes",
+      "description": "Classification and requirements for flux materials"
+    },
+    {
+      "id": "j-std-005",
+      "name": "J-STD-005",
+      "title": "Requirements for Soldering Pastes",
+      "description": "Classification of solder paste powder types"
+    }
+  ]
+}

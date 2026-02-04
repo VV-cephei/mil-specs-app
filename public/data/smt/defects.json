@@ -1,0 +1,197 @@
+{
+  "standard": "IPC-A-610 (Acceptability of Electronic Assemblies)",
+  "rule": "60-30-10 Rule: 60% of defects originate in printing, 30% in reflow, 10% in placement",
+  "categories": [
+    {
+      "id": "printing-defects",
+      "name": "Printing Defects",
+      "percentage": 60,
+      "defects": [
+        {
+          "id": "insufficient-solder",
+          "name": "Insufficient Solder",
+          "description": "Not enough solder paste deposited on pad",
+          "causes": ["Area ratio < 0.66", "Clogged stencil apertures", "Worn squeegee", "Paste too thick"],
+          "solutions": ["Increase aperture size", "Clean stencil", "Replace squeegee", "Adjust paste viscosity"],
+          "image": "/images/smt/defect-insufficient-wetting.jpg"
+        },
+        {
+          "id": "bridging",
+          "name": "Solder Bridging",
+          "description": "Solder connects two adjacent pads that should be separate",
+          "causes": ["Excessive paste volume", "Apertures too large", "Misaligned stencil", "Paste slump"],
+          "solutions": ["Reduce aperture size", "Improve stencil alignment", "Use no-slump paste", "Reduce print pressure"],
+          "image": "/images/smt/defect-bridging.jpg"
+        },
+        {
+          "id": "dog-ears",
+          "name": "Dog Ears",
+          "description": "Paste peaks at edges of deposit",
+          "causes": ["Poor paste release", "Fast separation speed", "Worn aperture edges"],
+          "solutions": ["Slow separation speed", "Clean stencil", "Replace stencil if worn"]
+        },
+        {
+          "id": "scooping",
+          "name": "Scooping",
+          "description": "Concave paste deposits (squeegee digs out paste)",
+          "causes": ["Excessive squeegee pressure", "Wrong paste type for stencil"],
+          "solutions": ["Reduce squeegee pressure", "Match paste type to stencil thickness"],
+          "image": "/images/smt/defect-scooping.jpg"
+        }
+      ]
+    },
+    {
+      "id": "reflow-defects",
+      "name": "Reflow Defects",
+      "percentage": 30,
+      "defects": [
+        {
+          "id": "tombstoning",
+          "name": "Tombstoning (Manhattan Effect)",
+          "description": "Chip component stands up vertically on one end",
+          "causes": ["Uneven wetting forces", "One side melted first", "Unequal pad thermal mass", "Pad on large ground plane heats slower"],
+          "solutions": ["Balance thermal mass", "Adjust pad sizes", "Modify reflow profile", "Use thermal reliefs"],
+          "image": "/images/smt/defect-tombstoning.jpg"
+        },
+        {
+          "id": "head-in-pillow",
+          "name": "Head-in-Pillow (HiP)",
+          "description": "BGA ball rests on solder paste but doesn't merge - like a head on a pillow",
+          "causes": ["Component warpage during soak", "Paste oxidized before ball dropped back", "Oxidized skin prevents merging"],
+          "solutions": ["Reduce soak time", "Use nitrogen atmosphere", "Control component warpage", "Adjust profile"],
+          "image": "/images/smt/defect-head-in-pillow.png"
+        },
+        {
+          "id": "graping",
+          "name": "Graping",
+          "description": "Solder joint looks like cluster of un-melted grapes",
+          "causes": ["Flux exhaustion", "Soak profile too long", "Flux burns off before reflow"],
+          "solutions": ["Shorten soak time", "Use more active flux", "Reduce time to peak"],
+          "image": "/images/smt/defect-graping.jpg"
+        },
+        {
+          "id": "cold-solder",
+          "name": "Cold Solder Joint",
+          "description": "Grainy, dull appearance - weak joint",
+          "causes": ["Insufficient peak temperature", "TAL too short", "Contaminated surfaces"],
+          "solutions": ["Increase peak temperature", "Extend TAL", "Clean surfaces before assembly"],
+          "image": "/images/smt/defect-cold-solder.jpg"
+        },
+        {
+          "id": "solder-balling",
+          "name": "Solder Balling",
+          "description": "Small solder balls scattered around joint",
+          "causes": ["Preheat too fast", "Paste solvents explode", "Moisture in paste"],
+          "solutions": ["Slow preheat ramp", "Allow paste to warm up", "Store paste properly"],
+          "image": "/images/smt/defect-solder-balling.jpg"
+        },
+        {
+          "id": "voiding",
+          "name": "Voiding (BGA)",
+          "description": "Air bubbles trapped in solder joint",
+          "standard": "IPC-7095",
+          "criteria": "Class 3 typically allows voids up to 25% of ball area",
+          "causes": ["Outgassing during reflow", "Flux entrapment", "Poor wetting"],
+          "solutions": ["Optimize reflow profile", "Use vacuum reflow", "Improve flux activity"],
+          "trenchInsight": "Voids are actually good for stopping crack propagation, provided they aren't at the interface (Planar Microvoids)",
+          "image": "/images/smt/defect-voiding.jpg"
+        }
+      ]
+    },
+    {
+      "id": "placement-defects",
+      "name": "Placement Defects",
+      "percentage": 10,
+      "defects": [
+        {
+          "id": "misalignment",
+          "name": "Component Misalignment",
+          "description": "Component not centered on pads",
+          "causes": ["Vision system error", "Nozzle wear", "Feeder issues", "PCB stretch"],
+          "solutions": ["Calibrate vision system", "Replace nozzles", "Check feeders", "Use local fiducials"],
+          "image": "/images/smt/defect-misalignment.jpg"
+        },
+        {
+          "id": "missing-component",
+          "name": "Missing Component",
+          "description": "Component not placed",
+          "causes": ["Pick failure", "Nozzle clog", "Empty feeder", "Vacuum loss"],
+          "solutions": ["Monitor pick rate", "Clean nozzles", "Check feeders", "Verify vacuum"],
+          "image": "/images/smt/defect-missing-component.png"
+        },
+        {
+          "id": "wrong-component",
+          "name": "Wrong Component",
+          "description": "Incorrect component placed",
+          "causes": ["Wrong reel loaded", "Feeder setup error", "Similar part numbers"],
+          "solutions": ["Verify reels at setup", "Use barcode verification", "Implement first-article inspection"]
+        },
+        {
+          "id": "polarity-reversal",
+          "name": "Polarity Reversal",
+          "description": "Polarized component placed backwards",
+          "causes": ["Vision system error", "Incorrect tape orientation", "Programming error"],
+          "solutions": ["Verify polarity in program", "Check tape orientation", "Use AOI inspection"]
+        }
+      ]
+    },
+    {
+      "id": "material-defects",
+      "name": "Material-Related Defects",
+      "defects": [
+        {
+          "id": "popcorning",
+          "name": "Popcorning",
+          "description": "Plastic IC package cracks or delaminates during reflow",
+          "causes": ["Moisture absorbed by IC", "Steam explosion during reflow"],
+          "standard": "IPC/JEDEC J-STD-033",
+          "solutions": ["Bake parts before SMT (125°C for 24h)", "Use dry packs", "Monitor humidity indicator cards"],
+          "image": "/images/smt/defect-popcorning.png"
+        },
+        {
+          "id": "gold-embrittlement",
+          "name": "Gold Embrittlement",
+          "description": "Brittle solder joint due to excess gold",
+          "causes": ["Gold content exceeds 3% by weight", "Thick gold finish (>0.7µm)"],
+          "solutions": ["Pre-tin leads to dissolve gold", "Use thinner gold finish", "Limit reflow cycles"],
+          "image": "/images/smt/defect-gold-embrittlement.png"
+        },
+        {
+          "id": "cte-mismatch",
+          "name": "CTE Mismatch Cracking",
+          "description": "Solder joint cracks due to thermal expansion differences",
+          "causes": ["Ceramic component (6-8 ppm/°C) on FR-4 (14-17 ppm/°C)", "Thermal cycling stress"],
+          "solutions": ["Use compliant leads (gull wings)", "Match substrates", "Use high-reliability solder (Innolot)"],
+          "image": "/images/smt/defect-cte-mismatch.png"
+        }
+      ]
+    }
+  ],
+  "inspectionClasses": {
+    "class1": {
+      "name": "Class 1 (Consumer)",
+      "description": "Toys, cheap electronics. Function is king. Ugly joints are fine.",
+      "criteria": "Minimal cosmetic requirements"
+    },
+    "class2": {
+      "name": "Class 2 (Dedicated Service)",
+      "description": "Laptops, microwaves. Extended life required, but not critical.",
+      "criteria": "Moderate cosmetic and reliability requirements"
+    },
+    "class3": {
+      "name": "Class 3 (High Reliability)",
+      "description": "Aerospace, Medical, Military (Mil-Spec). Equipment downtime is not tolerated.",
+      "criteria": "Stringent cosmetic and reliability requirements"
+    }
+  },
+  "images": {
+    "componentFaults": "/images/smt/component-faults.png",
+    "solderingDefects": "/images/smt/soldering-defects.png",
+    "solderDefectsCommon": "/images/smt/solder-defects-common.png",
+    "openDefects": "/images/smt/open-defects.png",
+    "corrosionDefect": "/images/smt/corrosion-defect.png",
+    "temperatureFaults": "/images/smt/temperature-faults.png",
+    "wiringTrackErrors": "/images/smt/wiring-track-errors.png",
+    "pcbDefects": "/images/smt/pcb-defects.png"
+  }
+}

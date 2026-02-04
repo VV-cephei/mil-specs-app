@@ -123,6 +123,35 @@ const routes = [
     redirect: '/tools/dd2326/decoder'
   },
   
+  // Resources section - Informational pages
+  {
+    path: '/resources/wire-bonding',
+    name: 'wire-bonding',
+    component: () => import('@/views/info/WireBondingView.vue'),
+    meta: { 
+      title: 'Wire Bonding Technology Guide - mil-specs.com',
+      description: 'Comprehensive wire bonding reference for RF engineers and semiconductor technicians'
+    }
+  },
+  {
+    path: '/resources/smt-manufacturing',
+    name: 'smt-manufacturing',
+    component: () => import('@/views/info/SMTManufacturingView.vue'),
+    meta: { 
+      title: 'SMT Manufacturing Guide - mil-specs.com',
+      description: 'Comprehensive SMT manufacturing reference for design and manufacturing engineers'
+    }
+  },
+  {
+    path: '/resources/die-attach',
+    name: 'die-attach',
+    component: () => import('@/views/info/DieAttachView.vue'),
+    meta: { 
+      title: 'Die Attach Technology Guide - mil-specs.com',
+      description: 'Comprehensive die attach reference for RF engineers and semiconductor technicians'
+    }
+  },
+  
   // About page
   {
     path: '/about',

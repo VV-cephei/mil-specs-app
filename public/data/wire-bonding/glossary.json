@@ -1,0 +1,169 @@
+{
+  "terms": [
+    {
+      "term": "HAZ",
+      "fullName": "Heat-Affected Zone",
+      "definition": "The region of wire adjacent to the ball bond that experiences thermal softening during the EFO process. Controlled by dopants like Beryllium or Calcium in gold wire."
+    },
+    {
+      "term": "EFO",
+      "fullName": "Electronic Flame Off",
+      "definition": "High-voltage spark process that melts the wire tip inside a ceramic capillary to form a Free Air Ball (FAB). For copper wire, requires forming gas environment."
+    },
+    {
+      "term": "FAB",
+      "fullName": "Free Air Ball",
+      "definition": "The spherical ball formed at the wire tip by the EFO process before bonding. Ball diameter is typically 2x-3x the wire diameter."
+    },
+    {
+      "term": "NSOP",
+      "fullName": "Non-Stick on Pad",
+      "definition": "Condition where the wire fails to properly weld to the bond pad, typically due to contamination or oxidation. Modern bonders can detect this via impedance monitoring."
+    },
+    {
+      "term": "Purple Plague",
+      "fullName": "AuAl₂ Intermetallic",
+      "definition": "Brittle gold-aluminum intermetallic compound that forms at elevated temperatures (>300°C), appearing purple in color. Can lead to bond failure over time."
+    },
+    {
+      "term": "White Plague",
+      "fullName": "Au₅Al₂ Intermetallic",
+      "definition": "Another brittle gold-aluminum intermetallic compound that forms at elevated temperatures. Along with Purple Plague, contributes to Kirkendall void formation."
+    },
+    {
+      "term": "Forming Gas",
+      "fullName": "N₂/H₂ Mixture",
+      "definition": "Gas mixture (typically 95% N₂ / 5% H₂) used to create an oxygen-free environment during copper wire bonding EFO process to prevent oxidation."
+    },
+    {
+      "term": "Capillary",
+      "fullName": "Bonding Capillary",
+      "definition": "Ceramic tool through which wire is fed during ball bonding process. The outer radius of the capillary tip forms the stitch bond shape."
+    },
+    {
+      "term": "Stitch Bond",
+      "fullName": "Second Bond / Wedge Bond",
+      "definition": "The second bond in a wire loop, formed by crushing the wire against the substrate using the outer radius of the capillary. Often the weakest link in the bond."
+    },
+    {
+      "term": "Heel",
+      "fullName": "Bond Heel",
+      "definition": "The transition point where the wire changes from the flat bonded area to the round wire loop. Susceptible to cracking from excessive ultrasonic power or tool wear."
+    },
+    {
+      "term": "Wire Sweep",
+      "fullName": "Wire Displacement",
+      "definition": "Lateral movement of wire loops during plastic molding encapsulation, potentially causing shorts between adjacent wires. Prevented by using worked loops."
+    },
+    {
+      "term": "IMC",
+      "fullName": "Intermetallic Coverage",
+      "definition": "Percentage of bond area that has formed a proper intermetallic weld between wire and pad. Typically requires >60-80% coverage for qualification."
+    },
+    {
+      "term": "Kink Height",
+      "fullName": "Loop Kink Height",
+      "definition": "The height to which the capillary rises before performing reverse motion during looping. Controls the loop profile shape."
+    },
+    {
+      "term": "Skin Effect",
+      "fullName": "High Frequency Current Distribution",
+      "definition": "At high frequencies (>10 GHz), current flows only on the surface (skin) of the conductor. Round wires have higher impedance due to skin effect; ribbon wire reduces this."
+    },
+    {
+      "term": "Cratering",
+      "fullName": "Silicon Cratering",
+      "definition": "Cracking of the silicon or dielectric under the bond pad, causing the pad to lift off with silicon attached. Particularly problematic with hard copper wire."
+    },
+    {
+      "term": "Ball Squash",
+      "fullName": "Ball Deformation Ratio",
+      "definition": "The ratio of bonded ball diameter to wire diameter. Typically should be 2x-3x the wire diameter for proper bonding."
+    },
+    {
+      "term": "Golf Club",
+      "fullName": "Ball Misalignment Defect",
+      "definition": "Visual defect where the ball is not centered on the wire stem, resembling a golf club. Indicates capillary tip misalignment - reject condition."
+    },
+    {
+      "term": "HAST",
+      "fullName": "Highly Accelerated Stress Test",
+      "definition": "Reliability test using high humidity (85%), high temperature (130°C), and electrical bias to check for corrosion. Critical for copper and silver wires."
+    },
+    {
+      "term": "HTS",
+      "fullName": "High Temperature Storage",
+      "definition": "Reliability test that accelerates intermetallic growth in gold wire bonds. Used to evaluate Purple Plague and Kirkendall void formation."
+    },
+    {
+      "term": "AOI",
+      "fullName": "Automated Optical Inspection",
+      "definition": "Machine vision system that automatically inspects wire bonds for defects including ball size, position, loop height, wire sweep, and missing bonds. Typical resolution ≤2 µm/pixel for fine pitch applications."
+    },
+    {
+      "term": "Cpk",
+      "fullName": "Process Capability Index",
+      "definition": "Statistical measure of process capability relative to specification limits. Cpk = min[(USL - μ)/(3σ), (μ - LSL)/(3σ)]. Values ≥1.33 indicate capable process; ≥1.67 required for automotive."
+    },
+    {
+      "term": "DOE",
+      "fullName": "Design of Experiments",
+      "definition": "Systematic methodology to determine relationships between process factors (force, power, time, temperature) and outputs (bond strength, quality). Used to optimize wire bonding parameters efficiently."
+    },
+    {
+      "term": "SPC",
+      "fullName": "Statistical Process Control",
+      "definition": "Method of quality control using statistical methods to monitor and control wire bonding processes. Includes control charts for pull strength, shear strength, and ball diameter."
+    },
+    {
+      "term": "JEDEC",
+      "fullName": "Joint Electron Device Engineering Council",
+      "definition": "Global standards organization for the microelectronics industry. Develops test methods for wire bonding including JESD22-B116 (shear test) and JESD22-B125 (pull test) specifically for copper wire."
+    },
+    {
+      "term": "IPC",
+      "fullName": "Institute for Printed Circuits",
+      "definition": "Trade association that develops standards for electronics manufacturing including IPC-TM-650 test methods for wire bond pull and shear testing on PCB substrates."
+    },
+    {
+      "term": "Squash Ratio",
+      "fullName": "Ball Deformation Ratio",
+      "definition": "Ratio of bonded ball diameter to original wire diameter. Acceptable range is 2.0x-3.5x wire diameter, with optimal at 2.5x-3.0x. Indicates proper bonding force application."
+    },
+    {
+      "term": "Neck Break",
+      "fullName": "HAZ Failure Mode",
+      "definition": "Wire pull test failure where wire breaks just above the ball at the heat-affected zone. This is the IDEAL failure mode indicating the bond is stronger than the wire itself."
+    },
+    {
+      "term": "Heel Break",
+      "fullName": "Stitch Heel Failure",
+      "definition": "Wire pull test failure where wire breaks at the heel of the stitch bond (transition from flat to round). May indicate worn tools or excessive ultrasonic power."
+    },
+    {
+      "term": "Bond Lift",
+      "fullName": "Bond Adhesion Failure",
+      "definition": "Failure mode where the ball or stitch bond separates from the pad surface. Indicates process failure such as contamination, insufficient bonding energy, or oxidation. Always a reject condition."
+    },
+    {
+      "term": "Shear Height",
+      "fullName": "Ball Shear Test Height",
+      "definition": "Height at which the shear tool chisel is positioned above the pad during ball shear testing. Must be 10-15% of ball height. Too high gives false pass; too low damages pad."
+    },
+    {
+      "term": "Hook Position",
+      "fullName": "Pull Test Hook Placement",
+      "definition": "Location where the pull test hook engages the wire loop. Must be at the loop apex (highest point) for valid test results. Mid-span placement changes trigonometric forces and invalidates data."
+    },
+    {
+      "term": "AEC-Q100",
+      "fullName": "Automotive Electronics Council Qualification",
+      "definition": "Stress test qualification standard for integrated circuits used in automotive applications. Defines temperature grades (0-3) and reliability test requirements."
+    },
+    {
+      "term": "MIL-STD-883",
+      "fullName": "Military Standard Test Methods",
+      "definition": "U.S. military standard defining test methods for microelectronics. Method 2011 covers wire pull testing; Method 2023 covers ball shear testing. The industry 'Bible' for wire bond testing."
+    }
+  ]
+}

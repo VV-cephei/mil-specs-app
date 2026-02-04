@@ -1,0 +1,173 @@
+{
+  "failureModes": [
+    {
+      "id": "heel-cracking",
+      "name": "Heel Cracking",
+      "description": "A crack forms at the 'Heel' of the stitch bond (where the wire transitions from flat to round).",
+      "images": [
+        {
+          "src": "/images/wire-bonding/failure-example-2.jpeg",
+          "alt": "Heel crack in aluminum bond wire",
+          "caption": "Diagram and SEM image showing heel crack formation in Al bond wire at Si chip interface"
+        },
+        {
+          "src": "/images/wire-bonding/failure-example-6.jpeg",
+          "alt": "Heel and wedge failure microscopy",
+          "caption": "SEM image showing heel and wedge failure at 100μm scale"
+        }
+      ],
+      "rootCauses": [
+        {
+          "cause": "Excessive Ultrasonic Power",
+          "mechanism": "Work-hardens the heel, making it brittle"
+        },
+        {
+          "cause": "Tool Wear",
+          "mechanism": "A sharp edge on the capillary/wedge cuts into the wire"
+        },
+        {
+          "cause": "Steep Loop Angle",
+          "mechanism": "If the loop comes into the stitch at a steep angle (>30°), the bending stress snaps the heel"
+        }
+      ],
+      "symptoms": [
+        "Visible crack at heel transition",
+        "Wire breaks at stitch heel during pull testing",
+        "Intermittent electrical failures"
+      ],
+      "prevention": [
+        "Optimize ultrasonic power settings",
+        "Regular tool inspection and replacement",
+        "Control loop angle to <30°",
+        "Use appropriate loop profiles"
+      ],
+      "fixes": [
+        "Reduce ultrasonic power",
+        "Replace worn capillary/wedge tools",
+        "Adjust loop trajectory to reduce heel angle"
+      ]
+    },
+    {
+      "id": "cratering",
+      "name": "Cratering",
+      "description": "The silicon or dielectric under the bond pad cracks. The bond pad lifts off, taking a chunk of silicon with it.",
+      "images": [
+        {
+          "src": "/images/wire-bonding/failure-example-5.png",
+          "alt": "Cratering damage SEM image",
+          "caption": "SEM image showing cratering damage with visible silicon fracture beneath the bond pad"
+        }
+      ],
+      "rootCauses": [
+        {
+          "cause": "Excessive Impact Force",
+          "mechanism": "Especially problematic with Copper wire due to its hardness"
+        },
+        {
+          "cause": "Ultrasonic Frequency Resonance",
+          "mechanism": "If the bonding frequency matches the resonant frequency of the pad structure, it acts like a jackhammer"
+        }
+      ],
+      "symptoms": [
+        "Bond pad lifts with silicon attached",
+        "Visible damage to silicon under pad",
+        "Conchoidal fractures (scalloped divots) visible after pad etch"
+      ],
+      "prevention": [
+        "Use 'Ramp-up' ultrasonic energy (start low, increase slowly)",
+        "Use higher frequency (120kHz) which uses less amplitude",
+        "Optimize impact force for wire type",
+        "Ensure robust pad metallization for Cu wire"
+      ],
+      "fixes": [
+        "Reduce impact force",
+        "Change ultrasonic frequency to avoid resonance",
+        "Switch to softer wire material if possible",
+        "Strengthen pad stack structure"
+      ]
+    },
+    {
+      "id": "lift-off",
+      "name": "Lift-Off (Peeling)",
+      "description": "The wire bond pops off the pad leaving the pad intact.",
+      "images": [
+        {
+          "src": "/images/wire-bonding/failure-example-1.jpeg",
+          "alt": "Wire bond lift-off pattern SEM",
+          "caption": "SEM image showing wire bond lift-off pattern with characteristic surface features"
+        },
+        {
+          "src": "/images/wire-bonding/failure-example-3.jpeg",
+          "alt": "Multiple failure modes comparison",
+          "caption": "Comparison of failure types: (a) Lift-off, (b) Heel crack, (c) Crack near joint interface"
+        }
+      ],
+      "rootCauses": [
+        {
+          "cause": "Contamination",
+          "mechanism": "Halogens, Flux residue on pad surface prevent proper weld formation"
+        },
+        {
+          "cause": "NSOP (Non-Stick on Pad)",
+          "mechanism": "Oxidation on pad surface prevents proper metal-to-metal contact"
+        }
+      ],
+      "symptoms": [
+        "Bond lifts cleanly from pad",
+        "Pad surface appears clean/shiny after lift",
+        "Low pull test values with Code 1 failure mode"
+      ],
+      "prevention": [
+        "Plasma cleaning (Argon/Oxygen) before bonding",
+        "Proper storage and handling of components",
+        "Control of manufacturing environment humidity",
+        "Minimize time between cleaning and bonding"
+      ],
+      "fixes": [
+        "Implement plasma cleaning step",
+        "Improve storage conditions",
+        "Increase bonding temperature",
+        "Increase ultrasonic power (carefully)"
+      ]
+    },
+    {
+      "id": "kirkendall-voids",
+      "name": "Kirkendall Voids",
+      "description": "Micro-voids forming at the interface of Gold wire and Aluminum pads.",
+      "images": [
+        {
+          "src": "/images/wire-bonding/failure-example-4.png",
+          "alt": "Corrosion progression in Au-Al bond",
+          "caption": "Corrosion progression showing Au ball detachment from Al pad: (a) Initiation, (b) Propagation, (c) Detachment"
+        }
+      ],
+      "rootCauses": [
+        {
+          "cause": "Diffusion Imbalance",
+          "mechanism": "Au diffuses into Al faster than Al diffuses into Au. This vacancy imbalance creates voids that eventually merge and sever the connection."
+        },
+        {
+          "cause": "High Temperature Exposure",
+          "mechanism": "Elevated temperatures accelerate the diffusion process and void formation"
+        }
+      ],
+      "symptoms": [
+        "Gradual increase in bond resistance over time",
+        "Eventual open circuit failure",
+        "Voids visible in cross-section analysis",
+        "Associated with Purple Plague (AuAl₂) or White Plague (Au₅Al₂) intermetallic formation"
+      ],
+      "prevention": [
+        "Minimize thermal exposure during operation",
+        "Use barrier metallization between Au and Al",
+        "Consider alternative wire materials (Cu, Pd-Cu)",
+        "Design for lower operating temperatures"
+      ],
+      "fixes": [
+        "Cannot be fixed once formed - prevention is key",
+        "Replace affected devices",
+        "Redesign with barrier layers or alternative materials"
+      ]
+    }
+  ]
+}

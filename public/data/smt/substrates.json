@@ -1,0 +1,122 @@
+{
+  "categories": [
+    {
+      "id": "fr4",
+      "name": "FR-4",
+      "description": "Flame Retardant Type 4 - Industry workhorse",
+      "variants": [
+        {
+          "id": "standard-fr4",
+          "name": "Standard FR-4",
+          "tg": "130-140°C",
+          "applications": ["Consumer electronics", "Toys", "Low-power IoT"],
+          "limitations": ["Not suitable for multiple lead-free reflow cycles", "Can delaminate (popcorning)"],
+          "costLevel": "low"
+        },
+        {
+          "id": "high-tg-fr4",
+          "name": "High-Tg FR-4",
+          "tg": ">170°C",
+          "examples": ["Isola 370HR"],
+          "applications": ["Multilayer servers", "Automotive", "Lead-free assemblies"],
+          "trenchInsight": "Look at Td (Decomposition Temperature) not just Tg. Low Td causes resin breakdown during 3rd/4th reflow.",
+          "costLevel": "medium"
+        }
+      ]
+    },
+    {
+      "id": "rf-laminates",
+      "name": "High-Frequency / RF Laminates",
+      "description": "Materials for RF circuits that don't absorb signal",
+      "variants": [
+        {
+          "id": "ptfe",
+          "name": "PTFE (Teflon)",
+          "dk": "~2.2",
+          "examples": ["Rogers RT/duroid 5880"],
+          "applications": ["Radar", "5G"],
+          "trenchInsight": "Pure PTFE is soft like cheese. Smears when drilled. Requires Plasma Etch or Sodium Naphthalene etch before plating.",
+          "costLevel": "high"
+        },
+        {
+          "id": "ceramic-hydrocarbon",
+          "name": "Ceramic-Filled Hydrocarbon",
+          "examples": ["Rogers RO4000 series"],
+          "advantages": ["Performs like Teflon electrically", "Processes like FR-4 mechanically"],
+          "applications": ["Commercial RF"],
+          "costLevel": "high"
+        }
+      ]
+    },
+    {
+      "id": "flex",
+      "name": "Flexible & Rigid-Flex",
+      "variants": [
+        {
+          "id": "polyimide",
+          "name": "Polyimide (Kapton)",
+          "applications": ["Flexible circuits (FPC)"],
+          "issues": ["Hygroscopic - absorbs up to 3% moisture by weight"],
+          "processControl": "MUST bake (125°C for 4-24 hours) immediately before reflow to prevent delamination",
+          "costLevel": "medium"
+        },
+        {
+          "id": "pet",
+          "name": "PET (Polyester)",
+          "applications": ["Keyboard membranes"],
+          "limitations": ["Cannot survive reflow soldering", "Used with conductive ink or crimps only"],
+          "costLevel": "low"
+        }
+      ]
+    },
+    {
+      "id": "thermal",
+      "name": "High Power / Thermal Substrates",
+      "variants": [
+        {
+          "id": "mcpcb",
+          "name": "MCPCB (Metal Core PCB)",
+          "description": "Copper layer, thin dielectric, thick Aluminum or Copper backing",
+          "applications": ["LED lighting", "Power MOSFETs"],
+          "costLevel": "medium"
+        },
+        {
+          "id": "alumina",
+          "name": "Alumina (Al₂O₃)",
+          "properties": ["Good insulator", "Decent thermal"],
+          "applications": ["Thick-film hybrids"],
+          "costLevel": "high"
+        },
+        {
+          "id": "aln",
+          "name": "Aluminum Nitride (AlN)",
+          "thermalConductivity": "170 W/mK",
+          "applications": ["High-power laser diodes", "RF power amps"],
+          "costLevel": "very-high"
+        }
+      ]
+    }
+  ],
+  "keyParameters": {
+    "tg": {
+      "name": "Glass Transition Temperature",
+      "description": "Temperature at which the material transitions from rigid to soft"
+    },
+    "td": {
+      "name": "Decomposition Temperature",
+      "description": "Temperature at which the resin chemically breaks down"
+    },
+    "dk": {
+      "name": "Dielectric Constant",
+      "description": "Measure of how much the material slows down electromagnetic waves"
+    },
+    "df": {
+      "name": "Dissipation Factor",
+      "description": "Measure of signal loss in the material"
+    },
+    "cte": {
+      "name": "Coefficient of Thermal Expansion",
+      "description": "Rate at which material expands with temperature"
+    }
+  }
+}

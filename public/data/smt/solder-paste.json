@@ -1,0 +1,152 @@
+{
+  "overview": {
+    "description": "Solder paste is a complex non-Newtonian fluid consisting of metal alloy powder and flux vehicle",
+    "composition": {
+      "metalPowder": {
+        "volumePercent": "~50%",
+        "weightPercent": "~90%"
+      },
+      "fluxVehicle": {
+        "volumePercent": "~50%",
+        "weightPercent": "~10%"
+      }
+    },
+    "keyProperty": "Thixotropic - must be shear thinning"
+  },
+  "rheology": {
+    "atRest": {
+      "viscosity": "High",
+      "purpose": "Prevent slump (spreading out) after printing"
+    },
+    "underStress": {
+      "viscosity": "Low",
+      "purpose": "Flow through tiny stencil apertures"
+    },
+    "recovery": {
+      "description": "Must instantly return to high viscosity once squeegee passes"
+    }
+  },
+  "powderTypes": {
+    "standard": "IPC J-STD-005",
+    "types": [
+      {
+        "id": "type3",
+        "name": "Type 3",
+        "particleSize": "25-45 µm",
+        "applications": ["0603 components", "0805 components", "Standard SMD"],
+        "stencilThickness": "125-150 µm",
+        "notes": "Standard for most applications"
+      },
+      {
+        "id": "type4",
+        "name": "Type 4",
+        "particleSize": "20-38 µm",
+        "applications": ["0402 components", "QFNs", "Fine pitch"],
+        "stencilThickness": "100-125 µm",
+        "notes": "Required for fine pitch assemblies"
+      },
+      {
+        "id": "type5",
+        "name": "Type 5",
+        "particleSize": "15-25 µm",
+        "applications": ["01005 components", "Flip-chips", "Ultra-miniature"],
+        "stencilThickness": "75-100 µm",
+        "notes": "Ultra-fine pitch applications"
+      },
+      {
+        "id": "type6",
+        "name": "Type 6",
+        "particleSize": "5-15 µm",
+        "applications": ["Micro-BGAs", "Advanced packaging"],
+        "stencilThickness": "50-75 µm",
+        "notes": "Cutting-edge miniaturization"
+      }
+    ],
+    "trenchInsight": "Using Type 4 paste on a Type 3 stencil causes 'Scooping' (squeegee digs paste out of holes). Using Type 3 paste for fine pitch causes 'Clogging'."
+  },
+  "fluxTypes": {
+    "standard": "IPC J-STD-004",
+    "categories": [
+      {
+        "id": "rosin",
+        "name": "Rosin-Based (RO)",
+        "subcategories": [
+          {
+            "id": "rol0",
+            "name": "ROL0 (Low Activity)",
+            "activity": "Low",
+            "residue": "Non-corrosive",
+            "cleaning": "Optional",
+            "applications": ["Clean assemblies", "No-clean processes"]
+          },
+          {
+            "id": "rol1",
+            "name": "ROL1 (Medium Activity)",
+            "activity": "Medium",
+            "residue": "Mildly active",
+            "cleaning": "Recommended",
+            "applications": ["General purpose"]
+          },
+          {
+            "id": "rom1",
+            "name": "ROM1 (High Activity)",
+            "activity": "High",
+            "residue": "Active",
+            "cleaning": "Required",
+            "applications": ["Difficult-to-solder surfaces"]
+          }
+        ]
+      },
+      {
+        "id": "organic",
+        "name": "Organic Acid (OR)",
+        "subcategories": [
+          {
+            "id": "orl0",
+            "name": "ORL0 (Water Soluble)",
+            "activity": "Low-Medium",
+            "residue": "Water soluble",
+            "cleaning": "Required (water wash)",
+            "applications": ["High-reliability", "Automotive"]
+          }
+        ]
+      },
+      {
+        "id": "inorganic",
+        "name": "Inorganic (IN)",
+        "subcategories": [
+          {
+            "id": "inl1",
+            "name": "INL1 (Aggressive)",
+            "activity": "Very High",
+            "residue": "Corrosive",
+            "cleaning": "Mandatory",
+            "applications": ["Heavily oxidized surfaces", "Rework"]
+          }
+        ]
+      }
+    ]
+  },
+  "storage": {
+    "temperature": "0-10°C (refrigerated)",
+    "shelfLife": "6-12 months (sealed)",
+    "workingLife": "8-24 hours (on stencil)",
+    "warmupTime": "4-6 hours before use",
+    "warnings": [
+      "Never freeze solder paste",
+      "Allow full warm-up before opening container",
+      "Condensation causes solder balling"
+    ]
+  },
+  "printingParameters": {
+    "squeegeeAngle": "60° (standard) or 45°",
+    "squeegePressure": "~0.5 kg per inch of blade",
+    "printSpeed": "25-75 mm/s",
+    "separationSpeed": "Slow (defines sharp edges)",
+    "issues": {
+      "tooHighPressure": "Scooping (concave paste bricks)",
+      "tooLowPressure": "Smearing on top of stencil",
+      "tooFastSeparation": "Dog ears, incomplete release"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "methods": [
+    {
+      "id": "thermocompression",
+      "name": "Thermocompression",
+      "energySources": ["Heat", "Pressure"],
+      "wireTypes": ["Gold"],
+      "temperature": ">300°C",
+      "frequency": null,
+      "applications": ["Legacy applications", "Historical (1950s technology)"],
+      "pros": [
+        "Simple process",
+        "No ultrasonic equipment needed"
+      ],
+      "cons": [
+        "Very slow processing speed",
+        "High heat (>300°C) damages modern sensitive dies",
+        "Rare today - largely obsolete"
+      ]
+    },
+    {
+      "id": "ultrasonic",
+      "name": "Ultrasonic",
+      "energySources": ["Ultrasonic Vibration", "Pressure"],
+      "wireTypes": ["Aluminum"],
+      "temperature": "Room temperature",
+      "frequency": "60-140 kHz",
+      "applications": ["Power devices", "Heavy Al wire bonding"],
+      "pros": [
+        "Room temperature process",
+        "No heat means no oxidation issues",
+        "No thermal damage to sensitive components",
+        "Ideal for aluminum wire"
+      ],
+      "cons": [
+        "Limited to aluminum wire",
+        "Cannot form ball bonds",
+        "Requires precise ultrasonic control"
+      ]
+    },
+    {
+      "id": "thermosonic",
+      "name": "Thermosonic",
+      "energySources": ["Heat", "Pressure", "Ultrasonic"],
+      "wireTypes": ["Gold", "Copper", "Silver"],
+      "temperature": "100-220°C",
+      "frequency": "60-140 kHz",
+      "applications": ["Industry Standard", "CPUs", "Memory", "Microcontrollers", "Most IC bonding"],
+      "pros": [
+        "Industry standard method",
+        "Works with multiple wire types (Au, Cu, Ag)",
+        "Good balance of speed and quality",
+        "Moderate heat softens wire while ultrasonics scrub oxide and weld"
+      ],
+      "cons": [
+        "Requires both heating and ultrasonic equipment",
+        "More complex process control"
+      ],
+      "frequencyDetails": {
+        "standard": {
+          "frequency": "60 kHz",
+          "description": "Standard frequency for general bonding applications"
+        },
+        "highFrequency": {
+          "frequency": "100-140 kHz",
+          "description": "High Frequency bonding allows for bonding at lower temperatures (down to 100°C) and faster times. The higher frequency creates more efficient scrubbing friction at the interface, allowing metal-to-metal contact without aggressive heating."
+        }
+      }
+    }
+  ]
+}

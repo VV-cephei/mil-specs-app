@@ -32,6 +32,36 @@
           </div>
         </div>
 
+        <!-- Curator Section -->
+        <section class="section-sm">
+          <div class="card card-curator">
+            <div class="card-body card-body-spacious">
+              <div class="curator-content">
+                <div class="curator-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div class="curator-info">
+                  <h3 class="curator-title">Curated by David Kueper</h3>
+                  <p class="curator-description">
+                    mil-specs.com is curated and maintained by David Kueper, a professional with deep expertise 
+                    in military specifications, semiconductor technology, and aerospace standards. With years of 
+                    experience in the defense industry, David has compiled this comprehensive resource to help 
+                    engineers, technicians, and professionals navigate the complex world of military specifications.
+                  </p>
+                  <p class="curator-description">
+                    The goal of this platform is to make military and aerospace specifications more accessible 
+                    and easier to understand, providing practical tools and detailed technical guides for 
+                    everyday use in the defense and semiconductor industries.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Capabilities Section -->
         <section class="section-sm">
           <div class="section-header section-header-left">
@@ -256,5 +286,59 @@
   background-color: var(--color-neutral-100);
   color: var(--color-text-secondary);
   border-radius: var(--radius-full);
+}
+
+/* Curator Section Styles */
+.card-curator {
+  border-left: 4px solid var(--color-accent-500, #c9a227);
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-primary-50, #e8eaf6) 100%);
+}
+
+.curator-content {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.curator-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  background-color: var(--color-primary-100, #c5cae9);
+  color: var(--color-primary-600, #1a3050);
+  border-radius: var(--radius-full);
+}
+
+.curator-info {
+  flex: 1;
+}
+
+.curator-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-600, #1a3050);
+  margin: 0 0 var(--space-3);
+}
+
+.curator-description {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0 0 var(--space-3);
+}
+
+.curator-description:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .curator-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
 </style>

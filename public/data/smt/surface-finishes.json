@@ -1,0 +1,118 @@
+{
+  "finishes": [
+    {
+      "id": "hasl",
+      "name": "HASL",
+      "fullName": "Hot Air Solder Leveling",
+      "description": "Molten solder applied to pads, excess blown off with hot air",
+      "pros": ["Cheapest option", "Long shelf life", "Excellent solderability"],
+      "cons": ["Uneven topography", "Solder puddles", "Impossible for fine-pitch parts (BGAs/QFNs)"],
+      "trenchNote": "Legacy only - not suitable for modern fine-pitch assemblies",
+      "shelfLife": "12+ months",
+      "costLevel": "low",
+      "finePitchCapable": false,
+      "leadFreeVariant": "Lead-free HASL available",
+      "applications": ["Through-hole", "Large SMD", "Prototypes"]
+    },
+    {
+      "id": "enig",
+      "name": "ENIG",
+      "fullName": "Electroless Nickel Immersion Gold",
+      "description": "Nickel barrier layer with thin gold coating to prevent oxidation",
+      "pros": ["Perfectly flat surface", "Excellent for BGAs", "Gold prevents oxidation", "Long shelf life"],
+      "cons": ["Black Pad Syndrome risk", "Higher cost"],
+      "trenchNote": "Industry standard for Class 2/3. Watch phosphorus content in nickel - too high causes brittle joints",
+      "shelfLife": "12+ months",
+      "costLevel": "medium-high",
+      "finePitchCapable": true,
+      "thickness": {
+        "nickel": "3-6 µm",
+        "gold": "0.05-0.1 µm"
+      },
+      "issues": {
+        "blackPad": {
+          "cause": "High phosphorus in nickel layer",
+          "effect": "Brittle joints that fail unpredictably",
+          "prevention": "Control phosphorus content, proper process monitoring"
+        }
+      },
+      "applications": ["BGAs", "QFNs", "Fine-pitch", "Class 2/3 assemblies"]
+    },
+    {
+      "id": "osp",
+      "name": "OSP",
+      "fullName": "Organic Solderability Preservative",
+      "description": "Thin organic coating that protects copper from oxidation",
+      "pros": ["Cheapest flat finish", "Environmentally friendly", "Flat surface"],
+      "cons": ["Very fragile", "Short shelf life", "Coating evaporates after 1st reflow", "2nd side reflow difficult"],
+      "trenchNote": "Dominant in consumer electronics (single use). Monitor shelf life carefully.",
+      "shelfLife": "6 months",
+      "costLevel": "low",
+      "finePitchCapable": true,
+      "reflows": 1,
+      "applications": ["Consumer electronics", "Single-sided SMT", "Cost-sensitive products"]
+    },
+    {
+      "id": "imag",
+      "name": "ImAg",
+      "fullName": "Immersion Silver",
+      "description": "Thin silver coating deposited on copper",
+      "pros": ["Excellent for RF (no nickel magnetic loss)", "Flat surface", "Good solderability"],
+      "cons": ["Creep corrosion in sulfur environments", "Champagne voids risk"],
+      "trenchNote": "Avoid in high sulfur environments (tire factories, polluted cities) - silver whiskers grow and short the board",
+      "shelfLife": "6-12 months",
+      "costLevel": "medium",
+      "finePitchCapable": true,
+      "thickness": "0.1-0.4 µm",
+      "issues": {
+        "creepCorrosion": {
+          "cause": "Sulfur in environment",
+          "effect": "Silver whiskers grow and cause shorts",
+          "prevention": "Conformal coating, avoid sulfur-rich environments"
+        },
+        "champagneVoids": {
+          "cause": "Outgassing during reflow",
+          "effect": "Small voids in solder joint",
+          "prevention": "Proper reflow profile"
+        }
+      },
+      "applications": ["RF circuits", "High-frequency", "Membrane switches"]
+    },
+    {
+      "id": "enepig",
+      "name": "ENEPIG",
+      "fullName": "Electroless Nickel Electroless Palladium Immersion Gold",
+      "description": "Three-layer finish with palladium barrier between nickel and gold",
+      "pros": ["Universal finish", "Bonds to Al, Au, and Cu wire", "Fixes black pad issues", "Best for mixed assemblies"],
+      "cons": ["Most expensive option"],
+      "trenchNote": "The universal finish - best choice for Wire Bonding + SMT mixed boards",
+      "shelfLife": "12+ months",
+      "costLevel": "high",
+      "finePitchCapable": true,
+      "thickness": {
+        "nickel": "3-6 µm",
+        "palladium": "0.05-0.1 µm",
+        "gold": "0.03-0.05 µm"
+      },
+      "applications": ["Wire bonding", "Mixed technology", "High-reliability", "Class 3"]
+    }
+  ],
+  "comparisonTable": {
+    "headers": ["Finish", "Cost", "Shelf Life", "Fine Pitch", "Reflows", "Best For"],
+    "rows": [
+      ["HASL", "Low", "12+ mo", "No", "Multiple", "Legacy/Prototypes"],
+      ["ENIG", "Medium-High", "12+ mo", "Yes", "Multiple", "BGAs/Fine-pitch"],
+      ["OSP", "Low", "6 mo", "Yes", "1", "Consumer"],
+      ["ImAg", "Medium", "6-12 mo", "Yes", "2-3", "RF/High-freq"],
+      ["ENEPIG", "High", "12+ mo", "Yes", "Multiple", "Wire bond + SMT"]
+    ]
+  },
+  "selectionGuide": {
+    "costSensitive": "osp",
+    "finePitch": "enig",
+    "rfCircuits": "imag",
+    "wireBonding": "enepig",
+    "prototype": "hasl",
+    "highReliability": "enig"
+  }
+}

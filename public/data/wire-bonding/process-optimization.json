@@ -1,0 +1,481 @@
+{
+  "processParameters": {
+    "title": "Wire Bonding Process Parameters",
+    "description": "Key parameters that control bond quality and must be optimized for each application",
+    "primaryParameters": [
+      {
+        "parameter": "Bonding Force",
+        "symbol": "F",
+        "unit": "grams-force (gf) or milliNewtons (mN)",
+        "description": "Downward force applied by capillary/wedge during bonding",
+        "effect": {
+          "tooLow": "Weak bond, insufficient deformation, bond lift",
+          "tooHigh": "Cratering, pad damage, excessive squash, thin neck"
+        },
+        "typicalRanges": {
+          "ballBond": {
+            "finePitch": "15-30 gf",
+            "standard": "25-50 gf",
+            "power": "40-80 gf"
+          },
+          "stitchBond": {
+            "finePitch": "30-60 gf",
+            "standard": "50-100 gf",
+            "power": "80-150 gf"
+          }
+        }
+      },
+      {
+        "parameter": "Ultrasonic Power",
+        "symbol": "USG or P",
+        "unit": "milliWatts (mW) or arbitrary machine units",
+        "description": "Ultrasonic energy applied to scrub oxide and create weld",
+        "effect": {
+          "tooLow": "Insufficient oxide removal, weak bond, NSOP",
+          "tooHigh": "Heel cracking, work hardening, pad damage"
+        },
+        "typicalRanges": {
+          "goldWire": "50-150 mW",
+          "copperWire": "80-200 mW (20-30% higher than Au)",
+          "aluminumWire": "100-300 mW"
+        },
+        "frequency": {
+          "standard": "60 kHz",
+          "highFrequency": "100-140 kHz",
+          "note": "Higher frequency allows lower amplitude, reducing damage risk"
+        }
+      },
+      {
+        "parameter": "Bonding Time",
+        "symbol": "t",
+        "unit": "milliseconds (ms)",
+        "description": "Duration of ultrasonic energy application",
+        "effect": {
+          "tooShort": "Incomplete weld formation",
+          "tooLong": "Excessive heat generation, reduced throughput"
+        },
+        "typicalRanges": {
+          "ballBond": "8-20 ms",
+          "stitchBond": "10-25 ms",
+          "heavyWire": "20-50 ms"
+        }
+      },
+      {
+        "parameter": "Temperature",
+        "symbol": "T",
+        "unit": "degrees Celsius (°C)",
+        "description": "Substrate/stage temperature during bonding",
+        "effect": {
+          "tooLow": "Hard wire, difficult bonding, higher force needed",
+          "tooHigh": "Intermetallic growth, oxidation, die damage"
+        },
+        "typicalRanges": {
+          "thermosonic": {
+            "gold": "150-220°C",
+            "copper": "150-200°C",
+            "palladiumCopper": "140-180°C"
+          },
+          "ultrasonic": {
+            "aluminum": "Room temperature to 150°C"
+          }
+        }
+      }
+    ],
+    "secondaryParameters": [
+      {
+        "parameter": "Impact Velocity",
+        "description": "Speed at which capillary contacts the pad",
+        "effect": "Higher velocity increases initial deformation but risks cratering"
+      },
+      {
+        "parameter": "Search Speed",
+        "description": "Speed of capillary descent during pad detection",
+        "typical": "0.1-0.5 mm/s"
+      },
+      {
+        "parameter": "Loop Height",
+        "description": "Maximum height of wire loop above die",
+        "typical": "75-500 µm depending on package"
+      },
+      {
+        "parameter": "Kink Height",
+        "description": "Height for reverse motion during looping",
+        "effect": "Controls loop profile shape"
+      },
+      {
+        "parameter": "Reverse Distance",
+        "description": "Distance of reverse motion for loop formation",
+        "effect": "Controls loop stiffness and profile"
+      }
+    ]
+  },
+  "parameterWindowsByMaterial": {
+    "title": "Parameter Windows by Wire Material",
+    "goldWire": {
+      "material": "Gold (Au) 4N",
+      "wireDiameter": "25 µm (1.0 mil)",
+      "parameters": {
+        "ballBondForce": { "min": 20, "nominal": 30, "max": 45, "unit": "gf" },
+        "ballBondPower": { "min": 60, "nominal": 90, "max": 130, "unit": "mW" },
+        "ballBondTime": { "min": 8, "nominal": 12, "max": 18, "unit": "ms" },
+        "stitchBondForce": { "min": 40, "nominal": 60, "max": 90, "unit": "gf" },
+        "stitchBondPower": { "min": 80, "nominal": 120, "max": 160, "unit": "mW" },
+        "stitchBondTime": { "min": 10, "nominal": 15, "max": 22, "unit": "ms" },
+        "temperature": { "min": 150, "nominal": 175, "max": 220, "unit": "°C" }
+      },
+      "processWindow": "Wide - forgiving process"
+    },
+    "copperWire": {
+      "material": "Copper (Cu)",
+      "wireDiameter": "25 µm (1.0 mil)",
+      "parameters": {
+        "ballBondForce": { "min": 25, "nominal": 40, "max": 55, "unit": "gf" },
+        "ballBondPower": { "min": 90, "nominal": 130, "max": 180, "unit": "mW" },
+        "ballBondTime": { "min": 10, "nominal": 15, "max": 22, "unit": "ms" },
+        "stitchBondForce": { "min": 50, "nominal": 80, "max": 120, "unit": "gf" },
+        "stitchBondPower": { "min": 100, "nominal": 150, "max": 200, "unit": "mW" },
+        "stitchBondTime": { "min": 12, "nominal": 18, "max": 28, "unit": "ms" },
+        "temperature": { "min": 150, "nominal": 175, "max": 200, "unit": "°C" }
+      },
+      "processWindow": "Narrow - requires tight control",
+      "specialRequirements": [
+        "Forming gas (95% N₂ / 5% H₂) required",
+        "Higher force increases cratering risk",
+        "Ramp-up ultrasonic recommended"
+      ]
+    },
+    "palladiumCoatedCopper": {
+      "material": "Pd-Coated Copper (Pd-Cu)",
+      "wireDiameter": "25 µm (1.0 mil)",
+      "parameters": {
+        "ballBondForce": { "min": 25, "nominal": 38, "max": 52, "unit": "gf" },
+        "ballBondPower": { "min": 85, "nominal": 125, "max": 170, "unit": "mW" },
+        "ballBondTime": { "min": 10, "nominal": 14, "max": 20, "unit": "ms" },
+        "stitchBondForce": { "min": 45, "nominal": 75, "max": 110, "unit": "gf" },
+        "stitchBondPower": { "min": 95, "nominal": 140, "max": 190, "unit": "mW" },
+        "stitchBondTime": { "min": 11, "nominal": 16, "max": 25, "unit": "ms" },
+        "temperature": { "min": 140, "nominal": 165, "max": 190, "unit": "°C" }
+      },
+      "processWindow": "Moderate - wider than bare Cu",
+      "specialRequirements": [
+        "Forming gas optional but recommended",
+        "Wider second bond window than bare Cu"
+      ]
+    },
+    "aluminumWire": {
+      "material": "Aluminum (Al-1%Si)",
+      "wireDiameter": "32 µm (1.25 mil)",
+      "parameters": {
+        "wedgeBondForce": { "min": 30, "nominal": 50, "max": 80, "unit": "gf" },
+        "wedgeBondPower": { "min": 100, "nominal": 180, "max": 280, "unit": "mW" },
+        "wedgeBondTime": { "min": 15, "nominal": 25, "max": 40, "unit": "ms" },
+        "temperature": { "min": 25, "nominal": 100, "max": 150, "unit": "°C" }
+      },
+      "processWindow": "Moderate",
+      "specialRequirements": [
+        "Ultrasonic wedge bonding only",
+        "Room temperature bonding possible",
+        "Precise ultrasonic control required"
+      ]
+    },
+    "heavyAluminumWire": {
+      "material": "Heavy Aluminum (Al-1%Si)",
+      "wireDiameter": "375 µm (15 mil)",
+      "parameters": {
+        "wedgeBondForce": { "min": 800, "nominal": 1200, "max": 1800, "unit": "gf" },
+        "wedgeBondPower": { "min": 2000, "nominal": 4000, "max": 6000, "unit": "mW" },
+        "wedgeBondTime": { "min": 50, "nominal": 100, "max": 200, "unit": "ms" },
+        "temperature": { "min": 25, "nominal": 80, "max": 150, "unit": "°C" }
+      },
+      "processWindow": "Wide for power applications",
+      "specialRequirements": [
+        "Heavy wire bonder required",
+        "Multiple bonds often used in parallel"
+      ]
+    }
+  },
+  "doeApproach": {
+    "title": "DOE (Design of Experiments) Approach",
+    "description": "Systematic method to optimize wire bonding parameters",
+    "methodology": {
+      "screening": {
+        "purpose": "Identify significant factors",
+        "design": "Fractional factorial (2^(k-p))",
+        "factors": ["Force", "Power", "Time", "Temperature"],
+        "responses": ["Pull strength", "Shear strength", "Ball diameter", "Heel condition"]
+      },
+      "optimization": {
+        "purpose": "Find optimal parameter settings",
+        "design": "Response Surface Methodology (RSM) or Central Composite Design (CCD)",
+        "goal": "Maximize bond strength while minimizing defects"
+      },
+      "confirmation": {
+        "purpose": "Verify optimal settings",
+        "method": "Run confirmation lots at predicted optimum",
+        "criteria": "Results within prediction interval"
+      }
+    },
+    "typicalDOEFactors": [
+      {
+        "factor": "Bond Force",
+        "levels": 3,
+        "range": "±20% of nominal"
+      },
+      {
+        "factor": "Ultrasonic Power",
+        "levels": 3,
+        "range": "±25% of nominal"
+      },
+      {
+        "factor": "Bond Time",
+        "levels": 3,
+        "range": "±30% of nominal"
+      },
+      {
+        "factor": "Temperature",
+        "levels": 2,
+        "range": "±15°C of nominal"
+      }
+    ],
+    "sampleSize": {
+      "screening": "3-5 bonds per condition, minimum 2 replicates",
+      "optimization": "5-10 bonds per condition, minimum 3 replicates",
+      "confirmation": "30+ bonds at optimal condition"
+    }
+  },
+  "spcMetrics": {
+    "title": "SPC (Statistical Process Control) Metrics",
+    "description": "Key metrics for monitoring wire bonding process stability",
+    "controlCharts": [
+      {
+        "chart": "X-bar and R chart",
+        "application": "Pull strength, shear strength",
+        "subgroupSize": "5 bonds per subgroup",
+        "frequency": "Every lot or every 2 hours"
+      },
+      {
+        "chart": "Individual and Moving Range (I-MR)",
+        "application": "Ball diameter, loop height",
+        "frequency": "Every unit or sample"
+      },
+      {
+        "chart": "p-chart or np-chart",
+        "application": "Defect rate (NSOP, lift-off)",
+        "frequency": "Per lot"
+      }
+    ],
+    "keyMetrics": [
+      {
+        "metric": "Pull Strength",
+        "target": "Specification midpoint",
+        "controlLimits": "±3σ from process mean",
+        "specLimits": "Per wire diameter table"
+      },
+      {
+        "metric": "Shear Strength",
+        "target": "Specification midpoint",
+        "controlLimits": "±3σ from process mean",
+        "specLimits": "Per ball diameter table"
+      },
+      {
+        "metric": "Ball Diameter",
+        "target": "2.5x wire diameter",
+        "controlLimits": "±3σ from process mean",
+        "specLimits": "2.0x-3.5x wire diameter"
+      },
+      {
+        "metric": "NSOP Rate",
+        "target": "0 ppm",
+        "controlLimit": "<100 ppm",
+        "action": "Investigate if >50 ppm"
+      }
+    ],
+    "outOfControlRules": [
+      "1 point beyond 3σ",
+      "9 consecutive points on same side of centerline",
+      "6 consecutive points trending up or down",
+      "14 consecutive points alternating up and down",
+      "2 of 3 consecutive points beyond 2σ (same side)",
+      "4 of 5 consecutive points beyond 1σ (same side)"
+    ]
+  },
+  "cpkRequirements": {
+    "title": "Cpk (Process Capability Index) Requirements",
+    "definition": "Cpk measures how well a process fits within specification limits",
+    "formula": "Cpk = min[(USL - μ)/(3σ), (μ - LSL)/(3σ)]",
+    "requirements": {
+      "commercial": {
+        "minimum": 1.0,
+        "target": 1.33,
+        "defectRate": "2700 ppm at Cpk=1.0"
+      },
+      "industrial": {
+        "minimum": 1.33,
+        "target": 1.5,
+        "defectRate": "63 ppm at Cpk=1.33"
+      },
+      "automotive": {
+        "minimum": 1.67,
+        "target": 2.0,
+        "defectRate": "0.6 ppm at Cpk=1.67"
+      },
+      "aerospace": {
+        "minimum": 1.67,
+        "target": 2.0,
+        "defectRate": "0.6 ppm at Cpk=1.67"
+      },
+      "medical": {
+        "minimum": 1.5,
+        "target": 1.67,
+        "defectRate": "6.8 ppm at Cpk=1.5"
+      }
+    },
+    "interpretation": {
+      "cpkLessThan1": "Process not capable - immediate action required",
+      "cpk1to1_33": "Marginally capable - improvement needed",
+      "cpk1_33to1_67": "Capable - acceptable for most applications",
+      "cpkGreaterThan1_67": "Highly capable - excellent process control"
+    }
+  },
+  "troubleshootingGuide": {
+    "title": "Wire Bonding Troubleshooting Guide",
+    "issues": [
+      {
+        "problem": "Non-Stick on Pad (NSOP)",
+        "symptoms": ["Bond doesn't adhere", "Wire pulls off easily", "Impedance monitoring alarm"],
+        "possibleCauses": [
+          "Pad contamination (organic, oxide)",
+          "Insufficient ultrasonic power",
+          "Low temperature",
+          "Worn capillary"
+        ],
+        "solutions": [
+          "Plasma clean pads before bonding",
+          "Increase ultrasonic power (5-10%)",
+          "Increase temperature (10-20°C)",
+          "Replace capillary",
+          "Verify forming gas flow (for Cu)"
+        ]
+      },
+      {
+        "problem": "Ball Lift",
+        "symptoms": ["Ball separates from pad during pull test", "Clean pad surface after lift"],
+        "possibleCauses": [
+          "Contamination",
+          "Insufficient bonding energy",
+          "Pad metallization issues",
+          "Oxidation"
+        ],
+        "solutions": [
+          "Improve cleaning process",
+          "Increase force, power, or time",
+          "Verify pad metallization quality",
+          "Check forming gas for Cu wire"
+        ]
+      },
+      {
+        "problem": "Cratering",
+        "symptoms": ["Silicon visible under lifted pad", "Conchoidal fractures in silicon"],
+        "possibleCauses": [
+          "Excessive bonding force",
+          "Excessive ultrasonic power",
+          "Hard wire (Cu)",
+          "Thin/weak dielectric"
+        ],
+        "solutions": [
+          "Reduce bonding force",
+          "Use ramp-up ultrasonic profile",
+          "Increase frequency (120 kHz)",
+          "Use softer wire or Pd-Cu",
+          "Strengthen pad stack design"
+        ]
+      },
+      {
+        "problem": "Heel Cracking",
+        "symptoms": ["Crack at stitch heel", "Low pull strength with heel break"],
+        "possibleCauses": [
+          "Excessive ultrasonic power",
+          "Worn capillary edge",
+          "Steep loop angle",
+          "Work hardening"
+        ],
+        "solutions": [
+          "Reduce ultrasonic power",
+          "Replace capillary",
+          "Adjust loop profile for gentler angle",
+          "Reduce bonding time"
+        ]
+      },
+      {
+        "problem": "Golf Club (Ball Misalignment)",
+        "symptoms": ["Ball not centered on wire", "Asymmetric ball shape"],
+        "possibleCauses": [
+          "Capillary misalignment",
+          "Worn capillary",
+          "EFO spark inconsistency",
+          "Wire feed issues"
+        ],
+        "solutions": [
+          "Realign capillary",
+          "Replace capillary",
+          "Adjust EFO parameters",
+          "Check wire tensioner and guides"
+        ]
+      },
+      {
+        "problem": "Wire Sweep",
+        "symptoms": ["Excessive lateral wire displacement", "Wires touching after mold"],
+        "possibleCauses": [
+          "Mold compound flow",
+          "Insufficient loop stiffness",
+          "Long wire spans",
+          "Low loop height"
+        ],
+        "solutions": [
+          "Use worked loop (double reverse)",
+          "Increase loop height if possible",
+          "Optimize mold compound and process",
+          "Reduce wire span length"
+        ]
+      },
+      {
+        "problem": "Inconsistent Ball Size",
+        "symptoms": ["Ball diameter variation", "FAB size inconsistency"],
+        "possibleCauses": [
+          "EFO current variation",
+          "EFO gap inconsistency",
+          "Wire feed variation",
+          "Forming gas flow variation"
+        ],
+        "solutions": [
+          "Calibrate EFO system",
+          "Check and adjust EFO gap",
+          "Verify wire tensioner settings",
+          "Stabilize forming gas flow"
+        ]
+      },
+      {
+        "problem": "Stitch Lift",
+        "symptoms": ["Second bond separates from substrate", "Tail not adhered"],
+        "possibleCauses": [
+          "Substrate contamination",
+          "Insufficient bonding parameters",
+          "Poor surface finish",
+          "Oxidation (Cu wire)"
+        ],
+        "solutions": [
+          "Clean substrate surface",
+          "Increase force, power, time for stitch",
+          "Verify plating quality",
+          "Use security bond (ball on stitch)"
+        ]
+      }
+    ]
+  },
+  "images": {
+    "wireBondingProcess": "/images/wire-bonding/wire-bonding-process.jpg",
+    "bonderStagingDiagram": "/images/wire-bonding/bonder-staging-diagram.jpg",
+    "ballStitchSequence": "/images/wire-bonding/ball-stitch-sequence.png",
+    "pullStrengthDeformation": "/images/wire-bonding/pull-strength-deformation.jpg"
+  }
+}

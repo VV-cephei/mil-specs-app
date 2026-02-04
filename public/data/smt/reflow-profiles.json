@@ -1,0 +1,97 @@
+{
+  "standard": "IPC-7801 (Reflow Oven Process Control)",
+  "overview": {
+    "description": "The board travels through a convection oven with 8-12 zones. The profile is the temperature vs. time graph.",
+    "totalTime": "4-6 minutes typical"
+  },
+  "zones": [
+    {
+      "id": "preheat",
+      "name": "Preheat (Ramp-Up)",
+      "order": 1,
+      "temperatureRange": "25°C to 150°C",
+      "rampRate": "1-3°C/second",
+      "duration": "60-120 seconds",
+      "goal": "Evaporate solvents in the paste safely",
+      "physics": "Gradual heating prevents thermal shock",
+      "issues": {
+        "tooFast": ["Thermal shock", "Cracked capacitors", "Solder balling (paste explodes)"],
+        "tooSlow": ["Extended profile time", "Flux exhaustion"]
+      }
+    },
+    {
+      "id": "soak",
+      "name": "Soak (Flux Activation)",
+      "order": 2,
+      "temperatureRange": "150-180°C",
+      "duration": "60-90 seconds",
+      "goal": "Activate flux to remove oxides from pads/leads. Equalize temperature across board.",
+      "physics": "Flux chemically reduces metal oxides, preparing surfaces for wetting",
+      "issues": {
+        "tooLong": ["Flux exhaustion", "Graping defect", "Oxidized solder powder"],
+        "tooShort": ["Uneven heating", "Cold spots on large components"]
+      },
+      "trenchInsight": "Large components (BGAs) and small ones must reach same temperature before reflow"
+    },
+    {
+      "id": "reflow",
+      "name": "Reflow (Time Above Liquidus - TAL)",
+      "order": 3,
+      "temperatureRange": {
+        "minimum": "217°C (SAC305 liquidus)",
+        "peak": "235-250°C",
+        "maximum": "260°C (component limit)"
+      },
+      "duration": "45-90 seconds",
+      "goal": "Melt solder, wet copper, form intermetallic compound (IMC) layer",
+      "physics": "Solder melts and forms Cu₆Sn₅ intermetallic at copper interface",
+      "issues": {
+        "tooLong": ["Leaching (solder eats copper pad)", "Charred boards", "Excessive IMC growth"],
+        "tooShort": ["Cold solder joints", "Grainy weak joints", "Incomplete wetting"],
+        "tooHot": ["Component damage", "Delamination", "Tombstoning"]
+      }
+    },
+    {
+      "id": "cooling",
+      "name": "Cooling",
+      "order": 4,
+      "temperatureRange": "Peak to 25°C",
+      "rampRate": ">4°C/second",
+      "goal": "Freeze grain structure rapidly for strong joints",
+      "physics": "Rapid cooling creates fine grain structure = strong joint. Slow cooling = large brittle grains.",
+      "issues": {
+        "tooSlow": ["Large grain structure", "Brittle joints", "Reduced fatigue life"],
+        "tooFast": ["Thermal shock (rare)", "Component cracking"]
+      }
+    }
+  ],
+  "profiles": {
+    "sac305": {
+      "name": "SAC305 Lead-Free Profile",
+      "alloy": "Sn96.5/Ag3.0/Cu0.5",
+      "liquidus": "217°C",
+      "peakTemp": "235-250°C",
+      "tal": "45-90 seconds",
+      "totalTime": "4-5 minutes"
+    },
+    "snpb": {
+      "name": "Sn63/Pb37 Leaded Profile",
+      "alloy": "Sn63/Pb37",
+      "liquidus": "183°C",
+      "peakTemp": "210-225°C",
+      "tal": "45-75 seconds",
+      "totalTime": "3.5-4.5 minutes"
+    },
+    "lowTemp": {
+      "name": "Low-Temperature Profile",
+      "alloy": "Sn42/Bi58",
+      "liquidus": "138°C",
+      "peakTemp": "165-180°C",
+      "tal": "45-60 seconds",
+      "totalTime": "3-4 minutes"
+    }
+  },
+  "images": {
+    "profileDiagram": "/images/smt/reflow-profile-diagram.png"
+  }
+}

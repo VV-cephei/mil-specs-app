@@ -1,0 +1,441 @@
+{
+  "rfMicrowave": {
+    "title": "RF/Microwave Applications",
+    "description": "Wire bonding for radio frequency and microwave devices requiring low inductance and controlled impedance",
+    "keyRequirements": [
+      "Low inductance interconnects",
+      "Controlled impedance matching",
+      "Minimal signal loss at high frequencies",
+      "Thermal management for power amplifiers"
+    ],
+    "preferredBonding": {
+      "type": "Ribbon Bonding",
+      "reasons": [
+        "Lower inductance than round wire (up to 50% reduction)",
+        "Reduced skin effect losses at high frequency",
+        "Better heat dissipation due to larger contact area",
+        "Stronger heel due to stress distribution across ribbon width"
+      ]
+    },
+    "typicalMaterials": [
+      {
+        "material": "Gold Ribbon",
+        "dimensions": "25-75 µm thick × 75-500 µm wide",
+        "applications": "GaAs MMICs, low-noise amplifiers"
+      },
+      {
+        "material": "Aluminum Ribbon",
+        "dimensions": "50-125 µm thick × 100-750 µm wide",
+        "applications": "Power amplifiers, GaN devices"
+      }
+    ],
+    "designConsiderations": {
+      "inductance": {
+        "roundWire": "~1 nH/mm for 25 µm wire",
+        "ribbon": "~0.5 nH/mm for equivalent cross-section",
+        "note": "Critical above 10 GHz where inductance affects matching"
+      },
+      "skinEffect": {
+        "description": "At high frequencies, current flows only on conductor surface",
+        "impact": "Round wires have higher AC resistance",
+        "solution": "Ribbon provides more surface area for current flow"
+      },
+      "bondCount": "Multiple parallel ribbons often used for impedance matching"
+    },
+    "frequencyRanges": {
+      "lBand": "1-2 GHz",
+      "sBand": "2-4 GHz",
+      "cBand": "4-8 GHz",
+      "xBand": "8-12 GHz",
+      "kuBand": "12-18 GHz",
+      "kBand": "18-27 GHz",
+      "kaBand": "27-40 GHz",
+      "vBand": "40-75 GHz",
+      "wBand": "75-110 GHz"
+    },
+    "deviceTypes": [
+      "GaAs MMICs (Monolithic Microwave Integrated Circuits)",
+      "GaN HEMTs (High Electron Mobility Transistors)",
+      "SiGe BiCMOS RF ICs",
+      "PIN diodes",
+      "Varactor diodes",
+      "Low-noise amplifiers (LNAs)",
+      "Power amplifiers (PAs)"
+    ]
+  },
+  "powerElectronics": {
+    "title": "Power Electronics Applications",
+    "description": "Heavy wire bonding for high-current power semiconductor devices",
+    "keyRequirements": [
+      "High current carrying capacity (10-1000+ Amps)",
+      "Excellent thermal conductivity",
+      "Mechanical reliability under thermal cycling",
+      "Long-term reliability at elevated temperatures"
+    ],
+    "preferredBonding": {
+      "type": "Heavy Aluminum Wedge Bonding",
+      "wireRange": "125-500 µm (5-20 mil) diameter",
+      "reasons": [
+        "High current capacity",
+        "Good thermal conductivity",
+        "Cost-effective for large wire",
+        "Room temperature bonding possible"
+      ]
+    },
+    "typicalConfigurations": [
+      {
+        "application": "IGBT Modules",
+        "wireSize": "300-500 µm Al",
+        "bondsPerChip": "4-12 parallel wires",
+        "currentPerWire": "20-50 A"
+      },
+      {
+        "application": "Power MOSFETs",
+        "wireSize": "250-375 µm Al",
+        "bondsPerChip": "2-8 parallel wires",
+        "currentPerWire": "15-40 A"
+      },
+      {
+        "application": "Power Diodes",
+        "wireSize": "200-300 µm Al",
+        "bondsPerChip": "2-6 parallel wires",
+        "currentPerWire": "10-30 A"
+      }
+    ],
+    "thermalManagement": {
+      "challenge": "Wire bonds must survive -40°C to +175°C cycling",
+      "solutions": [
+        "Optimized loop profiles to accommodate CTE mismatch",
+        "Multiple smaller wires vs fewer large wires",
+        "Copper wire for better thermal conductivity",
+        "Ribbon bonding for improved heat spreading"
+      ],
+      "cteValues": {
+        "silicon": "2.6 ppm/°C",
+        "aluminum": "23 ppm/°C",
+        "copper": "17 ppm/°C",
+        "dcbSubstrate": "7-8 ppm/°C"
+      }
+    },
+    "reliabilityRequirements": {
+      "thermalCycles": ">10,000 cycles (-40°C to +150°C)",
+      "powerCycles": ">100,000 cycles",
+      "lifetime": ">20 years for industrial applications"
+    },
+    "deviceTypes": [
+      "IGBTs (Insulated Gate Bipolar Transistors)",
+      "Power MOSFETs",
+      "Power Diodes",
+      "Thyristors (SCRs)",
+      "SiC MOSFETs",
+      "GaN HEMTs for power"
+    ]
+  },
+  "automotiveEV": {
+    "title": "Automotive and Electric Vehicle Applications",
+    "description": "Wire bonding for automotive electronics with stringent reliability requirements",
+    "keyRequirements": [
+      "AEC-Q100/Q101 qualification",
+      "Extended temperature range (-40°C to +175°C)",
+      "High humidity resistance",
+      "Vibration and mechanical shock resistance",
+      "Zero-defect quality targets"
+    ],
+    "qualificationStandards": {
+      "aecQ100": {
+        "name": "AEC-Q100",
+        "scope": "Integrated circuits",
+        "grades": [
+          { "grade": "0", "tempRange": "-40°C to +150°C" },
+          { "grade": "1", "tempRange": "-40°C to +125°C" },
+          { "grade": "2", "tempRange": "-40°C to +105°C" },
+          { "grade": "3", "tempRange": "-40°C to +85°C" }
+        ]
+      },
+      "aecQ101": {
+        "name": "AEC-Q101",
+        "scope": "Discrete semiconductors",
+        "focus": "Power devices, diodes, transistors"
+      }
+    },
+    "evSpecificRequirements": {
+      "powerModules": {
+        "application": "Traction inverters, DC-DC converters",
+        "wireType": "Heavy Al (300-500 µm) or Cu clip",
+        "current": "100-600 A per module",
+        "reliability": ">15 year / 300,000 km lifetime"
+      },
+      "batteryManagement": {
+        "application": "BMS ICs, cell monitoring",
+        "wireType": "Fine pitch Cu or Au (20-25 µm)",
+        "requirements": "High accuracy, low noise"
+      },
+      "sensors": {
+        "application": "Current sensors, temperature sensors",
+        "wireType": "Standard Au or Cu (25-33 µm)",
+        "requirements": "EMI immunity, accuracy"
+      }
+    },
+    "copperWireAdoption": {
+      "drivers": [
+        "Cost reduction (Cu ~90% cheaper than Au)",
+        "Better electrical conductivity",
+        "Better thermal conductivity"
+      ],
+      "challenges": [
+        "Harder material - cratering risk",
+        "Oxidation - requires forming gas",
+        "Corrosion in humid environments",
+        "Tighter process windows"
+      ],
+      "solutions": [
+        "Pd-coated copper wire",
+        "Improved pad metallization",
+        "Hermetic or near-hermetic packaging",
+        "Advanced process control"
+      ]
+    },
+    "reliabilityTests": [
+      {
+        "test": "Temperature Cycling",
+        "condition": "-40°C to +150°C, 1000 cycles minimum",
+        "purpose": "CTE mismatch stress"
+      },
+      {
+        "test": "HAST",
+        "condition": "130°C, 85% RH, 96 hours",
+        "purpose": "Humidity/corrosion resistance"
+      },
+      {
+        "test": "High Temperature Storage",
+        "condition": "150°C, 1000 hours",
+        "purpose": "Intermetallic growth"
+      },
+      {
+        "test": "Power Cycling",
+        "condition": "ΔT = 100°C, 100,000 cycles",
+        "purpose": "Thermal fatigue"
+      }
+    ]
+  },
+  "ledApplications": {
+    "title": "LED Applications",
+    "description": "Wire bonding for light-emitting diode packages",
+    "keyRequirements": [
+      "High reflectivity (minimize light absorption)",
+      "Thermal management",
+      "Reliability under thermal cycling",
+      "Fine pitch for high-density arrays"
+    ],
+    "preferredMaterials": {
+      "primary": {
+        "material": "Silver (Ag) Wire",
+        "reason": "Highest reflectivity - doesn't absorb light like gold",
+        "diameter": "20-25 µm typical"
+      },
+      "alternative": {
+        "material": "Gold (Au) Wire",
+        "reason": "Better reliability but absorbs blue light",
+        "diameter": "20-25 µm typical"
+      },
+      "emerging": {
+        "material": "Palladium-Coated Copper",
+        "reason": "Cost reduction with acceptable reflectivity",
+        "diameter": "20-25 µm typical"
+      }
+    },
+    "silverWireChallenges": {
+      "electromigration": {
+        "issue": "Silver ions migrate under electrical bias",
+        "mitigation": "Proper encapsulation, controlled humidity"
+      },
+      "dendriticGrowth": {
+        "issue": "Silver dendrites form in humid environments",
+        "mitigation": "Hermetic sealing, silicone encapsulation"
+      },
+      "sulfidation": {
+        "issue": "Silver tarnishes in sulfur-containing environments",
+        "mitigation": "Protective coatings, controlled atmosphere"
+      }
+    },
+    "packageTypes": [
+      {
+        "type": "SMD LED",
+        "wireCount": "1-2 per die",
+        "pitch": "Standard (>100 µm)"
+      },
+      {
+        "type": "COB (Chip-on-Board)",
+        "wireCount": "Multiple dies, many wires",
+        "pitch": "Fine pitch (<80 µm)"
+      },
+      {
+        "type": "High-Power LED",
+        "wireCount": "2-4 per die",
+        "pitch": "Standard",
+        "notes": "Thermal management critical"
+      },
+      {
+        "type": "Mini/Micro LED",
+        "wireCount": "1 per die",
+        "pitch": "Ultra-fine (<50 µm)",
+        "notes": "Emerging technology, flip-chip preferred"
+      }
+    ],
+    "opticalConsiderations": {
+      "wireShading": "Wire can block light output - minimize loop height",
+      "reflectivity": "Silver ~95%, Gold ~85%, Copper ~70% at visible wavelengths",
+      "encapsulant": "Silicone or epoxy must be optically clear"
+    }
+  },
+  "medicalDevices": {
+    "title": "Medical Device Applications",
+    "description": "Wire bonding for implantable and diagnostic medical electronics",
+    "keyRequirements": [
+      "Biocompatibility (for implantables)",
+      "Hermetic sealing",
+      "Long-term reliability (10+ years)",
+      "Sterilization compatibility",
+      "FDA/regulatory compliance"
+    ],
+    "implantableDevices": {
+      "examples": [
+        "Pacemakers",
+        "Implantable cardioverter-defibrillators (ICDs)",
+        "Cochlear implants",
+        "Neurostimulators",
+        "Drug delivery pumps"
+      ],
+      "requirements": {
+        "hermeticity": "Leak rate <1×10⁻⁸ atm·cc/sec He",
+        "biocompatibility": "ISO 10993 compliance",
+        "lifetime": ">10 years in body environment",
+        "sterilization": "EtO, gamma, or e-beam compatible"
+      },
+      "preferredBonding": {
+        "type": "Gold ball bonding",
+        "reason": "Proven reliability, biocompatible, corrosion resistant",
+        "alternative": "Aluminum wedge for hermetic ceramic packages"
+      }
+    },
+    "diagnosticDevices": {
+      "examples": [
+        "Blood glucose monitors",
+        "Pulse oximeters",
+        "Ultrasound transducers",
+        "Lab-on-chip devices",
+        "Hearing aids"
+      ],
+      "requirements": {
+        "reliability": "Consumer-grade to medical-grade depending on application",
+        "cost": "Often cost-sensitive for disposables",
+        "miniaturization": "Trend toward smaller devices"
+      }
+    },
+    "hermeticPackaging": {
+      "importance": "Critical for implantables to prevent moisture ingress",
+      "packageTypes": [
+        "Ceramic (HTCC, LTCC)",
+        "Metal (titanium, stainless steel)",
+        "Glass-to-metal seal"
+      ],
+      "bondingConsiderations": [
+        "Gold wire preferred for corrosion resistance",
+        "Aluminum wire acceptable inside hermetic cavity",
+        "Avoid copper due to corrosion concerns"
+      ]
+    },
+    "regulatoryConsiderations": {
+      "fda": "510(k) or PMA approval required",
+      "iso13485": "Quality management system for medical devices",
+      "iec60601": "Electrical safety standards",
+      "biocompatibility": "ISO 10993 testing required for patient contact"
+    }
+  },
+  "aerospaceDefense": {
+    "title": "Aerospace and Defense Applications",
+    "description": "Wire bonding for high-reliability military and space applications",
+    "keyRequirements": [
+      "MIL-STD-883 compliance",
+      "Radiation hardness (for space)",
+      "Extended temperature range",
+      "Long operational lifetime",
+      "Traceability and documentation"
+    ],
+    "militaryStandards": {
+      "milStd883": {
+        "name": "MIL-STD-883",
+        "scope": "Test methods for microelectronics",
+        "relevantMethods": [
+          { "method": "2010", "title": "Internal Visual" },
+          { "method": "2011", "title": "Bond Strength (Wire Pull)" },
+          { "method": "2017", "title": "Wire Bond Shear" },
+          { "method": "2023", "title": "Ball Bond Shear" }
+        ]
+      },
+      "milPrf38535": {
+        "name": "MIL-PRF-38535",
+        "scope": "Integrated circuits manufacturing",
+        "classes": [
+          { "class": "B", "description": "Standard military" },
+          { "class": "Q", "description": "Qualified manufacturer" },
+          { "class": "V", "description": "Space qualified" },
+          { "class": "S", "description": "Space (highest reliability)" }
+        ]
+      },
+      "milPrf19500": {
+        "name": "MIL-PRF-19500",
+        "scope": "Discrete semiconductors",
+        "jans": "JAN, JANTX, JANTXV, JANS quality levels"
+      }
+    },
+    "spaceApplications": {
+      "challenges": [
+        "Radiation effects (TID, SEE)",
+        "Thermal cycling in vacuum",
+        "Outgassing requirements",
+        "Launch vibration and shock"
+      ],
+      "requirements": {
+        "radiationHardness": "Up to 1 Mrad TID for some applications",
+        "thermalCycling": "-55°C to +125°C, 1000+ cycles",
+        "outgassing": "NASA ASTM E595 compliance",
+        "vibration": "20-2000 Hz, up to 20 g RMS"
+      },
+      "preferredBonding": {
+        "type": "Gold ball bonding",
+        "reason": "Proven space heritage, radiation tolerant",
+        "alternative": "Aluminum wedge for specific applications"
+      }
+    },
+    "qualityRequirements": {
+      "screening": "100% screening per MIL-STD-883",
+      "traceability": "Full lot traceability required",
+      "documentation": "Detailed test reports and certifications",
+      "dpa": "Destructive Physical Analysis on samples"
+    },
+    "typicalApplications": [
+      "Satellite electronics",
+      "Missile guidance systems",
+      "Radar systems",
+      "Avionics",
+      "Military communications",
+      "Night vision systems",
+      "Targeting systems"
+    ]
+  },
+  "comparisonTables": {
+    "methodsComparison": {
+      "title": "Comparison of Wire Bonding Methods by Bond Type",
+      "image": "/images/wire-bonding/methods-comparison-table.png"
+    },
+    "ballVsWedge": {
+      "title": "Ball Bonding vs Wedge Bonding Summary",
+      "image": "/images/wire-bonding/ball-vs-wedge-summary.png"
+    }
+  },
+  "images": {
+    "methodsComparisonTable": "/images/wire-bonding/methods-comparison-table.png",
+    "ballVsWedgeSummary": "/images/wire-bonding/ball-vs-wedge-summary.png"
+  }
+}

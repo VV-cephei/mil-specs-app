@@ -1,0 +1,301 @@
+{
+  "milStd883Method2011": {
+    "title": "Wire Pull Test (MIL-STD-883 Method 2011)",
+    "description": "Destructive test to evaluate wire bond strength by pulling the wire loop until failure",
+    "images": {
+      "hookPlacement": "/images/wire-bonding/pull-test-hook-placement.png",
+      "flatLoopTesting": "/images/wire-bonding/flat-loop-pull-testing.png",
+      "pullStrengthDeformation": "/images/wire-bonding/pull-strength-deformation.jpg"
+    },
+    "hookPlacement": {
+      "requirement": "Hook must be placed at the loop apex (highest point)",
+      "warning": "If placed at mid-span, trigonometric forces change, invalidating the data",
+      "tolerance": "Within 10% of loop apex position"
+    },
+    "failureCodes": [
+      {
+        "code": "1",
+        "name": "Bond Lift (First Bond)",
+        "description": "Ball peels off the die pad",
+        "assessment": "FAILURE",
+        "indication": "Process failure - contamination, low heat, or inadequate ultrasonic energy"
+      },
+      {
+        "code": "2",
+        "name": "Neck Break",
+        "description": "Wire breaks just above the ball at the heat-affected zone",
+        "assessment": "IDEAL",
+        "indication": "Bond is stronger than the wire itself - optimal failure mode"
+      },
+      {
+        "code": "3",
+        "name": "Wire Break (Mid-span)",
+        "description": "Wire breaks in the middle of the loop",
+        "assessment": "ACCEPTABLE",
+        "indication": "Normal failure if force exceeds minimum requirements"
+      },
+      {
+        "code": "4",
+        "name": "Heel Break",
+        "description": "Wire breaks at the stitch bond heel",
+        "assessment": "ACCEPTABLE (conditional)",
+        "indication": "May indicate worn tools or excessive ultrasonic power"
+      },
+      {
+        "code": "5",
+        "name": "Bond Lift (Second Bond)",
+        "description": "Stitch bond lifts from substrate",
+        "assessment": "FAILURE",
+        "indication": "Second bond process issue - contamination or inadequate bonding parameters"
+      }
+    ],
+    "minimumPullForces": {
+      "title": "Minimum Pull Force Requirements by Wire Diameter",
+      "units": {
+        "force": "grams-force (gf)",
+        "diameter": "micrometers (µm) / mils"
+      },
+      "goldWire": [
+        { "diameter": "18 µm (0.7 mil)", "minForce": "2.0 gf", "typical": "2.5-3.5 gf" },
+        { "diameter": "20 µm (0.8 mil)", "minForce": "2.4 gf", "typical": "3.0-4.0 gf" },
+        { "diameter": "25 µm (1.0 mil)", "minForce": "3.0 gf", "typical": "4.0-6.0 gf" },
+        { "diameter": "33 µm (1.3 mil)", "minForce": "5.0 gf", "typical": "6.0-9.0 gf" },
+        { "diameter": "38 µm (1.5 mil)", "minForce": "6.0 gf", "typical": "8.0-12.0 gf" },
+        { "diameter": "50 µm (2.0 mil)", "minForce": "9.0 gf", "typical": "12.0-18.0 gf" }
+      ],
+      "copperWire": [
+        { "diameter": "18 µm (0.7 mil)", "minForce": "2.5 gf", "typical": "3.0-4.5 gf" },
+        { "diameter": "20 µm (0.8 mil)", "minForce": "3.0 gf", "typical": "4.0-5.5 gf" },
+        { "diameter": "25 µm (1.0 mil)", "minForce": "4.0 gf", "typical": "5.0-7.5 gf" },
+        { "diameter": "33 µm (1.3 mil)", "minForce": "6.5 gf", "typical": "8.0-12.0 gf" },
+        { "diameter": "38 µm (1.5 mil)", "minForce": "8.0 gf", "typical": "10.0-15.0 gf" },
+        { "diameter": "50 µm (2.0 mil)", "minForce": "12.0 gf", "typical": "15.0-22.0 gf" }
+      ],
+      "aluminumWire": [
+        { "diameter": "25 µm (1.0 mil)", "minForce": "2.5 gf", "typical": "3.5-5.0 gf" },
+        { "diameter": "32 µm (1.25 mil)", "minForce": "4.0 gf", "typical": "5.0-7.0 gf" },
+        { "diameter": "50 µm (2.0 mil)", "minForce": "7.0 gf", "typical": "9.0-13.0 gf" },
+        { "diameter": "75 µm (3.0 mil)", "minForce": "12.0 gf", "typical": "15.0-22.0 gf" },
+        { "diameter": "125 µm (5.0 mil)", "minForce": "25.0 gf", "typical": "35.0-50.0 gf" },
+        { "diameter": "250 µm (10.0 mil)", "minForce": "80.0 gf", "typical": "100-150 gf" },
+        { "diameter": "375 µm (15.0 mil)", "minForce": "150.0 gf", "typical": "200-280 gf" },
+        { "diameter": "500 µm (20.0 mil)", "minForce": "250.0 gf", "typical": "350-450 gf" }
+      ]
+    }
+  },
+  "milStd883Method2023": {
+    "title": "Ball Shear Test (MIL-STD-883 Method 2023)",
+    "description": "Destructive test that pushes a chisel against the side of the ball bond to evaluate weld interface strength",
+    "image": "/images/wire-bonding/shear-test-cross-section.png",
+    "purpose": "Pull testing mostly tests wire strength (neck), not the weld interface. Shear test directly evaluates bond quality.",
+    "shearHeight": {
+      "requirement": "Chisel positioned at 10-15% of ball height above pad surface",
+      "tooHigh": "Slices top of gold ball off (false pass)",
+      "tooLow": "Drags chisel across aluminum pad (invalid test)",
+      "typical": "2-5 µm above pad for 25 µm wire"
+    },
+    "successCriteria": {
+      "shearForce": {
+        "minimum": "Typically >15 grams for 25 µm wire",
+        "formula": "Minimum = 0.6 × ball area (µm²) × 0.001 gf/µm²"
+      },
+      "shearMode": {
+        "pass": "Gold remnant visible on pad after shear",
+        "fail": "Clean pad (silver/aluminum color) indicates ball lift"
+      }
+    },
+    "minimumShearForces": [
+      { "ballDiameter": "50 µm", "minForce": "12 gf", "typical": "18-25 gf" },
+      { "ballDiameter": "60 µm", "minForce": "17 gf", "typical": "25-35 gf" },
+      { "ballDiameter": "70 µm", "minForce": "23 gf", "typical": "35-48 gf" },
+      { "ballDiameter": "80 µm", "minForce": "30 gf", "typical": "45-60 gf" },
+      { "ballDiameter": "90 µm", "minForce": "38 gf", "typical": "55-75 gf" },
+      { "ballDiameter": "100 µm", "minForce": "47 gf", "typical": "70-95 gf" }
+    ]
+  },
+  "dieShearTest": {
+    "title": "Die Shear Test",
+    "description": "Tests the adhesion of the silicon die to the substrate/leadframe",
+    "note": "Die Shear tests die attach adhesive, not wire bonds. Ball Shear is used for wire bond evaluation.",
+    "standard": "MIL-STD-883 Method 2019",
+    "minimumForce": "Depends on die size - typically 2.5 kg/mm² of die area"
+  },
+  "crateringTest": {
+    "title": "Cratering Test (Copper Wire Critical)",
+    "description": "Evaluates subsurface damage to silicon under bond pads",
+    "issue": "Copper wire is harder than silicon die. Bonding can create invisible micro-cracks under the bond pad that pass electrical tests but fail later.",
+    "procedure": [
+      "Chemically etch away the metal bond pad using Potassium Hydroxide (KOH) or similar",
+      "Expose the silicon surface underneath",
+      "Inspect under high-power microscope (100-500x)",
+      "Look for conchoidal fractures (scalloped divots) in the silicon"
+    ],
+    "acceptanceCriteria": "Zero cratering allowed",
+    "preventionMethods": [
+      "Use ramp-up ultrasonic energy (start low, increase slowly)",
+      "Use higher frequency bonding (120 kHz) which uses less amplitude",
+      "Optimize impact force parameters",
+      "Use softer wire materials or Pd-coated copper"
+    ]
+  },
+  "jedecTestMethods": {
+    "title": "JEDEC Test Methods for Copper Wire",
+    "description": "Industry standards developed specifically for copper wire bonding challenges",
+    "standards": [
+      {
+        "id": "JESD22-B116",
+        "name": "Wire Bond Shear Test Method",
+        "description": "Standardized ball shear test procedure for copper wire bonds"
+      },
+      {
+        "id": "JESD22-B125",
+        "name": "Wire Pull Test Method",
+        "description": "Updated pull test procedures addressing copper wire characteristics"
+      },
+      {
+        "id": "JESD22-A104",
+        "name": "Temperature Cycling",
+        "description": "Thermal cycling test to evaluate wire bond reliability under thermal stress"
+      },
+      {
+        "id": "JESD22-A110",
+        "name": "HAST (Highly Accelerated Stress Test)",
+        "description": "Accelerated humidity testing critical for copper wire corrosion evaluation"
+      }
+    ],
+    "copperSpecificConcerns": [
+      "Oxidation during bonding process",
+      "Harder material causing pad/die damage",
+      "Different intermetallic formation with Al pads",
+      "Corrosion susceptibility in humid environments"
+    ]
+  },
+  "ipcTm650Methods": {
+    "title": "IPC-TM-650 Test Methods",
+    "description": "Test methods from IPC (Institute for Printed Circuits) applicable to wire bonding on PCB substrates",
+    "relevantMethods": [
+      {
+        "id": "2.4.42",
+        "name": "Wire Bond Pull Strength",
+        "description": "Pull test method for wire bonds on printed circuit assemblies"
+      },
+      {
+        "id": "2.4.43",
+        "name": "Wire Bond Shear Strength",
+        "description": "Shear test method for ball bonds on PCB substrates"
+      },
+      {
+        "id": "2.6.8",
+        "name": "Surface Cleanliness",
+        "description": "Ionic contamination testing critical for bond quality"
+      }
+    ]
+  },
+  "testEquipmentRequirements": {
+    "title": "Test Equipment Requirements",
+    "pullTester": {
+      "forceRange": "0.1-500 gf (depending on wire size)",
+      "resolution": "0.1 gf minimum",
+      "accuracy": "±1% of reading",
+      "pullSpeed": "Adjustable, typically 0.5-2.0 mm/sec",
+      "hookTypes": ["Standard hook", "Micro hook for fine pitch", "Flat hook for ribbon"],
+      "features": ["Programmable test sequences", "Statistical analysis", "Failure mode detection"]
+    },
+    "shearTester": {
+      "forceRange": "1-1000 gf",
+      "resolution": "0.5 gf minimum",
+      "accuracy": "±1% of reading",
+      "shearSpeed": "Adjustable, typically 50-500 µm/sec",
+      "chiselWidth": "Multiple sizes (25-200 µm)",
+      "heightControl": "±1 µm positioning accuracy",
+      "features": ["Automatic height sensing", "Shear mode analysis", "Image capture"]
+    },
+    "microscope": {
+      "magnification": "50x-1000x",
+      "type": "Stereo or metallurgical",
+      "features": ["Measurement capability", "Image capture", "Polarized light option"]
+    }
+  },
+  "sampleSizeRequirements": {
+    "title": "Sample Size Requirements",
+    "milStd883": {
+      "qualification": {
+        "pullTest": "Minimum 10 wires per lot, 3 lots minimum",
+        "shearTest": "Minimum 10 balls per lot, 3 lots minimum"
+      },
+      "production": {
+        "pullTest": "Per MIL-STD-883 sampling plan (typically 5-15 per lot)",
+        "shearTest": "Per MIL-STD-883 sampling plan"
+      }
+    },
+    "automotive": {
+      "qualification": {
+        "pullTest": "Minimum 30 wires, 3 lots",
+        "shearTest": "Minimum 30 balls, 3 lots"
+      },
+      "production": {
+        "pullTest": "100% SPC monitoring with destructive sampling per shift",
+        "shearTest": "Minimum 5 per shift"
+      }
+    },
+    "commercial": {
+      "qualification": {
+        "pullTest": "Minimum 20 wires",
+        "shearTest": "Minimum 20 balls"
+      },
+      "production": {
+        "pullTest": "Per internal quality plan",
+        "shearTest": "Per internal quality plan"
+      }
+    },
+    "statisticalRequirements": {
+      "cpk": "≥1.33 for production (≥1.67 for automotive)",
+      "defectRate": "<100 ppm for high reliability",
+      "confidenceLevel": "95% minimum for qualification"
+    }
+  },
+  "failureLocations": {
+    "title": "Wire Bond Failure Locations and Descriptions",
+    "image": "/images/wire-bonding/failure-locations.png",
+    "locations": [
+      {
+        "location": "Ball-pad interface",
+        "failureType": "Ball lift",
+        "causes": ["Contamination", "Insufficient bonding energy", "Oxidation"],
+        "severity": "Critical"
+      },
+      {
+        "location": "Neck (HAZ)",
+        "failureType": "Neck break",
+        "causes": ["Normal failure mode", "Excessive HAZ softening"],
+        "severity": "Acceptable (ideal failure mode)"
+      },
+      {
+        "location": "Wire mid-span",
+        "failureType": "Wire break",
+        "causes": ["Wire defect", "Excessive loop stress"],
+        "severity": "Acceptable"
+      },
+      {
+        "location": "Heel",
+        "failureType": "Heel crack/break",
+        "causes": ["Excessive ultrasonic power", "Tool wear", "Steep loop angle"],
+        "severity": "Marginal"
+      },
+      {
+        "location": "Stitch-pad interface",
+        "failureType": "Stitch lift",
+        "causes": ["Contamination", "Insufficient bonding", "Surface finish issues"],
+        "severity": "Critical"
+      }
+    ]
+  },
+  "images": {
+    "pullTestHookPlacement": "/images/wire-bonding/pull-test-hook-placement.png",
+    "flatLoopPullTesting": "/images/wire-bonding/flat-loop-pull-testing.png",
+    "failureLocations": "/images/wire-bonding/failure-locations.png",
+    "pullStrengthDeformation": "/images/wire-bonding/pull-strength-deformation.jpg",
+    "shearTestCrossSection": "/images/wire-bonding/shear-test-cross-section.png",
+    "shearedWedgeMicroscopy": "/images/wire-bonding/sheared-wedge-microscopy.png"
+  }
+}

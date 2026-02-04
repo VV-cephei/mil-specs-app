@@ -51,6 +51,9 @@
         <p class="footer-copyright">
           © {{ currentYear }} mil-specs.com. All rights reserved.
         </p>
+        <p class="footer-curator">
+          Curated by David Kueper
+        </p>
         <p class="footer-legal">
           All specifications are property of their respective owners. This site is not affiliated with the U.S. Department of Defense.
         </p>
@@ -90,6 +93,13 @@ const currentYear = computed(() => new Date().getFullYear())
   color: var(--color-neutral-400, #9ca3af);
   line-height: var(--line-height-relaxed, 1.625);
   margin: 0;
+}
+
+.footer-curator {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-accent-400, #d4af37);
+  margin: var(--space-2, 0.5rem) 0;
+  font-weight: var(--font-weight-medium, 500);
 }
 
 .footer-legal {

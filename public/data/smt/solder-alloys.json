@@ -1,0 +1,153 @@
+{
+  "categories": [
+    {
+      "id": "lead-based",
+      "name": "Lead-Based Alloys (Legacy)",
+      "description": "Still required for Military, Aerospace, and Implantable Medical (Class 3 High Rel) to avoid Tin Whiskers",
+      "alloys": [
+        {
+          "id": "sn63pb37",
+          "name": "Sn63/Pb37 (Eutectic)",
+          "composition": { "Sn": 63, "Pb": 37 },
+          "meltingPoint": "183°C",
+          "meltingType": "eutectic",
+          "characteristics": ["Sharp single melting point", "No pasty range", "Shiny bright joints"],
+          "advantages": ["Minimizes risk of disturbed joints during cooling", "Excellent reliability"],
+          "applications": ["Military", "Aerospace", "Medical implants"],
+          "compliance": "Non-RoHS"
+        },
+        {
+          "id": "sn60pb40",
+          "name": "Sn60/Pb40",
+          "composition": { "Sn": 60, "Pb": 40 },
+          "meltingRange": "183-188°C",
+          "meltingType": "pasty",
+          "characteristics": ["Small pasty range", "Slightly cheaper"],
+          "applications": ["General electronics"],
+          "compliance": "Non-RoHS"
+        },
+        {
+          "id": "sn10pb90",
+          "name": "Sn10/Pb90 (High Temp)",
+          "composition": { "Sn": 10, "Pb": 90 },
+          "meltingPoint": "~300°C",
+          "meltingType": "high-temp",
+          "characteristics": ["Very high melting point"],
+          "applications": ["Inside component packages", "BGA balls"],
+          "trenchInsight": "Used so balls don't melt when component is soldered to board later",
+          "compliance": "Non-RoHS"
+        }
+      ]
+    },
+    {
+      "id": "lead-free-sac",
+      "name": "Lead-Free SAC Family",
+      "description": "Mandated by RoHS (Restriction of Hazardous Substances)",
+      "alloys": [
+        {
+          "id": "sac305",
+          "name": "SAC305",
+          "composition": { "Sn": 96.5, "Ag": 3.0, "Cu": 0.5 },
+          "meltingRange": "217-220°C",
+          "meltingType": "near-eutectic",
+          "characteristics": ["Global industry standard", "Good thermal fatigue life"],
+          "advantages": ["Excellent thermal cycling performance"],
+          "disadvantages": ["Drop shock fragility", "Ag₃Sn intermetallic plates are brittle"],
+          "applications": ["General electronics", "Industrial equipment"],
+          "trenchInsight": "High silver creates brittle intermetallics - phone BGAs may crack on drop",
+          "compliance": "RoHS"
+        },
+        {
+          "id": "sac105",
+          "name": "SAC105 (Low Silver)",
+          "composition": { "Sn": 98.5, "Ag": 1.0, "Cu": 0.5 },
+          "meltingRange": "217-227°C",
+          "meltingType": "pasty",
+          "characteristics": ["Lower silver content", "Better drop-shock performance"],
+          "advantages": ["Improved drop-shock resistance"],
+          "disadvantages": ["Reduced thermal cycling life"],
+          "applications": ["Handheld devices", "Smartphones"],
+          "compliance": "RoHS"
+        }
+      ]
+    },
+    {
+      "id": "high-reliability",
+      "name": "High-Reliability Lead-Free (Automotive)",
+      "description": "Designed for extreme environments",
+      "alloys": [
+        {
+          "id": "innolot",
+          "name": "Innolot (Sn-Ag-Cu-Bi-Sb-Ni)",
+          "composition": { "Sn": "balance", "Ag": 3.8, "Cu": 0.7, "Bi": 3.0, "Sb": 1.4, "Ni": 0.15 },
+          "meltingRange": "206-218°C",
+          "meltingType": "complex",
+          "characteristics": ["Six-element alloy", "Solution hardened"],
+          "advantages": ["Survives 150°C constant operation", "Extreme vibration resistance"],
+          "applications": ["Under-hood automotive", "Engine control units"],
+          "trenchInsight": "Antimony and Bismuth solution harden the alloy; Nickel stabilizes intermetallic layer",
+          "compliance": "RoHS"
+        }
+      ]
+    },
+    {
+      "id": "low-temperature",
+      "name": "Low-Temperature Solders",
+      "description": "Energy-saving alloys for sensitive components",
+      "alloys": [
+        {
+          "id": "snbi58",
+          "name": "Sn42/Bi58 (Tin-Bismuth)",
+          "composition": { "Sn": 42, "Bi": 58 },
+          "meltingPoint": "138°C",
+          "meltingType": "eutectic",
+          "characteristics": ["Very low melting point", "Energy efficient"],
+          "advantages": ["Saves electricity in ovens", "Safe for heat-sensitive parts"],
+          "applications": ["Sensitive optics", "Consumer electronics"],
+          "warnings": ["NEVER mix with lead - forms Sn16Pb32Bi52 that melts at 96°C"],
+          "trenchInsight": "The deadly trap: mixing with leaded components creates alloy that fails in hot environments",
+          "compliance": "RoHS"
+        }
+      ]
+    },
+    {
+      "id": "exotic",
+      "name": "Exotic & Specialty Alloys",
+      "description": "Special purpose alloys for extreme applications",
+      "alloys": [
+        {
+          "id": "ausn20",
+          "name": "Au80/Sn20 (Gold-Tin)",
+          "composition": { "Au": 80, "Sn": 20 },
+          "meltingPoint": "280°C",
+          "meltingType": "eutectic",
+          "characteristics": ["Fluxless soldering", "Extremely expensive"],
+          "advantages": ["No flux required", "Keeps sensor internals clean"],
+          "applications": ["Hermetic lid sealing", "Aerospace", "Optical sensors"],
+          "compliance": "RoHS"
+        },
+        {
+          "id": "indium",
+          "name": "Indium Alloys (Pure In, InPb)",
+          "composition": { "In": "varies" },
+          "meltingPoint": "varies",
+          "meltingType": "varies",
+          "characteristics": ["Extremely soft and ductile", "Remains ductile at cryogenic temps"],
+          "advantages": ["Works at near-absolute zero", "Prevents gold scavenging"],
+          "applications": ["Cryogenics", "Quantum computing", "Gold pad soldering"],
+          "trenchInsight": "Standard tin solders become brittle and shatter at Kelvin temps",
+          "compliance": "varies"
+        }
+      ]
+    }
+  ],
+  "selectionGuide": {
+    "military": ["sn63pb37", "sn60pb40"],
+    "aerospace": ["sn63pb37", "ausn20"],
+    "medical": ["sn63pb37"],
+    "consumer": ["sac305", "sac105", "snbi58"],
+    "automotive": ["innolot", "sac305"],
+    "rf": ["sac305", "ausn20"],
+    "cryogenic": ["indium"]
+  }
+}

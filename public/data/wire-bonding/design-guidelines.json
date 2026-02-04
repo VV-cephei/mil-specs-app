@@ -1,0 +1,263 @@
+{
+  "padLocationGuidelines": {
+    "title": "General Guidelines for Wire Bond Pad Locations",
+    "image": "/images/wire-bonding/pad-location-guidelines.png",
+    "rules": [
+      {
+        "id": "pad-spacing",
+        "rule": "Minimum pad-to-pad spacing",
+        "description": "Maintain adequate spacing between adjacent bond pads to prevent wire shorts",
+        "ballBonding": {
+          "value": "1.5x ball diameter",
+          "typical": "75-100 µm (3-4 mil)"
+        },
+        "wedgeBonding": {
+          "value": "1.2x bond width",
+          "typical": "50-75 µm (2-3 mil)"
+        }
+      },
+      {
+        "id": "pad-edge-clearance",
+        "rule": "Pad edge clearance",
+        "description": "Distance from bond center to pad edge",
+        "minimum": "0.5x ball diameter for ball bonds",
+        "recommended": "Ball should be fully contained within pad boundaries"
+      },
+      {
+        "id": "die-edge-distance",
+        "rule": "Distance from die edge",
+        "description": "Minimum distance from bond pad to die edge",
+        "minimum": "100 µm (4 mil)",
+        "recommended": "150-200 µm (6-8 mil)"
+      },
+      {
+        "id": "wire-crossing",
+        "rule": "Wire crossing avoidance",
+        "description": "Design pad layout to minimize or eliminate wire crossings",
+        "guideline": "If crossings unavoidable, maintain minimum 50 µm vertical separation"
+      }
+    ]
+  },
+  "bondDistanceSpecifications": {
+    "title": "Bond Distance and Location Requirements",
+    "image": "/images/wire-bonding/bond-distance-locations.png",
+    "specifications": [
+      {
+        "parameter": "Minimum bond-to-bond distance",
+        "ballBonding": "2.5x wire diameter",
+        "wedgeBonding": "2.0x wire diameter",
+        "notes": "Measured center-to-center"
+      },
+      {
+        "parameter": "Maximum wire length",
+        "standard": "5 mm (200 mil)",
+        "extended": "Up to 10 mm with special loop profiles",
+        "notes": "Longer wires require worked loops to prevent sag"
+      },
+      {
+        "parameter": "Minimum wire length",
+        "ballBonding": "250 µm (10 mil)",
+        "wedgeBonding": "200 µm (8 mil)",
+        "notes": "Shorter lengths increase loop stress"
+      },
+      {
+        "parameter": "Loop height range",
+        "standard": "150-500 µm (6-20 mil)",
+        "lowLoop": "75-150 µm (3-6 mil)",
+        "notes": "Height depends on package clearance requirements"
+      }
+    ]
+  },
+  "padDimensionsBySubstrate": {
+    "title": "Typical Substrate and IC Pad Dimensions",
+    "image": "/images/wire-bonding/pad-dimensions-table.png",
+    "substrates": [
+      {
+        "type": "Silicon IC (Standard)",
+        "padSize": {
+          "minimum": "60 x 60 µm",
+          "typical": "80 x 80 µm",
+          "recommended": "100 x 100 µm"
+        },
+        "pitch": {
+          "minimum": "50 µm",
+          "typical": "60-80 µm"
+        },
+        "metallization": "Al or Al-Cu (0.8-1.2 µm thick)"
+      },
+      {
+        "type": "Silicon IC (Fine Pitch)",
+        "padSize": {
+          "minimum": "45 x 45 µm",
+          "typical": "50 x 50 µm"
+        },
+        "pitch": {
+          "minimum": "35 µm",
+          "typical": "40-50 µm"
+        },
+        "metallization": "Al or Cu with barrier layers"
+      },
+      {
+        "type": "Leadframe (Cu)",
+        "padSize": {
+          "minimum": "150 x 150 µm",
+          "typical": "200 x 200 µm"
+        },
+        "pitch": {
+          "minimum": "100 µm",
+          "typical": "150-200 µm"
+        },
+        "metallization": "Ag or Au plating (2-5 µm)"
+      },
+      {
+        "type": "Ceramic Substrate (HTCC/LTCC)",
+        "padSize": {
+          "minimum": "100 x 100 µm",
+          "typical": "150 x 150 µm"
+        },
+        "pitch": {
+          "minimum": "100 µm",
+          "typical": "150-250 µm"
+        },
+        "metallization": "Au thick film (5-15 µm)"
+      },
+      {
+        "type": "PCB (FR-4/BT)",
+        "padSize": {
+          "minimum": "200 x 200 µm",
+          "typical": "300 x 300 µm"
+        },
+        "pitch": {
+          "minimum": "200 µm",
+          "typical": "300-500 µm"
+        },
+        "metallization": "ENIG or soft Au (0.5-2 µm)"
+      },
+      {
+        "type": "Power Module (DBC)",
+        "padSize": {
+          "minimum": "500 x 500 µm",
+          "typical": "1000 x 1000 µm"
+        },
+        "pitch": {
+          "minimum": "500 µm",
+          "typical": "1000-2000 µm"
+        },
+        "metallization": "Cu with Ni/Au or Al"
+      }
+    ]
+  },
+  "wireBondCoverage": {
+    "title": "Wire Bond Coverage Requirements",
+    "image": "/images/wire-bonding/wire-bond-coverage.png",
+    "requirements": [
+      {
+        "parameter": "Ball bond coverage",
+        "minimum": "Ball must be 100% on pad",
+        "optimal": "Ball centered with 20% margin to pad edge"
+      },
+      {
+        "parameter": "Stitch bond coverage",
+        "minimum": "80% of bond footprint on pad",
+        "optimal": "100% coverage with tail on pad"
+      },
+      {
+        "parameter": "Intermetallic coverage (IMC)",
+        "minimum": "60% of ball-pad interface",
+        "qualification": "80% for high-reliability applications"
+      }
+    ]
+  },
+  "pitchLimitations": {
+    "title": "Pitch Limitations by Bond Type",
+    "comparison": [
+      {
+        "bondType": "Ball Bonding",
+        "minimumPitch": "50 µm",
+        "typicalPitch": "60-80 µm",
+        "limitingFactor": "Ball diameter (2-3x wire diameter)",
+        "wireRange": "15-50 µm diameter"
+      },
+      {
+        "bondType": "Wedge Bonding",
+        "minimumPitch": "35 µm",
+        "typicalPitch": "50-75 µm",
+        "limitingFactor": "Bond width (1.5-2x wire diameter)",
+        "wireRange": "15-75 µm diameter"
+      },
+      {
+        "bondType": "Ribbon Bonding",
+        "minimumPitch": "100 µm",
+        "typicalPitch": "150-300 µm",
+        "limitingFactor": "Ribbon width",
+        "wireRange": "50-500 µm width"
+      }
+    ],
+    "notes": "Wedge bonding achieves finer pitch than ball bonding because there is no large ball to take up space"
+  },
+  "designRulesByWireDiameter": {
+    "title": "Design Rules by Wire Diameter",
+    "rules": [
+      {
+        "wireDiameter": "15-18 µm (0.6-0.7 mil)",
+        "application": "Ultra-fine pitch",
+        "minPadSize": "45 x 45 µm",
+        "minPitch": "35 µm",
+        "ballDiameter": "30-54 µm",
+        "pullStrength": ">2.0 gf",
+        "notes": "Requires high-precision equipment"
+      },
+      {
+        "wireDiameter": "20-25 µm (0.8-1.0 mil)",
+        "application": "Fine pitch standard",
+        "minPadSize": "60 x 60 µm",
+        "minPitch": "50 µm",
+        "ballDiameter": "40-75 µm",
+        "pullStrength": ">3.0 gf",
+        "notes": "Most common for IC bonding"
+      },
+      {
+        "wireDiameter": "30-38 µm (1.2-1.5 mil)",
+        "application": "Standard pitch",
+        "minPadSize": "80 x 80 µm",
+        "minPitch": "75 µm",
+        "ballDiameter": "60-114 µm",
+        "pullStrength": ">5.0 gf",
+        "notes": "Good balance of strength and density"
+      },
+      {
+        "wireDiameter": "50 µm (2.0 mil)",
+        "application": "Power/high current",
+        "minPadSize": "120 x 120 µm",
+        "minPitch": "125 µm",
+        "ballDiameter": "100-150 µm",
+        "pullStrength": ">8.0 gf",
+        "notes": "Higher current capacity"
+      },
+      {
+        "wireDiameter": "75-125 µm (3-5 mil)",
+        "application": "Heavy wire power",
+        "minPadSize": "200 x 200 µm",
+        "minPitch": "250 µm",
+        "ballDiameter": "N/A (wedge only)",
+        "pullStrength": ">15 gf",
+        "notes": "Typically aluminum wedge bonding"
+      },
+      {
+        "wireDiameter": "250-500 µm (10-20 mil)",
+        "application": "Power electronics",
+        "minPadSize": "1000 x 1000 µm",
+        "minPitch": "1500 µm",
+        "ballDiameter": "N/A (wedge only)",
+        "pullStrength": ">100 gf",
+        "notes": "Heavy aluminum wire for IGBT/power modules"
+      }
+    ]
+  },
+  "images": {
+    "padLocationGuidelines": "/images/wire-bonding/pad-location-guidelines.png",
+    "bondDistanceLocations": "/images/wire-bonding/bond-distance-locations.png",
+    "padDimensionsTable": "/images/wire-bonding/pad-dimensions-table.png",
+    "wireBondCoverage": "/images/wire-bonding/wire-bond-coverage.png"
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "standard": "IPC-7525 (Stencil Design Guidelines)",
+  "overview": {
+    "description": "Stencil printing deposits solder paste onto PCB pads. It is the single biggest source of defects.",
+    "materials": {
+      "stainlessSteel": {
+        "name": "Stainless Steel (Laser-Cut)",
+        "description": "Most common stencil material",
+        "advantages": ["Cost-effective", "Good durability", "Easy to manufacture"],
+        "disadvantages": ["Rougher aperture walls than electroformed"]
+      },
+      "nickel": {
+        "name": "Nickel (Electroformed)",
+        "description": "Premium stencil material",
+        "advantages": ["Smoother aperture walls", "Better paste release", "Longer life"],
+        "disadvantages": ["More expensive", "Longer lead time"]
+      }
+    }
+  },
+  "designRules": {
+    "aspectRatio": {
+      "name": "Aspect Ratio",
+      "formula": "Aperture Width / Stencil Thickness",
+      "minimum": 1.5,
+      "description": "Ensures paste releases from aperture walls",
+      "example": {
+        "apertureWidth": "0.25mm",
+        "stencilThickness": "0.15mm",
+        "ratio": 1.67,
+        "result": "Pass (>1.5)"
+      }
+    },
+    "areaRatio": {
+      "name": "Area Ratio",
+      "formula": "Area of Aperture Opening / Area of Aperture Walls",
+      "minimum": 0.66,
+      "description": "If < 0.66, friction against walls exceeds adhesion to pad. Paste stays in stencil.",
+      "calculation": {
+        "rectangular": "(L × W) / (2 × (L + W) × T)",
+        "circular": "(π × r²) / (2 × π × r × T) = r / (2 × T)"
+      },
+      "trenchInsight": "Area Ratio is more critical than Aspect Ratio for fine-pitch"
+    }
+  },
+  "thicknessGuide": [
+    {
+      "thickness": "150 µm (6 mil)",
+      "applications": ["0805", "0603", "Standard pitch"],
+      "pasteType": "Type 3"
+    },
+    {
+      "thickness": "125 µm (5 mil)",
+      "applications": ["0402", "0.5mm pitch QFP"],
+      "pasteType": "Type 3/4"
+    },
+    {
+      "thickness": "100 µm (4 mil)",
+      "applications": ["0201", "0.4mm pitch BGA"],
+      "pasteType": "Type 4"
+    },
+    {
+      "thickness": "75 µm (3 mil)",
+      "applications": ["01005", "0.3mm pitch"],
+      "pasteType": "Type 5"
+    },
+    {
+      "thickness": "50 µm (2 mil)",
+      "applications": ["Micro-BGA", "Advanced packaging"],
+      "pasteType": "Type 5/6"
+    }
+  ],
+  "apertureModifications": {
+    "homeplate": {
+      "name": "Home Plate",
+      "description": "Pentagon shape for QFN center pads",
+      "purpose": "Reduce voiding by allowing flux outgassing"
+    },
+    "windowPane": {
+      "name": "Window Pane",
+      "description": "Grid pattern for large pads",
+      "purpose": "Reduce voiding, control paste volume"
+    },
+    "cornerRadius": {
+      "name": "Corner Radius",
+      "description": "Rounded corners on apertures",
+      "purpose": "Improve paste release"
+    },
+    "reduction": {
+      "name": "Aperture Reduction",
+      "description": "Make aperture smaller than pad",
+      "typical": "10-20% reduction",
+      "purpose": "Prevent bridging on fine-pitch"
+    }
+  },
+  "processParameters": {
+    "squeegee": {
+      "angle": {
+        "standard": "60°",
+        "alternative": "45°",
+        "note": "Lower angle for thicker paste"
+      },
+      "pressure": {
+        "value": "~0.5 kg per inch of blade",
+        "tooHigh": "Scooping (concave paste bricks)",
+        "tooLow": "Smearing on top of stencil"
+      },
+      "speed": {
+        "range": "25-75 mm/s",
+        "note": "Slower for fine-pitch"
+      }
+    },
+    "separation": {
+      "speed": "Slow",
+      "purpose": "Define sharp edges on paste deposits",
+      "tooFast": "Dog ears, incomplete release"
+    }
+  },
+  "stencilTypes": {
+    "framed": {
+      "name": "Framed Stencil",
+      "description": "Stencil permanently mounted in aluminum frame",
+      "advantages": ["Rigid", "Consistent tension", "Easy handling"],
+      "disadvantages": ["Larger storage footprint", "Higher cost"]
+    },
+    "frameless": {
+      "name": "Frameless Stencil",
+      "description": "Stencil sheet mounted in reusable frame",
+      "advantages": ["Lower cost", "Compact storage", "Quick changeover"],
+      "disadvantages": ["Requires frame system", "Tension may vary"]
+    }
+  },
+  "images": {
+    "stencils": "/images/smt/stencils.jpg",
+    "stencilMachine": "/images/smt/stencil-machine.jpg",
+    "framedFrameless": "/images/smt/framed-frameless-stencil.jpg",
+    "stencilLaser": "/images/smt/stencil-laser.jpg"
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "bondTypes": [
+    {
+      "id": "ball",
+      "name": "Ball Bonding",
+      "description": "The Speed King - Used for >90% of ICs (CPUs, Memory, Microcontrollers). It is omni-directional (can loop in any direction).",
+      "processSteps": [
+        {
+          "step": 1,
+          "name": "EFO (Electronic Flame Off)",
+          "description": "A high-voltage spark melts the wire tip inside a ceramic Capillary, forming a Free Air Ball (FAB)."
+        },
+        {
+          "step": 2,
+          "name": "First Bond (Ball Bond)",
+          "description": "Capillary descends to the die pad. Heat + Ultrasonic Scrub welds the ball to the pad."
+        },
+        {
+          "step": 3,
+          "name": "Looping",
+          "description": "Capillary rises to 'Kink Height,' moves in 'Reverse Motion' to bend the wire, then moves to the second pad."
+        },
+        {
+          "step": 4,
+          "name": "Second Bond (Stitch Bond)",
+          "description": "Capillary crushes the wire against the leadframe using the 'outer radius' of the capillary tip. This is a Wedge-shaped bond."
+        },
+        {
+          "step": 5,
+          "name": "Tail Break",
+          "description": "The wire clamps close, and the capillary rises, tearing the wire at the 'Heel' of the stitch."
+        }
+      ],
+      "advantages": [
+        "Fast processing speed",
+        "Omni-directional (can loop in any direction)",
+        "High throughput",
+        "Industry standard for most ICs"
+      ],
+      "disadvantages": [
+        "Ball takes up space (limits minimum pitch)",
+        "Requires heat for FAB formation"
+      ],
+      "applications": ["CPUs", "Memory", "Microcontrollers", "General IC bonding"],
+      "parameters": {
+        "direction": "Omni-directional",
+        "marketShare": ">90% of ICs",
+        "wireTypes": ["Gold", "Copper", "Silver"]
+      }
+    },
+    {
+      "id": "wedge",
+      "name": "Wedge Bonding",
+      "description": "The Fine Pitch Specialist - Used for Aluminum wire and Ribbon. It is uni-directional (the tool must rotate to face the wire direction).",
+      "processSteps": [
+        {
+          "step": 1,
+          "name": "Wire Feed",
+          "description": "The wire is fed under a wedge tool. No ball is formed."
+        },
+        {
+          "step": 2,
+          "name": "First Bond",
+          "description": "The tool crushes the side of the wire onto the pad using Ultrasonic energy."
+        },
+        {
+          "step": 3,
+          "name": "Loop",
+          "description": "Tool moves to the second pad."
+        },
+        {
+          "step": 4,
+          "name": "Second Bond",
+          "description": "Another wedge crush completes the bond."
+        }
+      ],
+      "advantages": [
+        "Can achieve finer pitch (pad spacing) than ball bonding",
+        "No large ball to take up space",
+        "Works well with aluminum wire and ribbon"
+      ],
+      "disadvantages": [
+        "Uni-directional (tool must rotate to face wire direction)",
+        "Slower than ball bonding due to rotation requirement"
+      ],
+      "applications": ["Fine pitch applications", "Aluminum wire bonding", "Ribbon bonding", "RF/Microwave devices"],
+      "parameters": {
+        "direction": "Uni-directional",
+        "wireTypes": ["Aluminum", "Ribbon"]
+      }
+    },
+    {
+      "id": "security",
+      "name": "Security Bonds / Safety Bumps",
+      "description": "A reinforcement technique where a ball bond is placed on top of the stitch bond after the loop is finished to anchor the stitch down.",
+      "processSteps": [
+        {
+          "step": 1,
+          "name": "Complete Standard Loop",
+          "description": "Perform standard ball bonding process with first bond, loop, and stitch bond."
+        },
+        {
+          "step": 2,
+          "name": "Security Bond Placement",
+          "description": "Place a ball bond on top of the stitch bond to anchor it down."
+        }
+      ],
+      "advantages": [
+        "Reinforces the weakest link (stitch bond)",
+        "Prevents lift-off on difficult surfaces",
+        "Improves reliability"
+      ],
+      "disadvantages": [
+        "Additional process step",
+        "Increased cycle time"
+      ],
+      "applications": ["High reliability applications", "Difficult bonding surfaces", "Applications prone to stitch lift-off"],
+      "parameters": {
+        "purpose": "Reinforce weak stitch bonds",
+        "problem": "Stitch Bond (2nd bond) is the weakest link - often lifts off"
+      }
+    },
+    {
+      "id": "sos-bsob",
+      "name": "Standoff Stitch (SOS) / Ball Stitch on Ball (BSOB)",
+      "description": "Reverse Bonding technique critical for low-profile packages. Standard forward bonding has a high loop arc; reverse bonding allows the loop to be extremely flat.",
+      "processSteps": [
+        {
+          "step": 1,
+          "name": "Bump Placement",
+          "description": "Place a gold Bump on the die pad."
+        },
+        {
+          "step": 2,
+          "name": "Reverse Loop",
+          "description": "Create a loop from the leadframe back to the die."
+        },
+        {
+          "step": 3,
+          "name": "Stitch on Bump",
+          "description": "Stitch the wire onto the top of the gold Bump."
+        }
+      ],
+      "advantages": [
+        "Extremely flat loop profile",
+        "Bump protects die from heavy force of stitch bond",
+        "Ideal for low-profile packages"
+      ],
+      "disadvantages": [
+        "More complex process",
+        "Requires bump placement step",
+        "Slower than standard bonding"
+      ],
+      "applications": ["Low-profile packages", "Thin packages", "Space-constrained applications"],
+      "parameters": {
+        "technique": "Reverse Bonding",
+        "loopProfile": "Extremely flat"
+      }
+    }
+  ]
+}

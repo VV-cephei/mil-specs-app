@@ -9,6 +9,7 @@
         <span class="app-logo-text">
           <span class="app-logo-title">mil-specs.com</span>
           <span class="app-logo-subtitle">Military Specifications Hub</span>
+          <span class="app-logo-curator">by David Kueper</span>
         </span>
       </router-link>
 
@@ -37,6 +38,36 @@
         <router-link :to="{ name: 'dd2326-decoder' }" class="nav-link" active-class="nav-link-active">Decoder</router-link>
         <router-link :to="{ name: 'mil-std-202' }" class="nav-link" active-class="nav-link-active">MIL-STD-202</router-link>
         <router-link :to="{ name: 'superseding-lookup' }" class="nav-link" active-class="nav-link-active">Superseding</router-link>
+        
+        <!-- Resources Dropdown -->
+        <div class="nav-dropdown" @mouseenter="resourcesDropdownOpen = true" @mouseleave="resourcesDropdownOpen = false">
+          <button class="nav-link nav-dropdown-trigger" :class="{ 'nav-link-active': isResourcesActive }">
+            Resources
+            <svg class="nav-dropdown-arrow" :class="{ 'is-open': resourcesDropdownOpen }" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu" :class="{ 'is-open': resourcesDropdownOpen }">
+            <router-link to="/resources/wire-bonding" class="nav-dropdown-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M2,5.27L3.28,4L20,20.72L18.73,22L15.73,19H7V17H13.73L9.73,13H7V11H7.73L5.73,9H2V7H3.73L2,5.27M7,5H9V7H7V5M11,5H13V7H11V5M15,5H17V7H15V5M19,5H21V7H19V5M19,9H21V11H19V9M19,13H21V15H19V13M15,17H17V19H15V17M19,17H21V19H19V17Z" />
+              </svg>
+              Wire Bonding
+            </router-link>
+            <router-link to="/resources/smt-manufacturing" class="nav-dropdown-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17,14H19V17H22V19H19V22H17V19H14V17H17V14M11,16L2,9L11,2L20,9L11,16M11,18.54L12,17.75V18C12,18.71 12.12,19.39 12.35,20L11,21.07L2,14.07L3.62,12.81L11,18.54Z" />
+              </svg>
+              SMT Manufacturing
+            </router-link>
+            <router-link to="/resources/die-attach" class="nav-dropdown-item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17,17H7V7H17M21,11V9H19V7C19,5.89 18.1,5 17,5H15V3H13V5H11V3H9V5H7C5.89,5 5,5.89 5,7V9H3V11H5V13H3V15H5V17C5,18.1 5.89,19 7,19H9V21H11V19H13V21H15V19H17C18.1,19 19,18.1 19,17V15H21V13H19V11H21Z" />
+              </svg>
+              Die Attach
+            </router-link>
+          </div>
+        </div>
       </nav>
 
       <!-- Header Actions -->
@@ -94,22 +125,32 @@
         <li><router-link :to="{ name: 'dd2326-decoder' }" class="nav-link" @click="mobileMenuOpen = false">Decoder</router-link></li>
         <li><router-link :to="{ name: 'mil-std-202' }" class="nav-link" @click="mobileMenuOpen = false">MIL-STD-202</router-link></li>
         <li><router-link :to="{ name: 'superseding-lookup' }" class="nav-link" @click="mobileMenuOpen = false">Spec Superseding</router-link></li>
+        <li class="nav-section-header">Resources</li>
+        <li><router-link to="/resources/wire-bonding" class="nav-link nav-link-indent" @click="mobileMenuOpen = false">Wire Bonding</router-link></li>
+        <li><router-link to="/resources/smt-manufacturing" class="nav-link nav-link-indent" @click="mobileMenuOpen = false">SMT Manufacturing</router-link></li>
+        <li><router-link to="/resources/die-attach" class="nav-link nav-link-indent" @click="mobileMenuOpen = false">Die Attach</router-link></li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
-import { useRouter } from 'vue-router'
+import { ref, watch, computed } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
 import { useUIStore } from '@/stores/ui'
 import { useDisplay } from 'vuetify'
 
 const router = useRouter()
+const route = useRoute()
 const uiStore = useUIStore()
 const { mobile } = useDisplay()
 const searchQuery = ref('')
 const mobileMenuOpen = ref(false)
+const resourcesDropdownOpen = ref(false)
+
+const isResourcesActive = computed(() => {
+  return route.path.startsWith('/resources')
+})
 
 watch(mobile, (val) => {
   if (!val) mobileMenuOpen.value = false
@@ -177,5 +218,101 @@ function handleSearch() {
 
 .mobile-nav .nav-links li {
   margin: 0;
+}
+
+/* Dropdown navigation styles */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.nav-dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-arrow.is-open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background: var(--color-primary-600, #1a3050);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-default, 6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: all 0.2s ease;
+  z-index: 100;
+  padding: 0.5rem 0;
+}
+
+.nav-dropdown-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: var(--font-size-sm, 0.875rem);
+  transition: all 0.2s ease;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.nav-dropdown-item svg {
+  opacity: 0.7;
+}
+
+.nav-dropdown-item:hover svg {
+  opacity: 1;
+}
+
+/* Mobile navigation section header */
+.nav-section-header {
+  padding: 0.75rem 1rem 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--font-size-xs, 0.75rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 0.5rem;
+}
+
+.nav-link-indent {
+  padding-left: 2rem !important;
+}
+
+/* Curator branding in logo */
+.app-logo-curator {
+  display: block;
+  font-size: var(--font-size-xs, 0.65rem);
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: var(--font-weight-normal, 400);
+  font-style: italic;
+  margin-top: 1px;
 }
 </style>
